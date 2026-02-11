@@ -67,13 +67,100 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 pt-32 pb-20 md:pt-36 md:pb-28">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 pt-28 pb-20 md:pt-32 md:pb-28">
         <div className="text-center">
+          {/* Hero image - top */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="relative mb-8"
+          >
+            <div className="relative flex items-center justify-center">
+              {/* Circular glow behind person */}
+              <motion.div
+                animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute w-[280px] h-[280px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] bg-gradient-to-br from-brand-400/30 via-brand-500/20 to-brand-600/10 rounded-full blur-[80px]"
+              />
+              {/* Subtle ring */}
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[260px] h-[260px] md:w-[440px] md:h-[440px] lg:w-[500px] lg:h-[500px] rounded-full border border-dashed border-white/[0.06]"
+              />
+
+              {/* Person image */}
+              <div className="relative w-[240px] h-[240px] md:w-[400px] md:h-[400px] lg:w-[460px] lg:h-[460px] z-10">
+                <Image
+                  src="/images/hero-worker.png"
+                  alt="배관사무소 전문 기술진"
+                  fill
+                  className="object-contain drop-shadow-[0_20px_60px_rgba(41,128,185,0.4)]"
+                  priority
+                />
+              </div>
+
+              {/* Floating badges around person */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="absolute top-4 right-4 md:top-8 md:right-[10%] lg:right-[15%] z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
+                >
+                  <Zap className="w-4 h-4 text-gold-400" />
+                  <span className="text-white/90 text-xs font-black">30분 내 출동</span>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="absolute bottom-16 left-2 md:bottom-20 md:left-[8%] lg:left-[12%] z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity }}
+                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
+                >
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="w-3 h-3 fill-gold-400 text-gold-400" />
+                    ))}
+                  </div>
+                  <span className="text-white/90 text-xs font-black">5.0</span>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.5 }}
+                className="absolute bottom-2 right-8 md:bottom-6 md:right-[12%] lg:right-[18%] z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 2.8, repeat: Infinity }}
+                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span className="text-white/90 text-xs font-black">50,000+ 해결</span>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+
           {/* Live badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 px-5 py-2 rounded-full text-sm font-bold mb-3 backdrop-blur-sm shadow-[0_0_20px_rgba(16,185,129,0.15)]"
           >
             <span className="relative flex h-2.5 w-2.5">
@@ -88,7 +175,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="inline-flex items-center gap-2 bg-gold-400/15 border border-gold-400/30 text-gold-400 px-5 py-2.5 rounded-full text-sm font-bold mb-8 backdrop-blur-sm shadow-[0_0_20px_rgba(241,196,15,0.1)]"
           >
             <Sparkles className="w-4 h-4" />
@@ -98,7 +185,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
             className="text-white/65 text-lg md:text-xl font-semibold mb-5"
           >
             24시간 어디든 <span className="text-gold-400">30분 안에</span> 당일 출동
@@ -107,7 +194,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
           >
             <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black text-white leading-[1.05] tracking-tight mb-2">
               출장비 / 내시경
@@ -130,7 +217,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="flex items-center justify-center gap-2.5 mb-8"
             >
               <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-gold-400/70 to-transparent" />
@@ -142,7 +229,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
             className="text-white/50 text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed"
           >
             꽉 막힌 하수구, 한번에 해결해드립니다.
@@ -153,7 +240,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
           >
             <a href={`tel:${PHONE}`} className="btn-primary text-xl">
@@ -170,7 +257,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
+            className="flex flex-wrap justify-center gap-3"
           >
             {badges.map((badge, i) => (
               <motion.div
@@ -186,93 +273,6 @@ export default function Hero() {
                 <span className="text-white/80 text-sm font-semibold">{badge.text}</span>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Hero image - vertical layout */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
-          >
-            <div className="relative flex items-center justify-center">
-              {/* Circular glow behind person */}
-              <motion.div
-                animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0.5, 0.3] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[580px] lg:h-[580px] bg-gradient-to-br from-brand-400/30 via-brand-500/20 to-brand-600/10 rounded-full blur-[80px]"
-              />
-              {/* Subtle ring */}
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute w-[280px] h-[280px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px] rounded-full border border-dashed border-white/[0.06]"
-              />
-
-              {/* Person image */}
-              <div className="relative w-[260px] h-[260px] md:w-[440px] md:h-[440px] lg:w-[520px] lg:h-[520px] z-10">
-                <Image
-                  src="/images/hero-worker.png"
-                  alt="배관사무소 전문 기술진"
-                  fill
-                  className="object-contain drop-shadow-[0_20px_60px_rgba(41,128,185,0.4)]"
-                  priority
-                />
-              </div>
-
-              {/* Floating badges around person */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute top-4 right-4 md:top-8 md:right-[10%] lg:right-[15%] z-20"
-              >
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
-                >
-                  <Zap className="w-4 h-4 text-gold-400" />
-                  <span className="text-white/90 text-xs font-black">30분 내 출동</span>
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.1, duration: 0.5 }}
-                className="absolute bottom-20 left-2 md:bottom-24 md:left-[8%] lg:left-[12%] z-20"
-              >
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity }}
-                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
-                >
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-3 h-3 fill-gold-400 text-gold-400" />
-                    ))}
-                  </div>
-                  <span className="text-white/90 text-xs font-black">5.0</span>
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.3, duration: 0.5 }}
-                className="absolute bottom-4 right-8 md:bottom-8 md:right-[12%] lg:right-[18%] z-20"
-              >
-                <motion.div
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 2.8, repeat: Infinity }}
-                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span className="text-white/90 text-xs font-black">50,000+ 해결</span>
-                </motion.div>
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </div>
