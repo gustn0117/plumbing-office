@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(41, 128, 185, 0.2);
+    color: #0d1b2a;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(13, 27, 42, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Text gradient */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f1c40f 0%, #e67e22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  /* Premium button */
+  .btn-primary {
+    @apply inline-flex items-center gap-3 bg-danger-500 text-white
+           px-10 py-4 rounded-full text-lg font-bold
+           shadow-[0_8px_30px_rgba(231,76,60,0.35)]
+           hover:shadow-[0_12px_40px_rgba(231,76,60,0.5)]
+           hover:-translate-y-0.5
+           active:translate-y-0
+           transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-3 border-2 border-white/30 text-white
+           px-8 py-3.5 rounded-full text-base font-semibold
+           hover:bg-white/10 hover:border-white/50
+           transition-all duration-300;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-20 md:py-28 px-5 md:px-8;
+  }
+
+  /* Image placeholder */
+  .img-placeholder {
+    @apply relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-brand-200
+           flex items-center justify-center;
+  }
+
+  .img-placeholder::after {
+    content: "이미지를 넣어주세요";
+    @apply absolute text-sm text-brand-500/60 font-medium;
+  }
+
+  /* Noise texture overlay */
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
