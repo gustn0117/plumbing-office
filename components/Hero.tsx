@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown, MessageCircle, Star, Zap, CheckCircle2 } from "lucide-react";
+import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 const PHONE = "010-0000-0000";
@@ -209,78 +209,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden md:block"
           >
-            <div className="relative">
-              {/* Animated outer glow */}
-              <motion.div
-                animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.03, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -inset-8 bg-gradient-to-br from-brand-500/20 via-transparent to-gold-400/15 rounded-[3rem] blur-3xl"
-              />
-              <motion.div
-                animate={{ opacity: [0.2, 0.5, 0.2] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -inset-4 bg-gradient-to-br from-brand-400/25 via-white/5 to-gold-400/20 rounded-[2.5rem] blur-xl"
-              />
-              {/* Gradient border */}
-              <div className="absolute -inset-[2px] bg-gradient-to-br from-brand-400/40 via-white/15 to-gold-400/30 rounded-3xl" />
-
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
-                <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain relative z-[1]" priority />
-
-                {/* Stats card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
-                  className="absolute bottom-5 left-5 right-5 rounded-2xl p-5"
-                  style={{
-                    background: "rgba(255,255,255,0.9)",
-                    backdropFilter: "blur(20px) saturate(180%)",
-                    border: "1px solid rgba(255,255,255,0.6)",
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(41,128,185,0.05)",
-                  }}
-                >
-                  <div className="flex items-center">
-                    <div className="flex items-center gap-3 flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30">
-                        <Shield className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-brand-900 font-black text-sm">배관사무소</p>
-                        <div className="flex items-center gap-1 mt-0.5">
-                          {[...Array(5)].map((_, j) => (
-                            <Star key={j} className="w-3 h-3 fill-gold-400 text-gold-400" />
-                          ))}
-                          <span className="text-gray-400 text-[10px] ml-1 font-bold">5.0</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-px h-10 bg-gray-200 mx-4 flex-shrink-0" />
-                    <div className="flex items-center gap-4 flex-1 justify-end">
-                      <div className="text-center">
-                        <p className="text-brand-500 font-black text-xl leading-tight">50,000+</p>
-                        <p className="text-gray-400 text-[10px] font-bold">누적 해결</p>
-                      </div>
-                      <div className="w-px h-8 bg-gray-200 flex-shrink-0" />
-                      <div className="text-center">
-                        <p className="text-emerald-500 font-black text-xl leading-tight">100%</p>
-                        <p className="text-gray-400 text-[10px] font-bold">성공률</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Top badge */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1, duration: 0.4 }}
-                  className="absolute top-5 left-5 glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
-                >
-                  <Zap className="w-4 h-4 text-gold-400" />
-                  <span className="text-white/90 text-xs font-black">30분 내 출동</span>
-                </motion.div>
-              </div>
+            <div className="relative aspect-[4/5]">
+              <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain" priority />
             </div>
           </motion.div>
         </div>
