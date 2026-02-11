@@ -197,9 +197,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="md:hidden relative mt-4 mb-2"
           >
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-700 to-brand-800 border border-white/10 shadow-dramatic">
-              <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-cover relative z-[1]" priority />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-900 to-transparent" />
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
+              <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain relative z-[1]" priority />
             </div>
           </motion.div>
 
@@ -225,9 +224,8 @@ export default function Hero() {
               {/* Gradient border */}
               <div className="absolute -inset-[2px] bg-gradient-to-br from-brand-400/40 via-white/15 to-gold-400/30 rounded-3xl" />
 
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-brand-700 to-brand-800 border border-white/10 shadow-premium-lg">
-                <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-cover relative z-[1]" priority />
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-900 via-brand-900/60 to-transparent" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+                <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain relative z-[1]" priority />
 
                 {/* Stats card */}
                 <motion.div
