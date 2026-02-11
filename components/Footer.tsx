@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Clock, MapPin, Shield } from "lucide-react";
+import { Phone, Clock, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -20,10 +20,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-11 h-11 bg-gradient-to-br from-brand-700 to-brand-800 rounded-xl flex items-center justify-center shadow-lg ring-1 ring-white/5">
-            <Shield className="w-5 h-5 text-brand-400" />
-          </div>
+        <div className="flex items-center justify-center mb-8">
           <div>
             <span className="text-white/70 font-black text-lg">
               배관<span className="text-brand-400">사무소</span>
