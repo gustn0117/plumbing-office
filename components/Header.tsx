@@ -42,10 +42,10 @@ export default function Header() {
       if (mobileOpen) {
         setMobileOpen(false);
         setTimeout(() => {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 150);
+          target.scrollIntoView({ behavior: "auto", block: "start" });
+        }, 100);
       } else {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.scrollIntoView({ behavior: "auto", block: "start" });
       }
     },
     [mobileOpen],
@@ -65,7 +65,7 @@ export default function Header() {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              window.scrollTo({ top: 0, behavior: "auto" });
             }}
             className="flex items-center group"
           >

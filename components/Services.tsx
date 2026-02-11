@@ -153,7 +153,7 @@ export default function Services() {
                   />
 
                   {/* Image area */}
-                  <div className="aspect-[5/3] relative overflow-hidden">
+                  <div className="aspect-[2/1] relative overflow-hidden">
                     {s.tag && (
                       <motion.div
                         animate={{ scale: [1, 1.08, 1] }}
