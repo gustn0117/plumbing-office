@@ -114,7 +114,7 @@ export default function CtaBottom() {
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               href={`tel:${PHONE}`}
-              className="btn-primary text-xl justify-center"
+              className="btn-primary sm:text-xl justify-center"
             >
               <Phone className="w-6 h-6" />
               긴급상담 {PHONE}

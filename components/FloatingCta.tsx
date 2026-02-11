@@ -132,7 +132,7 @@ export default function FloatingCta() {
             <div className="flex items-center">
               <a
                 href={`tel:${PHONE}`}
-                className="flex-1 flex items-center justify-center gap-3 py-4 px-5 text-white font-bold text-lg"
+                className="flex-1 flex items-center justify-center gap-2 py-4 px-4 text-white font-bold text-base sm:text-lg"
               >
                 <Phone className="w-5 h-5" />
                 긴급상담 {PHONE}

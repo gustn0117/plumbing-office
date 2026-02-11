@@ -196,10 +196,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
           >
-            <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black text-white leading-[1.05] tracking-tight mb-2">
+            <h1 className="text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black text-white leading-[1.05] tracking-tight mb-2">
               출장비 / 내시경
             </h1>
-            <h2 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-3">
+            <h2 className="text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-3">
               <span className="relative inline-block">
                 <span className="text-gradient-gold">무료이벤트</span>
                 <motion.div
@@ -234,8 +234,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
           >
-            <a href={`tel:${PHONE}`} className="btn-primary text-xl">
-              <Phone className="w-6 h-6" />
+            <a href={`tel:${PHONE}`} className="btn-primary sm:text-xl">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
               긴급상담 {PHONE}
             </a>
             <a href={`sms:${PHONE}`} className="btn-outline text-lg group">

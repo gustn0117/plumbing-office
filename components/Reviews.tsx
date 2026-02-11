@@ -93,7 +93,7 @@ export default function Reviews() {
           <div className="flex items-center justify-center">
             <motion.div
               whileHover={{ y: -4, scale: 1.01 }}
-              className="relative inline-flex items-center gap-6 rounded-2xl px-10 py-6 overflow-hidden"
+              className="relative inline-flex items-center gap-6 rounded-2xl px-6 py-5 sm:px-10 sm:py-6 overflow-hidden"
             >
               {/* Animated border for summary card */}
               <div
@@ -110,9 +110,9 @@ export default function Reviews() {
                 }}
               />
 
-              <div className="relative z-10 flex items-center gap-6">
+              <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
                 <div className="text-center">
-                  <p className="text-5xl font-black text-white leading-none mb-1">5.0</p>
+                  <p className="text-4xl sm:text-5xl font-black text-white leading-none mb-1">5.0</p>
                   <div className="flex gap-1 justify-center">
                     {[...Array(5)].map((_, j) => (
                       <motion.div
@@ -122,27 +122,30 @@ export default function Reviews() {
                         transition={{ delay: 0.3 + j * 0.1, type: "spring" }}
                       >
                         <Star
-                          className="w-5 h-5 fill-gold-400 text-gold-400"
+                          className="w-4 h-4 sm:w-5 sm:h-5 fill-gold-400 text-gold-400"
                           style={{ filter: "drop-shadow(0 0 6px rgba(241,196,15,0.5))" }}
                         />
                       </motion.div>
                     ))}
                   </div>
                 </div>
-                <div className="h-12 w-px bg-white/10" />
-                <div className="text-left">
-                  <p className="text-white/50 text-sm font-bold">고객 만족도</p>
-                  <p className="text-white text-2xl font-black">99.8%</p>
-                </div>
-                <div className="h-12 w-px bg-white/10" />
-                <div className="flex items-center gap-2 text-emerald-400">
-                  <BadgeCheck
-                    className="w-6 h-6"
-                    style={{ filter: "drop-shadow(0 0 8px rgba(16,185,129,0.4))" }}
-                  />
-                  <div>
-                    <p className="text-sm font-black">인증 후기</p>
-                    <p className="text-emerald-500/70 text-xs">실사용 검증</p>
+                <div className="hidden sm:block h-12 w-px bg-white/10" />
+                <div className="w-16 h-px sm:hidden bg-white/10" />
+                <div className="flex items-center gap-4 sm:gap-6">
+                  <div className="text-center sm:text-left">
+                    <p className="text-white/50 text-xs sm:text-sm font-bold">고객 만족도</p>
+                    <p className="text-white text-xl sm:text-2xl font-black">99.8%</p>
+                  </div>
+                  <div className="h-10 sm:h-12 w-px bg-white/10" />
+                  <div className="flex items-center gap-2 text-emerald-400">
+                    <BadgeCheck
+                      className="w-5 h-5 sm:w-6 sm:h-6"
+                      style={{ filter: "drop-shadow(0 0 8px rgba(16,185,129,0.4))" }}
+                    />
+                    <div>
+                      <p className="text-xs sm:text-sm font-black">인증 후기</p>
+                      <p className="text-emerald-500/70 text-[10px] sm:text-xs">실사용 검증</p>
+                    </div>
                   </div>
                 </div>
               </div>
