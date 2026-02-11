@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageCircle, X, Headset } from "lucide-react";
 
-const PHONE = "010-0000-0000";
+const PHONE = "010-4111-6977";
 
 export default function FloatingCta() {
   const [visible, setVisible] = useState(false);

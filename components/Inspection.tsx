@@ -114,7 +114,7 @@ export default function Inspection() {
           <motion.a
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            href="tel:010-0000-0000"
+            href="tel:010-4111-6977"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-300 relative overflow-hidden"
             style={{ boxShadow: "0 10px 40px rgba(41,128,185,0.35), inset 0 1px 0 rgba(255,255,255,0.1)" }}
           >

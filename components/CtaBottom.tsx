@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import AnimateIn from "./AnimateIn";
 import { Phone, MessageCircle, ArrowRight, Clock, Shield, Users, Sparkles, Lock, Zap } from "lucide-react";
 
-const PHONE = "010-0000-0000";
+const PHONE = "010-4111-6977";
 
 const trustBadges = [
   { icon: Clock, label: "평균 30분 출동", value: "30분" },

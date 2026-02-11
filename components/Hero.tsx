@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown, MessageCircle, Star, Zap, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
-const PHONE = "010-0000-0000";
+const PHONE = "010-4111-6977";
 
 const badges = [
   { icon: Clock, text: "24시간 출동", highlight: true },

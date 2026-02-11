@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 
-const PHONE = "010-0000-0000";
+const PHONE = "010-4111-6977";
 
 const navItems = [
   { label: "서비스", href: "#services" },

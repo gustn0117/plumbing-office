@@ -4,7 +4,7 @@ import AnimateIn from "./AnimateIn";
 import { motion } from "framer-motion";
 import { Phone, Truck, Wrench, CheckCircle2, ChevronDown, Zap } from "lucide-react";
 
-const PHONE = "010-0000-0000";
+const PHONE = "010-4111-6977";
 
 const steps = [
   {

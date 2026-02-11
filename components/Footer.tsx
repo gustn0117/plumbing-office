@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
             <Phone className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/50 text-sm font-medium">010-0000-0000</span>
+            <span className="text-white/50 text-sm font-medium">010-4111-6977</span>
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
             <Clock className="w-3.5 h-3.5 text-brand-400" />
