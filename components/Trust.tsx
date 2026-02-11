@@ -36,7 +36,7 @@ export default function Trust() {
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1.5 h-1.5 rounded-full bg-gold-400/30"
+          className="absolute w-1 h-1 rounded-full bg-gold-400/40"
           style={{
             top: `${20 + Math.random() * 60}%`,
             left: `${10 + Math.random() * 80}%`,
@@ -77,7 +77,7 @@ export default function Trust() {
               <CountUp target={100} />%
             </div>
             {/* Glow behind number */}
-            <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/10 blur-2xl -z-10">
+            <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/15 blur-3xl -z-10">
               100%
             </div>
           </div>

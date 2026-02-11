@@ -25,10 +25,10 @@ const cases = [
 
 export default function BeforeAfter() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white bg-premium-mesh">
       <div className="max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
-          <span className="section-badge bg-brand-50 text-brand-600 mb-6">
+          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6">
             배관사무소는 근본원인부터 진단하고 해결합니다.
           </span>
           <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight">
@@ -42,7 +42,7 @@ export default function BeforeAfter() {
             <AnimateIn key={i} delay={i * 0.15}>
               <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-center">
                 {/* Before */}
-                <div className="rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-500">
+                <div className="rounded-2xl overflow-hidden bg-white border border-gray-100/80 shadow-elevated hover:shadow-card-hover transition-all duration-500">
                   <div className="aspect-[4/3] relative bg-red-50/50">
                     <Image
                       src={c.beforeImg}
@@ -68,7 +68,7 @@ export default function BeforeAfter() {
 
                 {/* Arrow */}
                 <div className="hidden md:flex items-center justify-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/25">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/25 ring-1 ring-brand-400/20">
                     <ArrowRight className="w-5 h-5 text-white" />
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export default function BeforeAfter() {
                 </div>
 
                 {/* After */}
-                <div className="rounded-2xl overflow-hidden bg-white border border-emerald-100 shadow-sm hover:shadow-lg hover:shadow-emerald-500/[0.06] transition-all duration-500">
+                <div className="rounded-2xl overflow-hidden bg-white border border-emerald-100/80 shadow-elevated hover:shadow-card-hover transition-all duration-500 ring-1 ring-emerald-500/[0.05]">
                   <div className="aspect-[4/3] relative bg-emerald-50/50">
                     <Image
                       src={c.afterImg}

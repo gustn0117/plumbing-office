@@ -35,7 +35,7 @@ export default function CtaBottom() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimateIn>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.1] mb-8 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse-slow" />
             <span className="text-white/60 text-sm font-medium">
               지금 상담 가능합니다
@@ -59,12 +59,12 @@ export default function CtaBottom() {
         <AnimateIn delay={0.12}>
           <div className="flex items-center justify-center gap-6 mb-10">
             <div className="flex items-center gap-2 text-white/40 text-sm">
-              <Clock className="w-4 h-4" />
+              <Clock className="w-4 h-4 text-white/50" />
               <span>24시간 연중무휴</span>
             </div>
             <div className="w-px h-4 bg-white/15" />
             <div className="flex items-center gap-2 text-white/40 text-sm">
-              <Shield className="w-4 h-4" />
+              <Shield className="w-4 h-4 text-white/50" />
               <span>무료 견적</span>
             </div>
           </div>

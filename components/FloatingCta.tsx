@@ -52,7 +52,7 @@ export default function FloatingCta() {
                     className="group flex items-center gap-3 text-white pl-5 pr-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                     style={{
                       background:
-                        "linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 100%)",
+                        "linear-gradient(145deg, #1e4468 0%, #132d47 50%, #0d1b2a 100%)",
                       boxShadow:
                         "0 10px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06)",
                     }}
@@ -74,7 +74,7 @@ export default function FloatingCta() {
                     className="group flex items-center gap-3 text-white pl-5 pr-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                     style={{
                       background:
-                        "linear-gradient(135deg, #2980b9 0%, #1a6da6 100%)",
+                        "linear-gradient(145deg, #2e8cc4 0%, #2475a8 50%, #1a6da6 100%)",
                       boxShadow:
                         "0 10px 40px rgba(41,128,185,0.25), inset 0 1px 0 rgba(255,255,255,0.08)",
                     }}
@@ -107,6 +107,7 @@ export default function FloatingCta() {
                 >
                   <Headset className="w-6 h-6" />
                   <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-brand-950 animate-pulse-slow" />
+                  <span className="absolute -inset-1 rounded-2xl border-2 border-danger-500/20 animate-pulse-slow" />
                 </motion.button>
               )}
             </AnimatePresence>

@@ -33,10 +33,10 @@ const features = [
 
 export default function Inspection() {
   return (
-    <section className="section-padding bg-white" id="inspection">
+    <section className="section-padding bg-white bg-premium-mesh" id="inspection">
       <div className="max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
-          <span className="section-badge bg-brand-50 text-brand-600 mb-6">
+          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6">
             누적 해결 건수 5만 돌파 기념
           </span>
           <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight leading-tight mb-5">
@@ -53,7 +53,7 @@ export default function Inspection() {
         <div className="grid md:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <AnimateIn key={i} delay={i * 0.15}>
-              <div className="group relative rounded-3xl overflow-hidden bg-brand-900 card-hover cursor-default">
+              <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-b from-brand-800 to-brand-900 card-hover cursor-default ring-1 ring-white/[0.05]">
                 <div className="aspect-[3/2] relative overflow-hidden">
                   <Image
                     src={f.image}
@@ -73,7 +73,7 @@ export default function Inspection() {
                 </div>
 
                 <div className="relative px-7 pt-6 pb-8 -mt-6 z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-brand-500/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-brand-500/25 ring-1 ring-white/10">
                     <f.icon className="w-5.5 h-5.5 text-white" />
                   </div>
                   <h4 className="text-white font-extrabold text-lg mb-3">{f.title}</h4>

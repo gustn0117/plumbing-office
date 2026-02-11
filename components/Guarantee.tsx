@@ -11,14 +11,14 @@ export default function Guarantee() {
 
       {/* Spotlight rays */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl">
-        <div className="absolute top-0 left-1/4 w-32 h-[500px] bg-white/[0.02] rotate-[12deg] blur-sm" />
-        <div className="absolute top-0 right-1/4 w-32 h-[500px] bg-white/[0.02] -rotate-[12deg] blur-sm" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[600px] bg-white/[0.015] blur-sm" />
+        <div className="absolute top-0 left-1/4 w-32 h-[500px] bg-white/[0.025] rotate-[12deg] blur-sm" />
+        <div className="absolute top-0 right-1/4 w-32 h-[500px] bg-white/[0.025] -rotate-[12deg] blur-sm" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[600px] bg-white/[0.02] blur-sm" />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <AnimateIn>
-          <span className="section-badge bg-gold-400/10 border border-gold-400/20 text-gold-400 mb-8">
+          <span className="section-badge bg-gold-400/[0.08] border border-gold-400/15 text-gold-400 mb-8 backdrop-blur-sm">
             해결하지 못했는데 요금청구? 절대 NO!
           </span>
         </AnimateIn>
@@ -43,7 +43,7 @@ export default function Guarantee() {
               ],
             }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="w-36 h-36 md:w-44 md:h-44 mx-auto mt-10 mb-8 bg-gradient-to-br from-gold-400 via-yellow-500 to-gold-600 rounded-[2rem] flex items-center justify-center rotate-3"
+            className="w-36 h-36 md:w-44 md:h-44 mx-auto mt-10 mb-8 bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 rounded-[2rem] flex items-center justify-center rotate-3 ring-2 ring-gold-400/20 ring-offset-4 ring-offset-transparent"
           >
             <span className="text-4xl md:text-5xl font-black text-brand-900 -rotate-3">₩0</span>
           </motion.div>

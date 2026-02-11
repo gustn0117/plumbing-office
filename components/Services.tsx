@@ -46,7 +46,7 @@ const services = [
 export default function Services() {
   return (
     <section className="relative section-padding overflow-hidden" id="services">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-500 to-brand-700" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-700 via-brand-500 to-brand-600" />
       <div className="absolute inset-0 noise" />
       {/* Mesh gradient overlay */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-400/20 rounded-full blur-[150px]" />
@@ -54,18 +54,18 @@ export default function Services() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
-          <span className="section-badge bg-white/10 border border-white/15 text-white mb-6">
+          <span className="section-badge bg-white/[0.08] border border-white/[0.12] text-white/90 mb-6 backdrop-blur-sm">
             완벽한 해결? 배관사무소에서 가능합니다!
           </span>
           <h2 className="text-3xl md:text-[2.75rem] font-black text-white tracking-tight">
-            배관사무소 <span className="text-gold-400">제공 서비스</span>
+            배관사무소 <span className="text-gold-300">제공 서비스</span>
           </h2>
         </AnimateIn>
 
         <div className="grid sm:grid-cols-2 gap-5">
           {services.map((s, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
-              <div className="group bg-white rounded-2xl overflow-hidden card-hover">
+              <div className="group bg-white rounded-2xl overflow-hidden card-hover ring-1 ring-black/[0.03]">
                 <div className="aspect-[4/3] relative overflow-hidden bg-gray-50">
                   <Image
                     src={s.image}
@@ -84,7 +84,7 @@ export default function Services() {
                 <div className="px-7 pt-5 pb-7 relative">
                   <div className="flex items-center gap-3 mb-3">
                     <div
-                      className={`w-11 h-11 bg-gradient-to-br ${s.gradient} rounded-xl flex items-center justify-center shadow-lg`}
+                      className={`w-11 h-11 bg-gradient-to-br ${s.gradient} rounded-xl flex items-center justify-center shadow-lg ring-1 ring-black/5`}
                     >
                       <s.icon className="w-5 h-5 text-white" />
                     </div>

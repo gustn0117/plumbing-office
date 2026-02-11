@@ -2,7 +2,7 @@ import { Phone, Clock, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-950 pt-12 px-5 text-center md:pb-12 pb-24">
+    <footer className="bg-gradient-to-b from-brand-950 to-[#040a12] pt-12 px-5 text-center md:pb-12 pb-24">
       <div className="max-w-4xl mx-auto">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2.5 mb-6">
@@ -22,15 +22,15 @@ export default function Footer() {
 
         {/* Info chips */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.06]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
             <Phone className="w-3.5 h-3.5 text-brand-400/60" />
             <span className="text-white/40 text-sm">010-0000-0000</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.06]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
             <Clock className="w-3.5 h-3.5 text-brand-400/60" />
             <span className="text-white/40 text-sm">24시간 연중무휴</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.06]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
             <MapPin className="w-3.5 h-3.5 text-brand-400/60" />
             <span className="text-white/40 text-sm">전국 출장 가능</span>
           </div>

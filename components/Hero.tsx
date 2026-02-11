@@ -19,10 +19,10 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
           }}
         />
         <motion.div
@@ -105,7 +105,7 @@ export default function Hero() {
               {badges.map((badge, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2.5 bg-white/[0.06] border border-white/[0.08] rounded-2xl px-5 py-3"
+                  className="flex items-center gap-2.5 bg-gradient-to-br from-white/[0.08] to-white/[0.03] border border-white/[0.1] rounded-2xl px-5 py-3 backdrop-blur-sm"
                 >
                   <badge.icon className="w-4 h-4 text-gold-400" />
                   <span className="text-white/70 text-sm font-medium">{badge.text}</span>
@@ -149,6 +149,7 @@ export default function Hero() {
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-brand-500/20 via-transparent to-gold-400/10 rounded-[2rem] blur-2xl" />
+              <div className="absolute -inset-[1px] bg-gradient-to-br from-brand-400/20 via-white/5 to-gold-400/10 rounded-3xl" />
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-brand-700 to-brand-800 border border-white/10 shadow-premium">
                 <Image
                   src="/images/hero-worker.png"
@@ -170,7 +171,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.5 }}
-                  className="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5"
+                  className="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5 shadow-lg"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -183,7 +184,7 @@ export default function Hero() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-brand-500 font-black text-xl">50,000+</p>
+                      <p className="text-brand-500 font-black text-xl" style={{textShadow: "0 0 20px rgba(41,128,185,0.3)"}}>50,000+</p>
                       <p className="text-gray-400 text-xs">누적 해결</p>
                     </div>
                   </div>

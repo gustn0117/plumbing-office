@@ -31,7 +31,7 @@ export default function Header() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-2xl shadow-[0_1px_40px_rgba(0,0,0,0.06)] border-b border-gray-100/50 py-2.5"
+            ? "bg-white/80 backdrop-blur-2xl shadow-[0_1px_3px_rgba(0,0,0,0.04),0_8px_30px_rgba(0,0,0,0.04)] border-b border-gray-100/60 py-2.5"
             : "bg-transparent py-5"
         }`}
       >
@@ -85,7 +85,7 @@ export default function Header() {
               className="ml-4 inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               style={{
                 background: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
-                boxShadow: "0 4px 20px rgba(231,76,60,0.35)",
+                boxShadow: "0 4px 20px rgba(231,76,60,0.3), 0 0 0 1px rgba(231,76,60,0.1)",
               }}
             >
               <Phone className="w-4 h-4" />
