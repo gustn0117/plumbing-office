@@ -40,10 +40,10 @@ export default function BeforeAfter() {
         <div className="space-y-12">
           {cases.map((c, i) => (
             <AnimateIn key={i} delay={i * 0.15}>
-              <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center">
+              <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-center">
                 {/* Before */}
                 <div className="rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-500">
-                  <div className="aspect-[3/2] relative bg-red-50/50">
+                  <div className="aspect-[4/3] relative bg-red-50/50">
                     <Image
                       src={c.beforeImg}
                       alt="작업 전"
@@ -61,26 +61,26 @@ export default function BeforeAfter() {
                       BEFORE
                     </div>
                   </div>
-                  <div className="p-5">
-                    <p className="text-gray-500 text-sm">{c.beforeText}</p>
+                  <div className="px-6 py-4">
+                    <p className="text-gray-500 text-[15px] leading-relaxed">{c.beforeText}</p>
                   </div>
                 </div>
 
                 {/* Arrow */}
                 <div className="hidden md:flex items-center justify-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/25 rotate-0">
-                    <ArrowRight className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/25">
+                    <ArrowRight className="w-5 h-5 text-white" />
                   </div>
                 </div>
                 <div className="flex md:hidden items-center justify-center py-1">
-                  <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center rotate-90 shadow-lg">
-                    <ArrowRight className="w-5 h-5 text-white" />
+                  <div className="w-9 h-9 bg-gradient-to-br from-brand-500 to-brand-600 rounded-lg flex items-center justify-center rotate-90 shadow-lg">
+                    <ArrowRight className="w-4 h-4 text-white" />
                   </div>
                 </div>
 
                 {/* After */}
                 <div className="rounded-2xl overflow-hidden bg-white border border-emerald-100 shadow-sm hover:shadow-lg hover:shadow-emerald-500/[0.06] transition-all duration-500">
-                  <div className="aspect-[3/2] relative bg-emerald-50/50">
+                  <div className="aspect-[4/3] relative bg-emerald-50/50">
                     <Image
                       src={c.afterImg}
                       alt="작업 후"
@@ -98,8 +98,8 @@ export default function BeforeAfter() {
                       AFTER
                     </div>
                   </div>
-                  <div className="p-5">
-                    <p className="text-gray-500 text-sm">{c.afterText}</p>
+                  <div className="px-6 py-4">
+                    <p className="text-gray-500 text-[15px] leading-relaxed">{c.afterText}</p>
                   </div>
                 </div>
               </div>

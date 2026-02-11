@@ -50,24 +50,24 @@ export default function Reviews() {
         <div className="grid md:grid-cols-2 gap-5">
           {reviews.map((r, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
-              <div className="relative bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-500/[0.04] transition-all duration-500 group">
-                <Quote className="absolute top-6 right-6 w-7 h-7 text-gray-100 group-hover:text-brand-100 transition-colors" />
+              <div className="relative bg-white rounded-2xl px-7 py-6 border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-500/[0.04] transition-all duration-500 group h-full">
+                <Quote className="absolute top-5 right-6 w-6 h-6 text-gray-100 group-hover:text-brand-100 transition-colors" />
 
-                <div className="flex items-center gap-4 mb-5">
+                <div className="flex items-center gap-3.5 mb-4">
                   <div
-                    className={`w-12 h-12 bg-gradient-to-br ${r.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                    className={`w-11 h-11 bg-gradient-to-br ${r.color} rounded-xl flex items-center justify-center text-white font-bold text-base shadow-lg`}
                   >
                     {r.initial}
                   </div>
                   <div>
-                    <p className="font-bold text-brand-800">{r.name} 고객님</p>
+                    <p className="font-bold text-brand-800 text-[15px]">{r.name} 고객님</p>
                     <p className="text-gray-400 text-sm">{r.location}</p>
                   </div>
                 </div>
 
-                <div className="flex gap-0.5 mb-4">
+                <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-gold-400 text-gold-400" />
+                    <Star key={j} className="w-3.5 h-3.5 fill-gold-400 text-gold-400" />
                   ))}
                 </div>
 
@@ -78,9 +78,9 @@ export default function Reviews() {
         </div>
 
         {/* Chat testimonials */}
-        <AnimateIn delay={0.2} className="mt-20">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-black text-brand-900 tracking-tight leading-snug">
+        <AnimateIn delay={0.2} className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-[1.75rem] font-black text-brand-900 tracking-tight leading-snug">
               이용해보신 고객님들은 다~ 알아요!
               <br />
               <span className="text-brand-500">고객님들의 이유 있는 선택!!</span>

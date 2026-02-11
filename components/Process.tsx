@@ -55,7 +55,7 @@ export default function Process() {
 
           {steps.map((s, i) => (
             <AnimateIn key={i} delay={i * 0.12}>
-              <div className="relative bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-500/[0.04] transition-all duration-500 text-center group h-full z-10">
+              <div className="relative bg-white rounded-2xl px-6 py-8 border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-500/[0.04] transition-all duration-500 text-center group h-full z-10">
                 {/* Step number badge */}
                 <div
                   className={`w-10 h-10 mx-auto bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center shadow-lg mb-5`}
@@ -63,21 +63,16 @@ export default function Process() {
                   <span className="text-white text-sm font-black">{s.num}</span>
                 </div>
 
-                <h3 className="text-lg font-extrabold text-brand-900 mb-4">
+                <div className={`w-14 h-14 mx-auto bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center mb-5 opacity-10`} />
+                <div className="w-14 h-14 mx-auto -mt-[76px] mb-5 flex items-center justify-center">
+                  <s.icon className="w-7 h-7 text-brand-500" />
+                </div>
+
+                <h3 className="text-lg font-extrabold text-brand-900 mb-3">
                   {s.title}
                 </h3>
 
-                <div
-                  className={`w-14 h-14 mx-auto bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                  style={{ opacity: 0.12 }}
-                >
-                  <s.icon className="w-7 h-7 text-white" style={{ opacity: 1 }} />
-                </div>
-                <div className={`w-14 h-14 mx-auto -mt-[56px] mb-5 rounded-2xl flex items-center justify-center`}>
-                  <s.icon className={`w-7 h-7 text-brand-500`} />
-                </div>
-
-                <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-gray-400 text-[15px] leading-relaxed">{s.desc}</p>
               </div>
             </AnimateIn>
           ))}

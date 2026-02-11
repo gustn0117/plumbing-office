@@ -2,7 +2,7 @@ import { Phone, Clock, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-950 pt-14 px-5 text-center md:pb-14 pb-24">
+    <footer className="bg-brand-950 pt-12 px-5 text-center md:pb-12 pb-24">
       <div className="max-w-4xl mx-auto">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2.5 mb-6">

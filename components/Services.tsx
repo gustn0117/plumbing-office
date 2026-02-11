@@ -66,7 +66,7 @@ export default function Services() {
           {services.map((s, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
               <div className="group bg-white rounded-2xl overflow-hidden card-hover">
-                <div className="aspect-[5/3] relative overflow-hidden bg-gray-50">
+                <div className="aspect-[4/3] relative overflow-hidden bg-gray-50">
                   <Image
                     src={s.image}
                     alt={s.name + " " + s.highlight}
@@ -78,11 +78,10 @@ export default function Services() {
                     <s.icon className="w-14 h-14 mb-2" />
                     <p className="text-xs">{s.imageHint}</p>
                   </div>
-                  {/* Top gradient overlay */}
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white to-transparent" />
                 </div>
 
-                <div className="p-7 -mt-6 relative">
+                <div className="px-7 pt-5 pb-7 relative">
                   <div className="flex items-center gap-3 mb-3">
                     <div
                       className={`w-11 h-11 bg-gradient-to-br ${s.gradient} rounded-xl flex items-center justify-center shadow-lg`}
@@ -93,7 +92,7 @@ export default function Services() {
                       <span className="text-brand-500">{s.name}</span> {s.highlight}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                  <p className="text-gray-400 text-[15px] leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             </AnimateIn>

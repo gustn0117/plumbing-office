@@ -54,30 +54,30 @@ export default function Inspection() {
           {features.map((f, i) => (
             <AnimateIn key={i} delay={i * 0.15}>
               <div className="group relative rounded-3xl overflow-hidden bg-brand-900 card-hover cursor-default">
-                <div className="aspect-[4/3] relative overflow-hidden">
+                <div className="aspect-[3/2] relative overflow-hidden">
                   <Image
                     src={f.image}
                     alt={f.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => { e.currentTarget.style.display = "none"; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-800 to-brand-900 flex flex-col items-center justify-center text-white/20">
                     <f.icon className="w-12 h-12 mb-2" />
                     <p className="text-xs">{f.imageHint}</p>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/20 to-transparent" />
-                  <div className="absolute top-4 right-4 text-white/10 text-6xl font-black leading-none">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/30 to-transparent" />
+                  <div className="absolute top-4 right-4 text-white/[0.06] text-7xl font-black leading-none">
                     {f.num}
                   </div>
                 </div>
 
-                <div className="relative p-7 -mt-10 z-10">
-                  <div className="w-13 h-13 bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-brand-500/30 w-[52px] h-[52px]">
-                    <f.icon className="w-6 h-6 text-white" />
+                <div className="relative px-7 pt-6 pb-8 -mt-6 z-10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-brand-500/30">
+                    <f.icon className="w-5.5 h-5.5 text-white" />
                   </div>
-                  <h4 className="text-white font-extrabold text-lg mb-2">{f.title}</h4>
-                  <p className="text-white/40 text-sm leading-relaxed">{f.desc}</p>
+                  <h4 className="text-white font-extrabold text-lg mb-3">{f.title}</h4>
+                  <p className="text-white/40 text-[15px] leading-relaxed">{f.desc}</p>
                 </div>
               </div>
             </AnimateIn>

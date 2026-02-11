@@ -44,12 +44,12 @@ export default function CtaBottom() {
         </AnimateIn>
 
         <AnimateIn delay={0.05}>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-white leading-tight tracking-tight mb-5">
+          <h2 className="text-3xl md:text-[2.5rem] font-black text-white leading-tight tracking-tight mb-5">
             배관 문제,
             <br />
             <span className="text-gradient-gold">더 이상 고민하지 마세요!</span>
           </h2>
-          <p className="text-white/45 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-white/45 text-[15px] md:text-base mb-8 max-w-xl mx-auto leading-relaxed">
             24시간 전문 상담사가 대기하고 있습니다.
             <br className="hidden sm:block" />
             지금 바로 연락주세요.

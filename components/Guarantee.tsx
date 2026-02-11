@@ -43,14 +43,14 @@ export default function Guarantee() {
               ],
             }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="w-40 h-40 md:w-48 md:h-48 mx-auto mt-12 mb-10 bg-gradient-to-br from-gold-400 via-yellow-500 to-gold-600 rounded-[2.5rem] flex items-center justify-center rotate-3"
+            className="w-36 h-36 md:w-44 md:h-44 mx-auto mt-10 mb-8 bg-gradient-to-br from-gold-400 via-yellow-500 to-gold-600 rounded-[2rem] flex items-center justify-center rotate-3"
           >
-            <span className="text-5xl md:text-6xl font-black text-brand-900 -rotate-3">₩0</span>
+            <span className="text-4xl md:text-5xl font-black text-brand-900 -rotate-3">₩0</span>
           </motion.div>
         </AnimateIn>
 
         <AnimateIn delay={0.3}>
-          <p className="text-white/40 text-base md:text-lg leading-relaxed max-w-lg mx-auto">
+          <p className="text-white/40 text-[15px] md:text-base leading-relaxed max-w-lg mx-auto">
             배관사무소는 고객님의 문제를 완벽하게 해결할 때까지 책임집니다.
             <br />
             해결하지 못하면 비용을 청구하지 않는 것이 저희의 원칙입니다.

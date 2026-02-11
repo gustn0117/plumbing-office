@@ -71,17 +71,17 @@ export default function Trust() {
         </AnimateIn>
 
         <AnimateIn delay={0.2}>
-          <p className="text-white/30 text-lg mt-10 mb-6">연간 해결 성공률이 무려</p>
+          <p className="text-white/30 text-base md:text-lg mt-10 mb-6">연간 해결 성공률이 무려</p>
           <div className="relative inline-block">
-            <div className="text-8xl md:text-[160px] font-black leading-none tracking-tighter text-gradient-gold">
+            <div className="text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gradient-gold">
               <CountUp target={100} />%
             </div>
             {/* Glow behind number */}
-            <div className="absolute inset-0 text-8xl md:text-[160px] font-black leading-none tracking-tighter text-gold-400/10 blur-2xl -z-10">
+            <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/10 blur-2xl -z-10">
               100%
             </div>
           </div>
-          <p className="text-white/25 text-lg mt-6">고객만족 보장</p>
+          <p className="text-white/25 text-base md:text-lg mt-6">고객만족 보장</p>
         </AnimateIn>
       </div>
     </section>
