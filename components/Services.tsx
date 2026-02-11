@@ -11,7 +11,7 @@ const services = [
     name: "변기, 싱크대",
     highlight: "막힘",
     desc: "물 내려가는 속도가 더디거나 악취, 역류할 때!",
-    image: "/images/service-toilet.jpg",
+    image: "/images/service-toilet.jpeg",
     imageHint: "service-toilet.jpg (500x400px)",
     gradient: "from-blue-500 to-cyan-500",
     glow: "rgba(59,130,246,0.5)",
@@ -23,7 +23,7 @@ const services = [
     name: "상가",
     highlight: "배관막힘",
     desc: "식당, 공공기관 등 많은 분들이 방문하시는 곳일 때!",
-    image: "/images/service-commercial.jpg",
+    image: "/images/service-commercial.jpeg",
     imageHint: "service-commercial.jpg (500x400px)",
     gradient: "from-violet-500 to-purple-500",
     glow: "rgba(139,92,246,0.5)",
@@ -34,7 +34,7 @@ const services = [
     name: "주택/아파트",
     highlight: "배관막힘",
     desc: "반복되는 막힘, 노후배관 문제를 근본적으로 해결!",
-    image: "/images/service-house.jpg",
+    image: "/images/service-house.jpeg",
     imageHint: "service-house.jpg (500x400px)",
     gradient: "from-emerald-500 to-teal-500",
     glow: "rgba(16,185,129,0.5)",
@@ -45,7 +45,7 @@ const services = [
     name: "공장/산업시설",
     highlight: "배관막힘",
     desc: "대형 산업시설 배관도 전문 장비로 확실하게 해결!",
-    image: "/images/service-factory.jpg",
+    image: "/images/service-factory.jpeg",
     imageHint: "service-factory.jpg (500x400px)",
     gradient: "from-orange-500 to-red-500",
     glow: "rgba(249,115,22,0.5)",
@@ -87,7 +87,7 @@ export default function Services() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <AnimateIn className="text-center mb-18">
+        <AnimateIn className="text-center mb-20">
           <span className="section-badge bg-white/[0.04] border border-white/[0.08] text-white/90 mb-6 backdrop-blur-xl shadow-[0_0_40px_rgba(59,130,246,0.12)]">
             <Flame className="w-4 h-4 text-gold-400" />
             완벽한 해결? 배관사무소에서 가능합니다!
@@ -153,7 +153,7 @@ export default function Services() {
                   />
 
                   {/* Image area */}
-                  <div className="aspect-[2/1] relative overflow-hidden">
+                  <div className="aspect-[3/2] relative overflow-hidden">
                     {s.tag && (
                       <motion.div
                         animate={{ scale: [1, 1.08, 1] }}
@@ -170,20 +170,20 @@ export default function Services() {
                         {s.tag}
                       </motion.div>
                     )}
-                    <Image
-                      src={s.image}
-                      alt={s.name + " " + s.highlight}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
                     {/* Placeholder fallback (dark) */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0c1a30] to-[#0a1525] flex flex-col items-center justify-center text-gray-600">
                       <s.icon className="w-14 h-14 mb-2 opacity-40" />
                       <p className="text-xs opacity-40">{s.imageHint}</p>
                     </div>
+                    <Image
+                      src={s.image}
+                      alt={s.name + " " + s.highlight}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 relative z-[1]"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
                     {/* Hover overlay with arrow */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#030810]/95 via-[#030810]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1] flex items-end justify-end p-5">
                       <motion.div
@@ -202,7 +202,7 @@ export default function Services() {
                   </div>
 
                   {/* Card body */}
-                  <div className="px-7 pt-5 pb-7 relative">
+                  <div className="px-7 pt-7 pb-8 relative">
                     {/* Colored top highlight line */}
                     <div
                       className="absolute top-0 left-7 right-7 h-px opacity-40 group-hover:opacity-80 transition-opacity duration-500"
@@ -211,7 +211,7 @@ export default function Services() {
                       }}
                     />
 
-                    <div className="flex items-center gap-3.5 mb-3">
+                    <div className="flex items-center gap-3.5 mb-4">
                       <div
                         className={`bg-gradient-to-br ${s.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative`}
                         style={{

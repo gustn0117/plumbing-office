@@ -78,17 +78,17 @@ export default function Inspection() {
                 />
 
                 <div className="aspect-[3/2] relative overflow-hidden">
-                  <Image
-                    src={f.image}
-                    alt={f.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    onError={(e) => { e.currentTarget.style.display = "none"; }}
-                  />
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-800 to-brand-900 flex flex-col items-center justify-center text-white/20">
                     <f.icon className="w-12 h-12 mb-2" />
                     <p className="text-xs">{f.imageHint}</p>
                   </div>
+                  <Image
+                    src={f.image}
+                    alt={f.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 relative z-[1]"
+                    onError={(e) => { e.currentTarget.style.display = "none"; }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/40 to-transparent" />
                   <div className="absolute top-4 right-4 text-white/[0.08] text-8xl font-black leading-none select-none">
                     {f.num}

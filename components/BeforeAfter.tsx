@@ -56,19 +56,19 @@ export default function BeforeAfter() {
                   className="rounded-2xl overflow-hidden bg-white border border-red-100/80 shadow-elevated hover:shadow-dramatic transition-all duration-500"
                 >
                   <div className="aspect-[4/3] relative bg-red-50/50">
-                    <Image
-                      src={c.beforeImg}
-                      alt="작업 전"
-                      fill
-                      className="object-cover"
-                      onError={(e) => { e.currentTarget.style.display = "none"; }}
-                    />
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-300">
                       <svg className="w-12 h-12 mb-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
                       </svg>
                       <p className="text-xs">{c.beforeHint}</p>
                     </div>
+                    <Image
+                      src={c.beforeImg}
+                      alt="작업 전"
+                      fill
+                      className="object-cover relative z-[1]"
+                      onError={(e) => { e.currentTarget.style.display = "none"; }}
+                    />
                     <div
                       className="absolute top-3 right-3 text-white text-[11px] font-black px-5 py-2.5 rounded-xl flex items-center gap-1.5 tracking-wider"
                       style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)", boxShadow: "0 8px 25px rgba(239,68,68,0.5)" }}
@@ -110,19 +110,19 @@ export default function BeforeAfter() {
                   className="rounded-2xl overflow-hidden bg-white border border-emerald-200/80 shadow-elevated hover:shadow-dramatic transition-all duration-500 ring-1 ring-emerald-500/[0.08]"
                 >
                   <div className="aspect-[4/3] relative bg-emerald-50/50">
-                    <Image
-                      src={c.afterImg}
-                      alt="작업 후"
-                      fill
-                      className="object-cover"
-                      onError={(e) => { e.currentTarget.style.display = "none"; }}
-                    />
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-300">
                       <svg className="w-12 h-12 mb-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
                       </svg>
                       <p className="text-xs">{c.afterHint}</p>
                     </div>
+                    <Image
+                      src={c.afterImg}
+                      alt="작업 후"
+                      fill
+                      className="object-cover relative z-[1]"
+                      onError={(e) => { e.currentTarget.style.display = "none"; }}
+                    />
                     <div
                       className="absolute top-3 right-3 text-white text-[11px] font-black px-5 py-2.5 rounded-xl flex items-center gap-1.5 tracking-wider"
                       style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)", boxShadow: "0 8px 25px rgba(16,185,129,0.5)" }}
