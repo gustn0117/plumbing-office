@@ -27,27 +27,28 @@ module.exports = {
           600: "#ca8a04",
         },
         danger: {
+          400: "#f87171",
           500: "#e74c3c",
           600: "#c0392b",
         },
       },
       fontFamily: {
         sans: ['"Noto Sans KR"', "sans-serif"],
-        display: ['"Noto Sans KR"', "sans-serif"],
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%)",
-        "dark-gradient": "linear-gradient(180deg, #0d1b2a 0%, #1a2a3a 50%, #0d1b2a 100%)",
-        "cta-gradient": "linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 100%)",
+        "dark-gradient":
+          "linear-gradient(180deg, #0d1b2a 0%, #1a2a3a 50%, #0d1b2a 100%)",
+        "cta-gradient":
+          "linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 100%)",
       },
       animation: {
-        "float": "float 6s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 3s ease-in-out infinite",
-        "shimmer": "shimmer 2.5s linear infinite",
-        "count-up": "countUp 2s ease-out forwards",
+        shimmer: "shimmer 2.5s linear infinite",
         "slide-up": "slideUp 0.6s ease-out forwards",
-        "glow": "glow 2s ease-in-out infinite alternate",
+        glow: "glow 2s ease-in-out infinite alternate",
+        "spin-slow": "spin 12s linear infinite",
+        gradient: "gradient 8s ease infinite",
       },
       keyframes: {
         float: {
@@ -66,6 +67,17 @@ module.exports = {
           "0%": { boxShadow: "0 0 20px rgba(41,128,185,0.3)" },
           "100%": { boxShadow: "0 0 40px rgba(41,128,185,0.6)" },
         },
+        gradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+      },
+      boxShadow: {
+        glow: "0 0 40px rgba(41,128,185,0.25)",
+        "glow-gold": "0 0 40px rgba(241,196,15,0.25)",
+        "glow-danger": "0 0 40px rgba(231,76,60,0.25)",
+        premium:
+          "0 25px 50px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05)",
       },
     },
   },

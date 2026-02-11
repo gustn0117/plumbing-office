@@ -24,7 +24,7 @@
 }
 
 @layer components {
-  /* Glass morphism card */
+  /* Glass morphism */
   .glass {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
@@ -54,6 +54,13 @@
     background-clip: text;
   }
 
+  .text-gradient-white {
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* Shimmer effect */
   .shimmer {
     background: linear-gradient(
@@ -66,15 +73,18 @@
     animation: shimmer 2.5s linear infinite;
   }
 
-  /* Premium button */
+  /* Premium buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-3 bg-danger-500 text-white
+    @apply inline-flex items-center gap-3 text-white
            px-10 py-4 rounded-full text-lg font-bold
-           shadow-[0_8px_30px_rgba(231,76,60,0.35)]
-           hover:shadow-[0_12px_40px_rgba(231,76,60,0.5)]
            hover:-translate-y-0.5
            active:translate-y-0
            transition-all duration-300;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 8px 32px rgba(231,76,60,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 12px 40px rgba(231,76,60,0.55), inset 0 1px 0 rgba(255,255,255,0.15);
   }
 
   .btn-outline {
@@ -84,9 +94,16 @@
            transition-all duration-300;
   }
 
+  .btn-white {
+    @apply inline-flex items-center gap-3 bg-white text-brand-900
+           px-8 py-3.5 rounded-full text-base font-bold
+           shadow-xl hover:shadow-2xl hover:-translate-y-0.5
+           transition-all duration-300;
+  }
+
   /* Section padding */
   .section-padding {
-    @apply py-20 md:py-28 px-5 md:px-8;
+    @apply py-24 md:py-32 px-5 md:px-8;
   }
 
   /* Image placeholder */
@@ -110,28 +127,48 @@
     pointer-events: none;
     z-index: 1;
   }
+
+  /* Section label badge */
+  .section-badge {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide;
+  }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply hover:shadow-2xl hover:-translate-y-1 transition-all duration-500;
+  }
+
+  /* Divider line with gradient */
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(41,128,185,0.2), transparent);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
-  border-radius: 3px;
+  background: #cbd5e1;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #94a3b8;
 }

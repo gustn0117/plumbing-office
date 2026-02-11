@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Clock, MapPin, Shield, Sparkles } from "lucide-react";
+import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 const PHONE = "010-0000-0000";
@@ -14,50 +14,60 @@ const badges = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-900">
-      {/* Background layers */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-brand-400/10 rounded-full blur-[120px]" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-brand-500/20 rounded-full blur-[120px]"
+        />
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-gold-400/10 rounded-full blur-[120px]"
+        />
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-5 pt-28 pb-16 md:pt-32 md:pb-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left - Text */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-5 pt-32 pb-20 md:pt-36 md:pb-28">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-gold-400/10 border border-gold-400/20 text-gold-400 px-4 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-flex items-center gap-2 bg-gold-400/10 border border-gold-400/20 text-gold-400 px-4 py-2 rounded-full text-sm font-semibold mb-8"
             >
               <Sparkles className="w-4 h-4" />
               누적 해결 건수 5만 돌파 기념
             </motion.div>
 
-            <motion.h1
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-white text-lg md:text-xl font-semibold mb-3 opacity-80"
+              className="text-white/70 text-lg md:text-xl font-medium mb-4"
             >
               24시간 어디든 30분 안에 당일 출동
-            </motion.h1>
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-2">
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-[1.15] tracking-tight mb-2">
                 출장비 / 내시경
-              </h2>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+              </h1>
+              <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black leading-[1.15] tracking-tight mb-8">
                 <span className="text-gradient-gold">무료이벤트</span>{" "}
                 <span className="text-white">진행중</span>
               </h2>
@@ -67,17 +77,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-white/60 text-lg mb-8"
+              className="text-white/50 text-lg mb-10 max-w-md leading-relaxed"
             >
               꽉 막힌 하수구, 한번에 해결해드립니다.
+              <br />
+              전문 자격 보유 기술진이 직접 방문합니다.
             </motion.p>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-col sm:flex-row gap-4 mb-10"
+              className="flex flex-col sm:flex-row gap-4 mb-12"
             >
               <a href={`tel:${PHONE}`} className="btn-primary text-xl">
                 <Phone className="w-6 h-6" />
@@ -85,7 +96,6 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Badges */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -95,18 +105,15 @@ export default function Hero() {
               {badges.map((badge, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2"
+                  className="flex items-center gap-2.5 bg-white/[0.06] border border-white/[0.08] rounded-2xl px-5 py-3"
                 >
                   <badge.icon className="w-4 h-4 text-gold-400" />
-                  <span className="text-white/80 text-sm font-medium">
-                    {badge.text}
-                  </span>
+                  <span className="text-white/70 text-sm font-medium">{badge.text}</span>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right - Image area */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -114,62 +121,63 @@ export default function Hero() {
             className="relative hidden md:block"
           >
             <div className="relative">
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-brand-500/20 rounded-3xl blur-[60px] scale-90" />
-
-              {/*
-                ============================================
-                  히어로 이미지 (작업자 사진)
-                  /public/images/hero-worker.png 에 넣어주세요
-                  권장 사이즈: 600x700px (세로형)
-                ============================================
-              */}
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden bg-gradient-to-br from-brand-700 to-brand-800 border border-white/10">
+              <div className="absolute -inset-4 bg-gradient-to-br from-brand-500/20 via-transparent to-gold-400/10 rounded-[2rem] blur-2xl" />
+              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden bg-gradient-to-br from-brand-700 to-brand-800 border border-white/10 shadow-premium">
                 <Image
                   src="/images/hero-worker.png"
                   alt="배관사무소 전문 기술진"
                   fill
                   className="object-cover"
                   priority
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                  }}
+                  onError={(e) => { e.currentTarget.style.display = "none"; }}
                 />
-                {/* Fallback content when no image */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/30">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/20">
                   <svg className="w-20 h-20 mb-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
                   </svg>
                   <p className="text-sm font-medium">hero-worker.png</p>
                   <p className="text-xs mt-1 opacity-60">600 x 700px</p>
                 </div>
-
-                {/* Floating card */}
-                <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
-                      <Shield className="w-5 h-5 text-white" />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-900/80 to-transparent" />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30">
+                        <Shield className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-brand-900 font-extrabold text-sm">배관사무소</p>
+                        <p className="text-gray-500 text-xs">전문 자격 보유 기술진</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-brand-800 font-bold text-sm">배관사무소</p>
-                      <p className="text-gray-500 text-xs">전문 자격 보유 기술진</p>
+                    <div className="text-right">
+                      <p className="text-brand-500 font-black text-xl">50,000+</p>
+                      <p className="text-gray-400 text-xs">누적 해결</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom wave */}
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 hidden md:block"
+      >
+        <ChevronDown className="w-6 h-6" />
+      </motion.div>
+
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 80V40C240 10 480 0 720 20C960 40 1200 50 1440 40V80H0Z"
-            fill="white"
-          />
+        <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" className="w-full h-16 md:h-20">
+          <path d="M0 80V40C240 10 480 0 720 20C960 40 1200 50 1440 40V80H0Z" fill="white" />
         </svg>
       </div>
     </section>

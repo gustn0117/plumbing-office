@@ -36,13 +36,13 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="section-padding bg-gray-50" id="reviews">
+    <section className="section-padding bg-gray-50/80" id="reviews">
       <div className="max-w-6xl mx-auto">
-        <AnimateIn className="text-center mb-14">
-          <span className="inline-block bg-brand-50 text-brand-500 px-5 py-2 rounded-full text-sm font-semibold mb-5">
+        <AnimateIn className="text-center mb-16">
+          <span className="section-badge bg-brand-50 text-brand-600 mb-6">
             고객님들이 직접 작성하신 생생후기!
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-brand-900 tracking-tight">
+          <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight">
             고객님들의 <span className="text-brand-500">리얼후기</span>
           </h2>
         </AnimateIn>
@@ -50,13 +50,12 @@ export default function Reviews() {
         <div className="grid md:grid-cols-2 gap-5">
           {reviews.map((r, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
-              <div className="relative bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-500 group">
-                {/* Quote icon */}
-                <Quote className="absolute top-5 right-5 w-8 h-8 text-brand-100 group-hover:text-brand-200 transition-colors" />
+              <div className="relative bg-white rounded-2xl p-7 border border-gray-100 hover:border-brand-100 hover:shadow-xl hover:shadow-brand-500/[0.04] transition-all duration-500 group">
+                <Quote className="absolute top-6 right-6 w-7 h-7 text-gray-100 group-hover:text-brand-100 transition-colors" />
 
                 <div className="flex items-center gap-4 mb-5">
                   <div
-                    className={`w-12 h-12 bg-gradient-to-br ${r.color} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                    className={`w-12 h-12 bg-gradient-to-br ${r.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg`}
                   >
                     {r.initial}
                   </div>
@@ -68,23 +67,20 @@ export default function Reviews() {
 
                 <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, j) => (
-                    <Star
-                      key={j}
-                      className="w-4 h-4 fill-gold-400 text-gold-400"
-                    />
+                    <Star key={j} className="w-4 h-4 fill-gold-400 text-gold-400" />
                   ))}
                 </div>
 
-                <p className="text-gray-600 leading-relaxed text-[15px]">{r.text}</p>
+                <p className="text-gray-500 leading-relaxed text-[15px]">{r.text}</p>
               </div>
             </AnimateIn>
           ))}
         </div>
 
-        {/* Chat style testimonials */}
-        <AnimateIn delay={0.2} className="mt-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-black text-brand-900 tracking-tight">
+        {/* Chat testimonials */}
+        <AnimateIn delay={0.2} className="mt-20">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-black text-brand-900 tracking-tight leading-snug">
               이용해보신 고객님들은 다~ 알아요!
               <br />
               <span className="text-brand-500">고객님들의 이유 있는 선택!!</span>
@@ -94,7 +90,7 @@ export default function Reviews() {
           <div className="max-w-lg mx-auto space-y-4">
             <AnimateIn delay={0.3} direction="left">
               <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md px-5 py-4 max-w-[85%] shadow-sm">
+                <div className="bg-white border border-gray-100 rounded-2xl rounded-bl-sm px-5 py-4 max-w-[85%] shadow-sm">
                   <p className="text-gray-600 text-[15px] leading-relaxed">
                     덕분에 싱크대 사용할 때 걱정 없겠어요.. 앞으로도 더 번창하세요
                   </p>
@@ -104,8 +100,9 @@ export default function Reviews() {
 
             <AnimateIn delay={0.4} direction="right">
               <div className="flex justify-end">
-                <div className="bg-brand-500 rounded-2xl rounded-br-md px-5 py-4 max-w-[85%] shadow-lg shadow-brand-500/20">
-                  <p className="text-white text-[15px] leading-relaxed">
+                <div className="rounded-2xl rounded-br-sm px-5 py-4 max-w-[85%] text-white"
+                  style={{ background: "linear-gradient(135deg, #2980b9 0%, #1a6da6 100%)", boxShadow: "0 8px 24px rgba(41,128,185,0.2)" }}>
+                  <p className="text-[15px] leading-relaxed">
                     너무 다행입니다^^ 그럴일은 없겠지만 혹시라도 재발하거나 다른 문제
                     생기시면 언제든 편히 연락주세요 &#128522;
                   </p>
@@ -115,7 +112,7 @@ export default function Reviews() {
 
             <AnimateIn delay={0.5} direction="left">
               <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md px-5 py-4 max-w-[85%] shadow-sm">
+                <div className="bg-white border border-gray-100 rounded-2xl rounded-bl-sm px-5 py-4 max-w-[85%] shadow-sm">
                   <p className="text-gray-600 text-[15px] leading-relaxed">
                     감사합니다. 아내가 기사님 친절하고 잘 뚫어주신다고 하네요.
                     주변에도 소개 많이 해야겠어요. &#127942;

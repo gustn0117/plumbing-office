@@ -31,39 +31,34 @@ export default function Header() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_30px_rgba(0,0,0,0.08)] py-3"
+            ? "bg-white/80 backdrop-blur-2xl shadow-[0_1px_40px_rgba(0,0,0,0.06)] border-b border-gray-100/50 py-2.5"
             : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
-          {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
             <div
-              className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 ${
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
                 scrolled
-                  ? "bg-brand-800"
-                  : "bg-white/20 backdrop-blur-sm border border-white/30"
+                  ? "bg-brand-800 shadow-lg shadow-brand-800/20"
+                  : "bg-white/15 backdrop-blur-sm border border-white/20"
               }`}
             >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
               </svg>
             </div>
             <div>
               <div
-                className={`text-xl font-black tracking-tight transition-colors duration-300 ${
+                className={`text-lg font-black tracking-tight transition-colors duration-300 ${
                   scrolled ? "text-brand-800" : "text-white"
                 }`}
               >
-                배관<span className="text-brand-500">사무소</span>
+                배관<span className={scrolled ? "text-brand-500" : "text-gold-400"}>사무소</span>
               </div>
               <div
-                className={`text-[10px] tracking-[3px] font-medium transition-colors duration-300 ${
-                  scrolled ? "text-gray-400" : "text-white/60"
+                className={`text-[9px] tracking-[3px] font-medium transition-colors duration-300 ${
+                  scrolled ? "text-gray-400" : "text-white/50"
                 }`}
               >
                 PLUMBING OFFICE
@@ -71,16 +66,15 @@ export default function Header() {
             </div>
           </a>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   scrolled
-                    ? "text-gray-600 hover:text-brand-500 hover:bg-brand-50"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-gray-500 hover:text-brand-500 hover:bg-brand-50"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.label}
@@ -88,18 +82,21 @@ export default function Header() {
             ))}
             <a
               href={`tel:${PHONE}`}
-              className="ml-3 inline-flex items-center gap-2 bg-danger-500 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-danger-600 transition-all shadow-lg hover:shadow-xl"
+              className="ml-4 inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
+                boxShadow: "0 4px 20px rgba(231,76,60,0.35)",
+              }}
             >
               <Phone className="w-4 h-4" />
               긴급상담
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? "text-brand-800" : "text-white"
+            className={`md:hidden p-2.5 rounded-xl transition-all ${
+              scrolled ? "text-brand-800 hover:bg-brand-50" : "text-white hover:bg-white/10"
             }`}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -107,16 +104,15 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-brand-900/95 backdrop-blur-xl pt-24 px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-brand-950/95 backdrop-blur-2xl pt-24 px-6"
           >
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-1">
               {navItems.map((item, i) => (
                 <motion.a
                   key={item.label}
@@ -124,21 +120,26 @@ export default function Header() {
                   onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-white text-2xl font-bold py-4 border-b border-white/10 hover:text-gold-400 transition-colors"
+                  transition={{ delay: i * 0.08 }}
+                  className="text-white text-2xl font-bold py-5 border-b border-white/[0.06] hover:text-gold-400 transition-colors"
                 >
                   {item.label}
                 </motion.a>
               ))}
             </nav>
-            <div className="mt-10 flex flex-col gap-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mt-10 flex flex-col gap-3"
+            >
               <a href={`tel:${PHONE}`} className="btn-primary justify-center text-base">
                 <Phone className="w-5 h-5" /> 전화상담
               </a>
               <a href={`sms:${PHONE}`} className="btn-outline justify-center text-base">
                 <MessageCircle className="w-5 h-5" /> 문자상담
               </a>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
