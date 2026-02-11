@@ -2,7 +2,8 @@
 
 import AnimateIn from "./AnimateIn";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2, AlertTriangle } from "lucide-react";
 
 const cases = [
   {
@@ -25,10 +26,12 @@ const cases = [
 
 export default function BeforeAfter() {
   return (
-    <section className="section-padding bg-white bg-premium-mesh">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative section-padding overflow-hidden">
+      <div className="absolute inset-0 bg-white bg-mesh-vivid" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
-          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6">
+          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6 shadow-sm">
             배관사무소는 근본원인부터 진단하고 해결합니다.
           </span>
           <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight">
@@ -40,12 +43,16 @@ export default function BeforeAfter() {
           </p>
         </AnimateIn>
 
-        <div className="space-y-12">
+        <div className="space-y-14">
           {cases.map((c, i) => (
             <AnimateIn key={i} delay={i * 0.15}>
               <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-center">
                 {/* Before */}
-                <div className="rounded-2xl overflow-hidden bg-white border border-gray-100/80 shadow-elevated hover:shadow-card-hover transition-all duration-500">
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-2xl overflow-hidden bg-white border border-red-100/80 shadow-elevated hover:shadow-dramatic transition-all duration-500"
+                >
                   <div className="aspect-[4/3] relative bg-red-50/50">
                     <Image
                       src={c.beforeImg}
@@ -60,29 +67,46 @@ export default function BeforeAfter() {
                       </svg>
                       <p className="text-xs">{c.beforeHint}</p>
                     </div>
-                    <div className="absolute top-3 right-3 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg tracking-wider" style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)", boxShadow: "0 4px 12px rgba(239,68,68,0.3)" }}>
+                    <div
+                      className="absolute top-3 right-3 text-white text-[11px] font-black px-4 py-2 rounded-xl flex items-center gap-1.5 tracking-wider"
+                      style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)", boxShadow: "0 6px 20px rgba(239,68,68,0.4)" }}
+                    >
+                      <AlertTriangle className="w-3 h-3" />
                       BEFORE
                     </div>
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-gray-500 text-[15px] leading-relaxed">{c.beforeText}</p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Arrow */}
                 <div className="hidden md:flex items-center justify-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/25 ring-1 ring-brand-400/20">
-                    <ArrowRight className="w-5 h-5 text-white" />
-                  </div>
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="w-14 h-14 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg ring-1 ring-brand-400/20"
+                    style={{ boxShadow: "0 8px 24px rgba(41,128,185,0.35)" }}
+                  >
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </motion.div>
                 </div>
-                <div className="flex md:hidden items-center justify-center py-1">
-                  <div className="w-9 h-9 bg-gradient-to-br from-brand-500 to-brand-600 rounded-lg flex items-center justify-center rotate-90 shadow-lg">
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </div>
+                <div className="flex md:hidden items-center justify-center py-2">
+                  <motion.div
+                    animate={{ y: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center rotate-90 shadow-lg"
+                  >
+                    <ArrowRight className="w-5 h-5 text-white" />
+                  </motion.div>
                 </div>
 
                 {/* After */}
-                <div className="rounded-2xl overflow-hidden bg-white border border-emerald-100/80 shadow-elevated hover:shadow-card-hover transition-all duration-500 ring-1 ring-emerald-500/[0.05]">
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-2xl overflow-hidden bg-white border border-emerald-200/80 shadow-elevated hover:shadow-dramatic transition-all duration-500 ring-1 ring-emerald-500/[0.08]"
+                >
                   <div className="aspect-[4/3] relative bg-emerald-50/50">
                     <Image
                       src={c.afterImg}
@@ -97,14 +121,18 @@ export default function BeforeAfter() {
                       </svg>
                       <p className="text-xs">{c.afterHint}</p>
                     </div>
-                    <div className="absolute top-3 right-3 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg tracking-wider" style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)", boxShadow: "0 4px 12px rgba(16,185,129,0.3)" }}>
+                    <div
+                      className="absolute top-3 right-3 text-white text-[11px] font-black px-4 py-2 rounded-xl flex items-center gap-1.5 tracking-wider"
+                      style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)", boxShadow: "0 6px 20px rgba(16,185,129,0.4)" }}
+                    >
+                      <CheckCircle2 className="w-3 h-3" />
                       AFTER
                     </div>
                   </div>
                   <div className="px-6 py-4">
                     <p className="text-gray-500 text-[15px] leading-relaxed">{c.afterText}</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </AnimateIn>
           ))}

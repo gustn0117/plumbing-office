@@ -2,7 +2,8 @@
 
 import AnimateIn from "./AnimateIn";
 import Image from "next/image";
-import { Camera, Monitor, FileCheck, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import { Camera, Monitor, FileCheck, Phone, Sparkles, ArrowRight } from "lucide-react";
 
 const features = [
   {
@@ -12,6 +13,8 @@ const features = [
     desc: "최첨단 카메라로 배관 내부를 직접 확인하여 정확한 원인을 파악합니다.",
     image: "/images/inspection-1.jpg",
     imageHint: "inspection-1.jpg (400x300px)",
+    color: "from-blue-500 to-brand-500",
+    glow: "rgba(41,128,185,0.25)",
   },
   {
     icon: Monitor,
@@ -20,6 +23,8 @@ const features = [
     desc: "고화질 모니터로 현장에서 바로 배관 상태를 확인하실 수 있습니다.",
     image: "/images/inspection-2.jpg",
     imageHint: "inspection-2.jpg (400x300px)",
+    color: "from-violet-500 to-purple-500",
+    glow: "rgba(139,92,246,0.25)",
   },
   {
     icon: FileCheck,
@@ -28,15 +33,20 @@ const features = [
     desc: "전문가의 진단 후 고객님 상황에 맞는 최적의 솔루션을 제안드립니다.",
     image: "/images/inspection-3.jpg",
     imageHint: "inspection-3.jpg (400x300px)",
+    color: "from-emerald-500 to-teal-500",
+    glow: "rgba(16,185,129,0.25)",
   },
 ];
 
 export default function Inspection() {
   return (
-    <section className="section-padding bg-white bg-premium-mesh" id="inspection">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative section-padding overflow-hidden" id="inspection">
+      <div className="absolute inset-0 bg-white bg-mesh-vivid" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
-          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6">
+          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6 shadow-sm">
+            <Sparkles className="w-4 h-4 text-gold-500" />
             누적 해결 건수 5만 돌파 기념
           </span>
           <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight leading-tight mb-5">
@@ -53,43 +63,64 @@ export default function Inspection() {
         <div className="grid md:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <AnimateIn key={i} delay={i * 0.15}>
-              <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-b from-brand-800 to-brand-900 card-hover cursor-default ring-1 ring-white/[0.05]">
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className="group relative rounded-3xl overflow-hidden bg-gradient-to-b from-brand-800 to-brand-900 shadow-dramatic hover:shadow-premium-lg transition-all duration-500 cursor-default ring-1 ring-white/[0.08]"
+              >
+                {/* Scan line effect */}
+                <motion.div
+                  animate={{ top: ["0%", "100%", "0%"] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                  className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-400/60 to-transparent z-20 pointer-events-none"
+                />
+
                 <div className="aspect-[3/2] relative overflow-hidden">
                   <Image
                     src={f.image}
                     alt={f.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => { e.currentTarget.style.display = "none"; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-800 to-brand-900 flex flex-col items-center justify-center text-white/20">
                     <f.icon className="w-12 h-12 mb-2" />
                     <p className="text-xs">{f.imageHint}</p>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/30 to-transparent" />
-                  <div className="absolute top-4 right-4 text-white/[0.06] text-7xl font-black leading-none">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/40 to-transparent" />
+                  <div className="absolute top-4 right-4 text-white/[0.08] text-8xl font-black leading-none select-none">
                     {f.num}
                   </div>
                 </div>
 
                 <div className="relative px-7 pt-6 pb-8 -mt-6 z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-brand-500/25 ring-1 ring-white/10">
-                    <f.icon className="w-5.5 h-5.5 text-white" />
+                  <div
+                    className={`w-13 h-13 bg-gradient-to-br ${f.color} rounded-xl flex items-center justify-center mb-4 shadow-lg ring-1 ring-white/10`}
+                    style={{ boxShadow: `0 8px 24px ${f.glow}`, width: "52px", height: "52px" }}
+                  >
+                    <f.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-white font-extrabold text-lg mb-3">{f.title}</h4>
-                  <p className="text-white/40 text-[15px] leading-relaxed">{f.desc}</p>
+                  <h4 className="text-white font-extrabold text-lg mb-3 text-glow-white">{f.title}</h4>
+                  <p className="text-white/45 text-[15px] leading-relaxed">{f.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             </AnimateIn>
           ))}
         </div>
 
-        <AnimateIn delay={0.5} className="text-center mt-12">
-          <a href="tel:010-0000-0000" className="inline-flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white px-8 py-3.5 rounded-full text-base font-bold shadow-lg shadow-brand-500/25 hover:-translate-y-0.5 transition-all duration-300">
+        <AnimateIn delay={0.5} className="text-center mt-14">
+          <motion.a
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            href="tel:010-0000-0000"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-300 relative overflow-hidden"
+            style={{ boxShadow: "0 10px 40px rgba(41,128,185,0.35), inset 0 1px 0 rgba(255,255,255,0.1)" }}
+          >
             <Phone className="w-5 h-5" />
             무료 내시경 검사 예약하기
-          </a>
-          <p className="text-gray-400 text-sm mt-3">지금 예약하시면 내시경 검사가 무료!</p>
+            <ArrowRight className="w-5 h-5" />
+          </motion.a>
+          <p className="text-gray-400 text-sm mt-4">지금 예약하시면 내시경 검사가 무료!</p>
         </AnimateIn>
       </div>
     </section>

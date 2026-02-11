@@ -42,6 +42,8 @@ module.exports = {
           "linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 100%)",
         "premium-mesh":
           "radial-gradient(at 40% 20%, rgba(41,128,185,0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(241,196,15,0.05) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(41,128,185,0.05) 0px, transparent 50%)",
+        "mesh-vivid":
+          "radial-gradient(at 20% 30%, rgba(41,128,185,0.12) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(241,196,15,0.08) 0px, transparent 50%), radial-gradient(at 50% 80%, rgba(231,76,60,0.06) 0px, transparent 50%)",
       },
       animation: {
         float: "float 6s ease-in-out infinite",
@@ -52,8 +54,10 @@ module.exports = {
         "spin-slow": "spin 12s linear infinite",
         gradient: "gradient 8s ease infinite",
         "border-flow": "borderFlow 3s ease infinite",
-        "shine": "shine 2s ease-in-out infinite",
+        shine: "shine 2s ease-in-out infinite",
         "scale-in": "scaleIn 0.3s ease-out",
+        "float-slow": "float 8s ease-in-out infinite",
+        "bounce-subtle": "bounceSubtle 2s ease-in-out infinite",
       },
       keyframes: {
         float: {
@@ -88,21 +92,30 @@ module.exports = {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
+        bounceSubtle: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
       },
       boxShadow: {
         glow: "0 0 40px rgba(41,128,185,0.25)",
+        "glow-lg": "0 0 60px rgba(41,128,185,0.35), 0 0 120px rgba(41,128,185,0.15)",
         "glow-gold": "0 0 40px rgba(241,196,15,0.25)",
+        "glow-gold-lg": "0 0 60px rgba(241,196,15,0.35), 0 0 120px rgba(241,196,15,0.15)",
         "glow-danger": "0 0 40px rgba(231,76,60,0.25)",
+        "glow-danger-lg": "0 0 60px rgba(231,76,60,0.35), 0 0 120px rgba(231,76,60,0.15)",
         premium:
           "0 25px 50px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05)",
         "premium-lg":
-          "0 30px 60px -15px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.08)",
+          "0 35px 70px -15px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.08)",
         "inner-glow":
           "inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 50px -10px rgba(0,0,0,0.2)",
         "card-hover":
-          "0 20px 40px -8px rgba(41,128,185,0.12), 0 8px 16px -4px rgba(0,0,0,0.08)",
-        "elevated":
+          "0 25px 50px -12px rgba(41,128,185,0.15), 0 10px 20px -5px rgba(0,0,0,0.08)",
+        elevated:
           "0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.08), 0 20px 25px -5px rgba(0,0,0,0.04)",
+        "dramatic":
+          "0 30px 60px -15px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05), 0 0 40px rgba(41,128,185,0.1)",
       },
     },
   },
