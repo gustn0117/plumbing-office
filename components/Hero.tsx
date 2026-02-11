@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
+import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown, MessageCircle, Star, Zap, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
 const PHONE = "010-0000-0000";
@@ -195,10 +195,14 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="md:hidden relative mt-4 mb-2"
+            className="md:hidden relative mt-6 mb-2"
           >
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
-              <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain relative z-[1]" priority />
+            <div className="relative flex justify-center">
+              {/* Background glow behind person */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-brand-400/25 rounded-full blur-[80px]" />
+              <div className="relative w-[240px] h-[240px]">
+                <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain drop-shadow-[0_10px_30px_rgba(41,128,185,0.3)]" priority />
+              </div>
             </div>
           </motion.div>
 
@@ -209,8 +213,83 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden md:block"
           >
-            <div className="relative aspect-[4/5]">
-              <Image src="/images/hero-worker.png" alt="배관사무소 전문 기술진" fill className="object-contain" priority />
+            <div className="relative flex items-center justify-center">
+              {/* Circular glow behind person */}
+              <motion.div
+                animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute w-[380px] h-[380px] lg:w-[440px] lg:h-[440px] bg-gradient-to-br from-brand-400/30 via-brand-500/20 to-brand-600/10 rounded-full blur-[60px]"
+              />
+              {/* Subtle ring */}
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[360px] h-[360px] lg:w-[420px] lg:h-[420px] rounded-full border border-dashed border-white/[0.06]"
+              />
+
+              {/* Person image */}
+              <div className="relative w-[320px] h-[320px] lg:w-[380px] lg:h-[380px] z-10">
+                <Image
+                  src="/images/hero-worker.png"
+                  alt="배관사무소 전문 기술진"
+                  fill
+                  className="object-contain drop-shadow-[0_20px_50px_rgba(41,128,185,0.35)]"
+                  priority
+                />
+              </div>
+
+              {/* Floating badges around person */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.9, duration: 0.5 }}
+                className="absolute top-8 -right-4 lg:right-0 z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
+                >
+                  <Zap className="w-4 h-4 text-gold-400" />
+                  <span className="text-white/90 text-xs font-black">30분 내 출동</span>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
+                className="absolute bottom-16 -left-8 lg:-left-4 z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity }}
+                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
+                >
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="w-3 h-3 fill-gold-400 text-gold-400" />
+                    ))}
+                  </div>
+                  <span className="text-white/90 text-xs font-black">5.0</span>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3, duration: 0.5 }}
+                className="absolute -bottom-2 right-4 lg:right-8 z-20"
+              >
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 2.8, repeat: Infinity }}
+                  className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span className="text-white/90 text-xs font-black">50,000+ 해결</span>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
