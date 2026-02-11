@@ -214,16 +214,7 @@ export default function Hero() {
               </span>{" "}
               <span className="text-white">진행중</span>
             </h2>
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex items-center justify-center gap-2.5 mb-8"
-            >
-              <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-gold-400/70 to-transparent" />
-              <span className="text-gold-400 text-xs font-black tracking-[0.2em] uppercase">Limited Event</span>
-              <div className="h-px flex-1 max-w-[80px] bg-gradient-to-l from-gold-400/70 to-transparent" />
-            </motion.div>
+            <div className="mb-8" />
           </motion.div>
 
           <motion.p
