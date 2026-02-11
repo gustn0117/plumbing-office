@@ -7,16 +7,16 @@ import { ArrowRight, CheckCircle2, AlertTriangle } from "lucide-react";
 
 const cases = [
   {
-    beforeImg: "/images/before-1.jpg",
-    afterImg: "/images/after-1.jpg",
+    beforeImg: "/images/before-1.jpeg",
+    afterImg: "/images/after-1.jpeg",
     beforeText: "배관이 꽉 막혀 물이 빠지지 않았습니다.",
     afterText: "전문 장비로 깔끔하게 해결 완료!",
     beforeHint: "before-1.jpg (500x350px)",
     afterHint: "after-1.jpg (500x350px)",
   },
   {
-    beforeImg: "/images/before-2.jpg",
-    afterImg: "/images/after-2.jpg",
+    beforeImg: "/images/before-2.jpeg",
+    afterImg: "/images/after-2.jpeg",
     beforeText: "하수구 역류로 악취가 심했습니다.",
     afterText: "근본 원인을 찾아 완벽 수리!",
     beforeHint: "before-2.jpg (500x350px)",
