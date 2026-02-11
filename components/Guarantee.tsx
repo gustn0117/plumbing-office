@@ -44,12 +44,12 @@ export default function Guarantee() {
       <motion.div
         animate={{ scale: [1, 1.12, 1], opacity: [0.08, 0.18, 0.08] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border-2 border-gold-400/10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border-[3px] border-gold-400/10"
       />
       <motion.div
         animate={{ scale: [1, 1.18, 1], opacity: [0.05, 0.12, 0.05] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-full border border-gold-400/[0.08]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-full border-2 border-gold-400/[0.08]"
       />
       <motion.div
         animate={{ scale: [1.05, 1.2, 1.05], opacity: [0.03, 0.08, 0.03] }}
@@ -84,10 +84,10 @@ export default function Guarantee() {
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
+          <h2 className="text-4xl md:text-[3rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
             저희 업체는
           </h2>
-          <h2 className="text-3xl md:text-[2.75rem] font-black leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-[3rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-gold text-glow-gold">미해결시</span>{" "}
             <span className="text-white text-glow-white">금액을 받지 않습니다.</span>
           </h2>
@@ -124,18 +124,18 @@ export default function Guarantee() {
               animate={{
                 boxShadow: [
                   "0 0 60px rgba(241,196,15,0.12), 0 0 120px rgba(241,196,15,0.06), 0 25px 60px rgba(0,0,0,0.35)",
-                  "0 0 100px rgba(241,196,15,0.25), 0 0 200px rgba(241,196,15,0.1), 0 25px 60px rgba(0,0,0,0.35)",
+                  "0 0 120px rgba(241,196,15,0.35), 0 0 250px rgba(241,196,15,0.15), 0 25px 60px rgba(0,0,0,0.35)",
                   "0 0 60px rgba(241,196,15,0.12), 0 0 120px rgba(241,196,15,0.06), 0 25px 60px rgba(0,0,0,0.35)",
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="relative w-44 h-44 md:w-56 md:h-56 mx-auto bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 rounded-[2.5rem] flex flex-col items-center justify-center rotate-3"
+              className="relative w-48 h-48 md:w-60 md:h-60 mx-auto bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 rounded-[2.5rem] flex flex-col items-center justify-center rotate-3"
             >
               {/* Inner shine */}
               <div className="absolute inset-[1px] rounded-[2.4rem] bg-gradient-to-br from-white/25 via-transparent to-transparent" />
               <div className="absolute inset-[1px] rounded-[2.4rem] bg-gradient-to-tl from-black/10 via-transparent to-transparent" />
               <span className="text-brand-900/40 text-sm font-black tracking-widest -rotate-3 mb-2 uppercase">Guaranteed</span>
-              <span className="text-5xl md:text-7xl font-black text-brand-900 -rotate-3" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.1)" }}>₩0</span>
+              <span className="text-6xl md:text-8xl font-black text-brand-900 -rotate-3" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.1)" }}>₩0</span>
               <span className="text-brand-900/30 text-xs font-bold -rotate-3 mt-1">미해결시</span>
             </motion.div>
           </div>

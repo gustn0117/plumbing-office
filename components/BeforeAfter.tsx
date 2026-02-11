@@ -28,13 +28,15 @@ export default function BeforeAfter() {
   return (
     <section className="relative section-padding overflow-hidden">
       <div className="absolute inset-0 bg-white bg-mesh-vivid" />
+      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.45, 0.2] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-100/30 rounded-full blur-[120px]" />
+      <motion.div animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.15, 0.4, 0.15] }} transition={{ duration: 10, repeat: Infinity }} className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/25 rounded-full blur-[100px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
           <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6 shadow-sm">
             배관사무소는 근본원인부터 진단하고 해결합니다.
           </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight">
+          <h2 className="text-4xl md:text-[3rem] font-black text-brand-900 tracking-tight">
             배관사무소는{" "}
             <span className="text-brand-500">해결 못할 시</span> 금액을 받지 않습니다!
           </h2>
@@ -68,8 +70,8 @@ export default function BeforeAfter() {
                       <p className="text-xs">{c.beforeHint}</p>
                     </div>
                     <div
-                      className="absolute top-3 right-3 text-white text-[11px] font-black px-4 py-2 rounded-xl flex items-center gap-1.5 tracking-wider"
-                      style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)", boxShadow: "0 6px 20px rgba(239,68,68,0.4)" }}
+                      className="absolute top-3 right-3 text-white text-[11px] font-black px-5 py-2.5 rounded-xl flex items-center gap-1.5 tracking-wider"
+                      style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)", boxShadow: "0 8px 25px rgba(239,68,68,0.5)" }}
                     >
                       <AlertTriangle className="w-3 h-3" />
                       BEFORE
@@ -85,7 +87,7 @@ export default function BeforeAfter() {
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    className="w-14 h-14 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg ring-1 ring-brand-400/20"
+                    className="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg ring-1 ring-brand-400/20"
                     style={{ boxShadow: "0 8px 24px rgba(41,128,185,0.35)" }}
                   >
                     <ArrowRight className="w-6 h-6 text-white" />
@@ -122,8 +124,8 @@ export default function BeforeAfter() {
                       <p className="text-xs">{c.afterHint}</p>
                     </div>
                     <div
-                      className="absolute top-3 right-3 text-white text-[11px] font-black px-4 py-2 rounded-xl flex items-center gap-1.5 tracking-wider"
-                      style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)", boxShadow: "0 6px 20px rgba(16,185,129,0.4)" }}
+                      className="absolute top-3 right-3 text-white text-[11px] font-black px-5 py-2.5 rounded-xl flex items-center gap-1.5 tracking-wider"
+                      style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)", boxShadow: "0 8px 25px rgba(16,185,129,0.5)" }}
                     >
                       <CheckCircle2 className="w-3 h-3" />
                       AFTER

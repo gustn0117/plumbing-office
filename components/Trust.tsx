@@ -50,15 +50,15 @@ export default function Trust() {
 
       {/* Animated gradient orbs - bigger and brighter */}
       <motion.div
-        animate={{ scale: [1, 1.4, 1], opacity: [0.1, 0.25, 0.1] }}
+        animate={{ scale: [1, 1.4, 1], opacity: [0.15, 0.35, 0.15] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full"
+        className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(241,196,15,0.15) 0%, transparent 70%)" }}
       />
       <motion.div
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.08, 0.2, 0.08] }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.12, 0.3, 0.12] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full"
+        className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(41,128,185,0.15) 0%, transparent 70%)" }}
       />
       <motion.div
@@ -97,10 +97,10 @@ export default function Trust() {
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
+          <h2 className="text-4xl md:text-[3rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
             배관사무소는
           </h2>
-          <h2 className="text-3xl md:text-[2.75rem] font-black leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-[3rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-gold text-glow-gold">결과로 신뢰를</span>{" "}
             <span className="text-white text-glow-white">증명합니다!</span>
           </h2>
@@ -138,15 +138,15 @@ export default function Trust() {
               </motion.div>
 
               {/* Number glow layers - more intense */}
-              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/25 blur-3xl -z-10 select-none flex items-center justify-center">
+              <div className="absolute inset-0 text-8xl md:text-[140px] lg:text-[170px] font-black leading-none tracking-tighter text-gold-400/25 blur-3xl -z-10 select-none flex items-center justify-center">
                 100%
               </div>
-              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/10 blur-xl -z-10 select-none flex items-center justify-center">
+              <div className="absolute inset-0 text-8xl md:text-[140px] lg:text-[170px] font-black leading-none tracking-tighter text-gold-400/10 blur-xl -z-10 select-none flex items-center justify-center">
                 100%
               </div>
 
               {/* Actual number */}
-              <div className="text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gradient-gold py-6" style={{ filter: "drop-shadow(0 0 40px rgba(241,196,15,0.2))" }}>
+              <div className="text-8xl md:text-[140px] lg:text-[170px] font-black leading-none tracking-tighter text-gradient-gold py-6" style={{ filter: "drop-shadow(0 0 40px rgba(241,196,15,0.2))" }}>
                 <CountUp target={100} />%
               </div>
             </div>
@@ -176,12 +176,12 @@ export default function Trust() {
                 />
 
                 <div
-                  className={`w-12 h-12 mx-auto bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center mb-3 shadow-lg`}
+                  className={`w-14 h-14 mx-auto bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center mb-3 shadow-lg`}
                   style={{ boxShadow: `0 6px 20px ${s.glow}` }}
                 >
-                  <s.icon className="w-5 h-5 text-white" />
+                  <s.icon className="w-6 h-6 text-white" />
                 </div>
-                <p className="text-white font-black text-xl md:text-2xl mb-1 text-glow-white">
+                <p className="text-white font-black text-2xl md:text-3xl mb-1 text-glow-white">
                   {s.value}
                 </p>
                 <p className="text-white/35 text-xs md:text-sm">{s.label}</p>

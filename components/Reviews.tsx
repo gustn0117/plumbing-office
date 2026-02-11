@@ -2,7 +2,7 @@
 
 import AnimateIn from "./AnimateIn";
 import { motion } from "framer-motion";
-import { Star, Quote, BadgeCheck, MessageSquare } from "lucide-react";
+import { Star, Quote, BadgeCheck, MessageSquare, Shield, Award } from "lucide-react";
 
 const reviews = [
   {
@@ -10,6 +10,8 @@ const reviews = [
     location: "서울 강남구",
     initial: "김",
     color: "from-blue-500 to-blue-600",
+    glow: "rgba(59,130,246,0.5)",
+    borderColor: "#3b82f6",
     text: "처음 겪는 경우라 가격이나 비용 등 막막했는데, 배관사무소에서 상담받고 빠르게 해결됐습니다. 친절하고 꼼꼼한 서비스에 감동했어요.",
   },
   {
@@ -17,6 +19,8 @@ const reviews = [
     location: "경기 수원시",
     initial: "이",
     color: "from-emerald-500 to-emerald-600",
+    glow: "rgba(16,185,129,0.5)",
+    borderColor: "#10b981",
     text: "기사님 빠르게 해결해주시고 저희가 바꿨어야 하던 수전까지 무료로 해주셔서 너무 감사했어요. 만족해서 기쁩니다!",
   },
   {
@@ -24,6 +28,8 @@ const reviews = [
     location: "인천 부평구",
     initial: "박",
     color: "from-violet-500 to-violet-600",
+    glow: "rgba(139,92,246,0.5)",
+    borderColor: "#8b5cf6",
     text: "대형 식당인데도 불구하고 차분하게 작업해주시고, 비용과 서비스 너무 만족합니다. 문제가 생기면 또 바로 연락하겠습니다.",
   },
   {
@@ -31,6 +37,8 @@ const reviews = [
     location: "부산 해운대구",
     initial: "정",
     color: "from-orange-500 to-orange-600",
+    glow: "rgba(249,115,22,0.5)",
+    borderColor: "#f97316",
     text: "아내가 기사님 친절하고 잘 뚫어주신다고 하네요. 주변에도 소개 많이 해야겠어요. 감사합니다!",
   },
 ];
@@ -38,90 +46,210 @@ const reviews = [
 export default function Reviews() {
   return (
     <section className="relative section-padding overflow-hidden" id="reviews">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/80 via-white to-gray-50/80" />
-      <div className="absolute inset-0 bg-mesh-vivid" />
+      {/* Dark premium background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050c18] via-[#081422] to-[#040a14]" />
+      <div className="absolute inset-0 noise" />
+      {/* Subtle cross-hatch pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage:
+            "linear-gradient(45deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(-45deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
+          backgroundSize: "50px 50px",
+        }}
+      />
+
+      {/* Animated orbs */}
+      <motion.div
+        animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.22, 0.08] }}
+        transition={{ duration: 9, repeat: Infinity }}
+        className="absolute top-20 left-0 w-[700px] h-[700px] bg-blue-600/12 rounded-full blur-[200px]"
+      />
+      <motion.div
+        animate={{ scale: [1.1, 0.8, 1.1], opacity: [0.06, 0.18, 0.06] }}
+        transition={{ duration: 11, repeat: Infinity }}
+        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gold-400/10 rounded-full blur-[180px]"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], opacity: [0.04, 0.12, 0.04] }}
+        transition={{ duration: 13, repeat: Infinity }}
+        className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-[150px]"
+      />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-12">
-          <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6 shadow-sm">
-            <MessageSquare className="w-4 h-4" />
+          <span className="section-badge bg-white/[0.04] border border-white/[0.08] text-white/90 mb-6 backdrop-blur-xl shadow-[0_0_30px_rgba(241,196,15,0.08)]">
+            <MessageSquare className="w-4 h-4 text-gold-400" />
             고객님들이 직접 작성하신 생생후기!
           </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight">
-            고객님들의 <span className="text-brand-500">리얼후기</span>
+          <h2 className="text-4xl md:text-[3.25rem] font-black text-white tracking-tight">
+            고객님들의{" "}
+            <span className="text-gradient-gold text-glow-gold">리얼후기</span>
           </h2>
         </AnimateIn>
 
-        {/* Rating summary - more dramatic */}
-        <AnimateIn delay={0.05} className="mb-12">
+        {/* Big rating summary card - glass style */}
+        <AnimateIn delay={0.05} className="mb-14">
           <div className="flex items-center justify-center">
-            <div className="inline-flex items-center gap-5 bg-white rounded-2xl px-8 py-4 shadow-elevated border border-gray-100/80">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, j) => (
-                  <motion.div
-                    key={j}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 + j * 0.1 }}
-                  >
-                    <Star className="w-6 h-6 fill-gold-400 text-gold-400 drop-shadow-sm" />
-                  </motion.div>
-                ))}
+            <motion.div
+              whileHover={{ y: -4, scale: 1.01 }}
+              className="relative inline-flex items-center gap-6 rounded-2xl px-10 py-6 overflow-hidden"
+            >
+              {/* Animated border for summary card */}
+              <div
+                className="absolute inset-0 rounded-2xl z-0 opacity-40"
+                style={{
+                  background: "linear-gradient(135deg, #f1c40f55, transparent 40%, transparent 60%, #f1c40f55)",
+                }}
+              />
+              <div
+                className="absolute inset-[1.5px] rounded-[calc(1rem-1.5px)] z-[1]"
+                style={{
+                  background: "linear-gradient(160deg, rgba(14,24,42,0.95) 0%, rgba(10,18,34,0.98) 100%)",
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)",
+                }}
+              />
+
+              <div className="relative z-10 flex items-center gap-6">
+                <div className="text-center">
+                  <p className="text-5xl font-black text-white leading-none mb-1">5.0</p>
+                  <div className="flex gap-1 justify-center">
+                    {[...Array(5)].map((_, j) => (
+                      <motion.div
+                        key={j}
+                        initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        transition={{ delay: 0.3 + j * 0.1, type: "spring" }}
+                      >
+                        <Star
+                          className="w-5 h-5 fill-gold-400 text-gold-400"
+                          style={{ filter: "drop-shadow(0 0 6px rgba(241,196,15,0.5))" }}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                <div className="h-12 w-px bg-white/10" />
+                <div className="text-left">
+                  <p className="text-white/50 text-sm font-bold">고객 만족도</p>
+                  <p className="text-white text-2xl font-black">99.8%</p>
+                </div>
+                <div className="h-12 w-px bg-white/10" />
+                <div className="flex items-center gap-2 text-emerald-400">
+                  <BadgeCheck
+                    className="w-6 h-6"
+                    style={{ filter: "drop-shadow(0 0 8px rgba(16,185,129,0.4))" }}
+                  />
+                  <div>
+                    <p className="text-sm font-black">인증 후기</p>
+                    <p className="text-emerald-500/70 text-xs">실사용 검증</p>
+                  </div>
+                </div>
               </div>
-              <div className="h-6 w-px bg-gray-200" />
-              <div className="text-center">
-                <p className="text-brand-900 font-black text-xl leading-none">5.0</p>
-                <p className="text-gray-400 text-xs mt-0.5">고객 평점</p>
-              </div>
-              <div className="h-6 w-px bg-gray-200" />
-              <div className="flex items-center gap-1.5 text-emerald-500">
-                <BadgeCheck className="w-5 h-5" />
-                <span className="text-sm font-bold">인증 후기</span>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </AnimateIn>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        {/* Review cards grid */}
+        <div className="grid md:grid-cols-2 gap-7">
           {reviews.map((r, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
               <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
-                transition={{ duration: 0.3 }}
-                className="relative bg-white rounded-2xl px-7 py-6 border border-gray-100/80 shadow-elevated hover:shadow-dramatic transition-all duration-500 group h-full"
+                whileHover={{ y: -8, scale: 1.01 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="group relative rounded-2xl p-[1.5px] overflow-hidden h-full"
               >
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* === ANIMATED GRADIENT BORDER === */}
+                <div
+                  className="absolute inset-0 rounded-2xl z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700"
+                  style={{
+                    background: `linear-gradient(${60 + i * 60}deg, transparent 25%, ${r.borderColor}88 45%, ${r.borderColor} 50%, ${r.borderColor}88 55%, transparent 75%)`,
+                    backgroundSize: "300% 300%",
+                    animation: `gradientBorderMove 4s ease infinite ${i * 0.3}s`,
+                  }}
+                />
+                {/* Static border fallback */}
+                <div
+                  className="absolute inset-0 rounded-2xl z-0 opacity-20"
+                  style={{
+                    background: `linear-gradient(135deg, ${r.borderColor}44, transparent 45%, transparent 55%, ${r.borderColor}44)`,
+                  }}
+                />
 
-                <Quote className="absolute top-5 right-6 w-7 h-7 text-gray-100 group-hover:text-brand-100 transition-colors duration-500" />
+                {/* Glow behind card on hover */}
+                <div
+                  className="absolute -inset-3 rounded-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 blur-xl z-0"
+                  style={{ background: r.glow }}
+                />
 
-                <div className="relative">
-                  <div className="flex items-center gap-3.5 mb-4">
-                    <motion.div
-                      whileHover={{ rotate: [0, -5, 5, 0] }}
-                      className={`w-12 h-12 bg-gradient-to-br ${r.color} rounded-xl flex items-center justify-center text-white font-bold text-base shadow-lg`}
-                    >
-                      {r.initial}
-                    </motion.div>
-                    <div>
-                      <p className="font-bold text-brand-800 text-[15px]">{r.name} 고객님</p>
-                      <p className="text-gray-400 text-sm">{r.location}</p>
+                {/* Card inner */}
+                <div
+                  className="relative z-10 rounded-[calc(1rem-1.5px)] px-7 py-6 h-full overflow-hidden"
+                  style={{
+                    background: "linear-gradient(160deg, rgba(14,24,42,0.96) 0%, rgba(9,17,32,0.98) 50%, rgba(6,12,24,1) 100%)",
+                    boxShadow: "0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)",
+                  }}
+                >
+                  {/* Shimmer sweep on hover */}
+                  <div
+                    className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.02) 42%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 58%, transparent 65%)",
+                      backgroundSize: "250% 100%",
+                      animation: "shimmer 2.5s linear infinite",
+                    }}
+                  />
+
+                  {/* Quote icon */}
+                  <Quote
+                    className="absolute top-5 right-6 w-8 h-8 transition-all duration-500"
+                    style={{
+                      color: `${r.borderColor}15`,
+                    }}
+                  />
+
+                  <div className="relative z-10">
+                    {/* User row */}
+                    <div className="flex items-center gap-3.5 mb-4">
+                      <motion.div
+                        whileHover={{ rotate: [0, -5, 5, 0] }}
+                        className={`bg-gradient-to-br ${r.color} rounded-xl flex items-center justify-center text-white font-bold text-lg`}
+                        style={{
+                          width: "52px",
+                          height: "52px",
+                          boxShadow: `0 8px 25px ${r.glow}, 0 0 15px ${r.glow}30`,
+                        }}
+                      >
+                        {r.initial}
+                      </motion.div>
+                      <div>
+                        <p className="font-bold text-white text-base">{r.name} 고객님</p>
+                        <p className="text-gray-500 text-sm">{r.location}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex gap-0.5 mb-3">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-3.5 h-3.5 fill-gold-400 text-gold-400" />
-                    ))}
-                  </div>
+                    {/* Stars */}
+                    <div className="flex gap-0.5 mb-3">
+                      {[...Array(5)].map((_, j) => (
+                        <Star
+                          key={j}
+                          className="w-4 h-4 fill-gold-400 text-gold-400"
+                          style={{ filter: "drop-shadow(0 0 4px rgba(241,196,15,0.4))" }}
+                        />
+                      ))}
+                    </div>
 
-                  <p className="text-gray-500 leading-relaxed text-[15px] mb-4">{r.text}</p>
+                    {/* Review text */}
+                    <p className="text-gray-400 leading-relaxed text-[15px] mb-4">{r.text}</p>
 
-                  <div className="flex items-center gap-1.5 text-emerald-500">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-xs font-semibold">실제 이용 후기</span>
+                    {/* Verified badge */}
+                    <div className="flex items-center gap-1.5 text-emerald-400">
+                      <Shield
+                        className="w-4 h-4"
+                        style={{ filter: "drop-shadow(0 0 4px rgba(16,185,129,0.3))" }}
+                      />
+                      <span className="text-xs font-bold">실제 이용 후기</span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -129,57 +257,91 @@ export default function Reviews() {
           ))}
         </div>
 
-        {/* Chat testimonials */}
+        {/* Chat testimonials section */}
         <AnimateIn delay={0.2} className="mt-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-[1.75rem] font-black text-brand-900 tracking-tight leading-snug">
+            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-snug">
               이용해보신 고객님들은 다~ 알아요!
               <br />
-              <span className="text-brand-500">고객님들의 이유 있는 선택!!</span>
+              <span className="text-gradient-gold text-glow-gold">
+                고객님들의 이유 있는 선택!!
+              </span>
             </h3>
           </div>
 
-          <div className="max-w-lg mx-auto space-y-4">
+          <div className="max-w-lg mx-auto space-y-5">
+            {/* Customer message */}
             <AnimateIn delay={0.3} direction="left">
               <div className="flex justify-start">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white border border-gray-100/80 rounded-2xl rounded-bl-sm px-5 py-4 max-w-[85%] shadow-elevated"
+                  className="relative rounded-2xl rounded-bl-sm px-6 py-4 max-w-[85%] overflow-hidden"
                 >
-                  <p className="text-gray-600 text-[15px] leading-relaxed">
+                  {/* Glass border */}
+                  <div
+                    className="absolute inset-0 rounded-2xl rounded-bl-sm opacity-30"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%, rgba(255,255,255,0.08))",
+                    }}
+                  />
+                  <div
+                    className="absolute inset-[1px] rounded-[calc(1rem-1px)] rounded-bl-sm"
+                    style={{
+                      background: "linear-gradient(160deg, rgba(18,30,50,0.95) 0%, rgba(12,22,38,0.98) 100%)",
+                      boxShadow: "0 8px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
+                    }}
+                  />
+                  <p className="relative z-10 text-gray-300 text-[15px] leading-relaxed">
                     덕분에 싱크대 사용할 때 걱정 없겠어요.. 앞으로도 더 번창하세요
                   </p>
                 </motion.div>
               </div>
             </AnimateIn>
 
+            {/* Business reply */}
             <AnimateIn delay={0.4} direction="right">
               <div className="flex justify-end">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="rounded-2xl rounded-br-sm px-5 py-4 max-w-[85%] text-white"
+                  className="rounded-2xl rounded-br-sm px-6 py-4 max-w-[85%] text-white"
                   style={{
-                    background: "linear-gradient(145deg, #2e8cc4 0%, #2475a8 50%, #1a6da6 100%)",
-                    boxShadow: "0 10px 30px rgba(41,128,185,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
+                    background: "linear-gradient(145deg, #3498db 0%, #2980b9 50%, #1a6da6 100%)",
+                    boxShadow:
+                      "0 15px 40px rgba(41,128,185,0.4), 0 0 20px rgba(41,128,185,0.15), inset 0 1px 0 rgba(255,255,255,0.2)",
                   }}
                 >
                   <p className="text-[15px] leading-relaxed">
-                    너무 다행입니다^^ 그럴일은 없겠지만 혹시라도 재발하거나 다른 문제
-                    생기시면 언제든 편히 연락주세요 &#128522;
+                    너무 다행입니다^^ 그럴일은 없겠지만 혹시라도 재발하거나 다른 문제 생기시면
+                    언제든 편히 연락주세요 &#128522;
                   </p>
                 </motion.div>
               </div>
             </AnimateIn>
 
+            {/* Customer message */}
             <AnimateIn delay={0.5} direction="left">
               <div className="flex justify-start">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white border border-gray-100/80 rounded-2xl rounded-bl-sm px-5 py-4 max-w-[85%] shadow-elevated"
+                  className="relative rounded-2xl rounded-bl-sm px-6 py-4 max-w-[85%] overflow-hidden"
                 >
-                  <p className="text-gray-600 text-[15px] leading-relaxed">
-                    감사합니다. 아내가 기사님 친절하고 잘 뚫어주신다고 하네요.
-                    주변에도 소개 많이 해야겠어요. &#127942;
+                  {/* Glass border */}
+                  <div
+                    className="absolute inset-0 rounded-2xl rounded-bl-sm opacity-30"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%, rgba(255,255,255,0.08))",
+                    }}
+                  />
+                  <div
+                    className="absolute inset-[1px] rounded-[calc(1rem-1px)] rounded-bl-sm"
+                    style={{
+                      background: "linear-gradient(160deg, rgba(18,30,50,0.95) 0%, rgba(12,22,38,0.98) 100%)",
+                      boxShadow: "0 8px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
+                    }}
+                  />
+                  <p className="relative z-10 text-gray-300 text-[15px] leading-relaxed">
+                    감사합니다. 아내가 기사님 친절하고 잘 뚫어주신다고 하네요. 주변에도 소개
+                    많이 해야겠어요. &#127942;
                   </p>
                 </motion.div>
               </div>
@@ -187,6 +349,21 @@ export default function Reviews() {
           </div>
         </AnimateIn>
       </div>
+
+      {/* Keyframes for animated border */}
+      <style jsx>{`
+        @keyframes gradientBorderMove {
+          0% {
+            background-position: 0% 0%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
+        }
+      `}</style>
     </section>
   );
 }

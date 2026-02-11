@@ -20,13 +20,13 @@ export default function CtaBottom() {
 
       {/* Animated gradient orbs - bigger and more vivid */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full"
+        className="absolute top-1/4 left-1/4 w-[700px] h-[700px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(41,128,185,0.15) 0%, transparent 70%)" }}
         animate={{ scale: [1, 1.4, 1], opacity: [0.2, 0.5, 0.2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full"
+        className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(231,76,60,0.1) 0%, transparent 70%)" }}
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.15, 0.3] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
@@ -59,7 +59,7 @@ export default function CtaBottom() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimateIn>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-6 backdrop-blur-sm shadow-lg">
-            <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse-slow shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
+            <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse-slow shadow-[0_0_12px_rgba(74,222,128,0.8)]" />
             <span className="text-white/70 text-sm font-semibold">
               지금 상담 가능합니다
             </span>
@@ -79,7 +79,7 @@ export default function CtaBottom() {
         </AnimateIn>
 
         <AnimateIn delay={0.06}>
-          <h2 className="text-[2rem] md:text-[2.75rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
+          <h2 className="text-[2.25rem] md:text-[3rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
             배관 문제,
             <br />
             <span className="text-gradient-gold text-glow-gold">더 이상 고민하지 마세요!</span>
@@ -98,10 +98,10 @@ export default function CtaBottom() {
               <motion.div
                 key={i}
                 whileHover={{ y: -3, scale: 1.03 }}
-                className="bg-white/[0.08] border border-white/[0.12] rounded-2xl px-6 py-4 backdrop-blur-sm text-center min-w-[120px]"
+                className="bg-white/[0.08] border border-white/[0.12] rounded-2xl px-7 py-5 backdrop-blur-sm text-center min-w-[120px]"
               >
-                <badge.icon className="w-6 h-6 text-gold-400 mx-auto mb-2" />
-                <p className="text-white font-black text-lg leading-none mb-1">{badge.value}</p>
+                <badge.icon className="w-7 h-7 text-gold-400 mx-auto mb-2" />
+                <p className="text-white font-black text-2xl leading-none mb-1">{badge.value}</p>
                 <span className="text-white/40 text-xs font-medium">{badge.label}</span>
               </motion.div>
             ))}

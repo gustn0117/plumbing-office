@@ -1,45 +1,55 @@
-import { Phone, Clock, MapPin } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { Phone, Clock, MapPin, Shield } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-brand-950 to-[#040a12] pt-12 px-5 text-center md:pb-12 pb-24">
-      <div className="max-w-4xl mx-auto">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-brand-950 to-[#020810] pt-16 px-5 text-center md:pb-16 pb-28">
+      {/* Decorative orbs */}
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.15, 0.05] }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-brand-500/15 rounded-full blur-[120px]"
+      />
+      <motion.div
+        animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.03, 0.1, 0.03] }}
+        transition={{ duration: 10, repeat: Infinity }}
+        className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-gold-400/10 rounded-full blur-[100px]"
+      />
+
+      <div className="relative z-10 max-w-4xl mx-auto">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2.5 mb-6">
-          <div className="w-9 h-9 bg-brand-800/80 rounded-xl flex items-center justify-center">
-            <svg
-              className="w-4.5 h-4.5 text-brand-400"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-            </svg>
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="w-11 h-11 bg-gradient-to-br from-brand-700 to-brand-800 rounded-xl flex items-center justify-center shadow-lg ring-1 ring-white/5">
+            <Shield className="w-5 h-5 text-brand-400" />
           </div>
-          <span className="text-white/60 font-bold text-base">
-            배관<span className="text-brand-400/80">사무소</span>
-          </span>
+          <div>
+            <span className="text-white/70 font-black text-lg">
+              배관<span className="text-brand-400">사무소</span>
+            </span>
+            <p className="text-white/20 text-[9px] tracking-[3px] font-medium">PLUMBING OFFICE</p>
+          </div>
         </div>
 
         {/* Info chips */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
-            <Phone className="w-3.5 h-3.5 text-brand-400/60" />
-            <span className="text-white/40 text-sm">010-0000-0000</span>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+            <Phone className="w-3.5 h-3.5 text-brand-400" />
+            <span className="text-white/50 text-sm font-medium">010-0000-0000</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
-            <Clock className="w-3.5 h-3.5 text-brand-400/60" />
-            <span className="text-white/40 text-sm">24시간 연중무휴</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+            <Clock className="w-3.5 h-3.5 text-brand-400" />
+            <span className="text-white/50 text-sm font-medium">24시간 연중무휴</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
-            <MapPin className="w-3.5 h-3.5 text-brand-400/60" />
-            <span className="text-white/40 text-sm">전국 출장 가능</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
+            <MapPin className="w-3.5 h-3.5 text-brand-400" />
+            <span className="text-white/50 text-sm font-medium">전국 출장 가능</span>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="divider-gradient mb-6" />
+        <div className="divider-gradient mb-8" />
 
-        {/* Copyright */}
         <div className="text-white/20 text-sm">
           <p>&copy; 2026 배관사무소. All rights reserved.</p>
         </div>

@@ -41,7 +41,9 @@ const features = [
 export default function Inspection() {
   return (
     <section className="relative section-padding overflow-hidden" id="inspection">
-      <div className="absolute inset-0 bg-white bg-mesh-vivid" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc]" />
+      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-100/40 rounded-full blur-[120px]" />
+      <motion.div animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 10, repeat: Infinity }} className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-violet-100/30 rounded-full blur-[100px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
@@ -49,7 +51,7 @@ export default function Inspection() {
             <Sparkles className="w-4 h-4 text-gold-500" />
             누적 해결 건수 5만 돌파 기념
           </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight leading-tight mb-5">
+          <h2 className="text-4xl md:text-[3rem] font-black text-brand-900 tracking-tight leading-tight mb-5">
             최첨단 내시경 검사{" "}
             <span className="text-brand-500">무료이벤트</span>
           </h2>
@@ -72,7 +74,7 @@ export default function Inspection() {
                 <motion.div
                   animate={{ top: ["0%", "100%", "0%"] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                  className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-400/60 to-transparent z-20 pointer-events-none"
+                  className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-400/80 to-transparent z-20 pointer-events-none"
                 />
 
                 <div className="aspect-[3/2] relative overflow-hidden">

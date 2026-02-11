@@ -2,7 +2,7 @@
 
 import AnimateIn from "./AnimateIn";
 import Image from "next/image";
-import { Droplets, Building2, Home, Factory, Flame } from "lucide-react";
+import { Droplets, Building2, Home, Factory, Flame, ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
@@ -14,6 +14,8 @@ const services = [
     image: "/images/service-toilet.jpg",
     imageHint: "service-toilet.jpg (500x400px)",
     gradient: "from-blue-500 to-cyan-500",
+    glow: "rgba(59,130,246,0.5)",
+    borderColor: "#3b82f6",
     tag: "BEST",
   },
   {
@@ -24,6 +26,8 @@ const services = [
     image: "/images/service-commercial.jpg",
     imageHint: "service-commercial.jpg (500x400px)",
     gradient: "from-violet-500 to-purple-500",
+    glow: "rgba(139,92,246,0.5)",
+    borderColor: "#8b5cf6",
   },
   {
     icon: Home,
@@ -33,6 +37,8 @@ const services = [
     image: "/images/service-house.jpg",
     imageHint: "service-house.jpg (500x400px)",
     gradient: "from-emerald-500 to-teal-500",
+    glow: "rgba(16,185,129,0.5)",
+    borderColor: "#10b981",
   },
   {
     icon: Factory,
@@ -42,107 +48,239 @@ const services = [
     image: "/images/service-factory.jpg",
     imageHint: "service-factory.jpg (500x400px)",
     gradient: "from-orange-500 to-red-500",
+    glow: "rgba(249,115,22,0.5)",
+    borderColor: "#f97316",
   },
 ];
 
 export default function Services() {
   return (
     <section className="relative section-padding overflow-hidden" id="services">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-700 via-brand-500 to-brand-600" />
+      {/* Deep dark background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#030810] via-[#0a1628] to-[#050e1d]" />
       <div className="absolute inset-0 noise" />
-      {/* Animated dot pattern */}
+      {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, #fff 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
+            "linear-gradient(rgba(59,130,246,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.4) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
         }}
       />
-      {/* Mesh gradient overlays */}
+
+      {/* Massive animated orbs */}
       <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }}
+        animate={{ scale: [1, 1.5, 1], opacity: [0.12, 0.3, 0.12] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-400/20 rounded-full blur-[150px]"
+        className="absolute -top-60 -right-60 w-[1000px] h-[1000px] bg-blue-600/15 rounded-full blur-[250px]"
       />
       <motion.div
-        animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.1, 0.25, 0.1] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-700/30 rounded-full blur-[120px]"
+        animate={{ scale: [1.3, 0.7, 1.3], opacity: [0.08, 0.25, 0.08] }}
+        transition={{ duration: 11, repeat: Infinity }}
+        className="absolute -bottom-60 -left-60 w-[900px] h-[900px] bg-purple-600/15 rounded-full blur-[220px]"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.4, 1], opacity: [0.04, 0.12, 0.04] }}
+        transition={{ duration: 14, repeat: Infinity }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-400/8 rounded-full blur-[180px]"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <AnimateIn className="text-center mb-16">
-          <span className="section-badge bg-white/[0.1] border border-white/[0.15] text-white/90 mb-6 backdrop-blur-sm shadow-lg">
+        <AnimateIn className="text-center mb-18">
+          <span className="section-badge bg-white/[0.04] border border-white/[0.08] text-white/90 mb-6 backdrop-blur-xl shadow-[0_0_40px_rgba(59,130,246,0.12)]">
             <Flame className="w-4 h-4 text-gold-400" />
             완벽한 해결? 배관사무소에서 가능합니다!
           </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-black text-white tracking-tight text-glow-white">
-            배관사무소 <span className="text-gradient-gold text-glow-gold">제공 서비스</span>
+          <h2 className="text-4xl md:text-[3.5rem] font-black text-white tracking-tight leading-tight">
+            배관사무소{" "}
+            <span className="text-gradient-gold text-glow-gold">제공 서비스</span>
           </h2>
-          <p className="text-white/55 max-w-xl mx-auto text-base mt-4">
+          <p className="text-white/40 max-w-xl mx-auto text-lg mt-5">
             다양한 배관 문제, 전문 장비와 기술로 확실하게 해결합니다.
           </p>
         </AnimateIn>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-8">
           {services.map((s, i) => (
-            <AnimateIn key={i} delay={i * 0.1}>
+            <AnimateIn key={i} delay={i * 0.12}>
               <motion.div
-                whileHover={{ y: -6, scale: 1.01 }}
-                transition={{ duration: 0.3 }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-elevated hover:shadow-dramatic transition-all duration-500 ring-1 ring-black/[0.03]"
+                whileHover={{ y: -12, scale: 1.02 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="group relative rounded-[1.5rem] p-[2px] overflow-hidden"
               >
-                <div className="aspect-[4/3] relative overflow-hidden bg-gray-50">
-                  {s.tag && (
-                    <motion.div
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute top-4 left-4 z-10 text-white text-xs font-black px-4 py-1.5 rounded-lg flex items-center gap-1.5 shadow-glow-danger"
-                      style={{
-                        background: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
-                      }}
-                    >
-                      <Flame className="w-3 h-3" />
-                      {s.tag}
-                    </motion.div>
-                  )}
-                  <Image
-                    src={s.image}
-                    alt={s.name + " " + s.highlight}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    onError={(e) => { e.currentTarget.style.display = "none"; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center text-gray-300">
-                    <s.icon className="w-14 h-14 mb-2" />
-                    <p className="text-xs">{s.imageHint}</p>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-brand-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1]" />
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white to-transparent" />
-                </div>
+                {/* === ANIMATED GRADIENT BORDER (visible at all times) === */}
+                <div
+                  className="absolute inset-0 rounded-[1.5rem] z-0"
+                  style={{
+                    background: `linear-gradient(var(--card-angle-${i}, ${45 + i * 90}deg), transparent 20%, ${s.borderColor}88 40%, ${s.borderColor} 50%, ${s.borderColor}88 60%, transparent 80%)`,
+                    backgroundSize: "300% 300%",
+                    animation: `gradientBorderMove 4s ease infinite ${i * 0.5}s`,
+                  }}
+                />
+                {/* Static subtle border fallback for when animation not supported */}
+                <div
+                  className="absolute inset-0 rounded-[1.5rem] z-0 opacity-30"
+                  style={{
+                    background: `linear-gradient(135deg, ${s.borderColor}66, transparent 40%, transparent 60%, ${s.borderColor}66)`,
+                  }}
+                />
 
-                <div className="px-7 pt-5 pb-7 relative">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-br ${s.gradient} rounded-xl flex items-center justify-center shadow-lg ring-1 ring-black/5 group-hover:shadow-glow transition-shadow duration-500`}
-                    >
-                      <s.icon className="w-5 h-5 text-white" />
+                {/* Glow behind card on hover */}
+                <div
+                  className="absolute -inset-4 rounded-[2rem] opacity-0 group-hover:opacity-70 transition-opacity duration-700 blur-2xl z-0"
+                  style={{ background: s.glow }}
+                />
+
+                {/* Card inner (gradient glass on dark) */}
+                <div
+                  className="relative z-10 rounded-[calc(1.5rem-2px)] overflow-hidden backdrop-blur-sm"
+                  style={{
+                    background:
+                      "linear-gradient(165deg, rgba(12,22,42,0.97) 0%, rgba(8,16,32,0.99) 40%, rgba(6,12,24,1) 100%)",
+                    boxShadow: `0 30px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 0 80px rgba(255,255,255,0.01)`,
+                  }}
+                >
+                  {/* Shimmer sweep on hover */}
+                  <div
+                    className="absolute inset-0 z-30 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background:
+                        "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.03) 42%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 58%, transparent 65%)",
+                      backgroundSize: "250% 100%",
+                      animation: "shimmer 2.5s linear infinite",
+                    }}
+                  />
+
+                  {/* Image area */}
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    {s.tag && (
+                      <motion.div
+                        animate={{ scale: [1, 1.08, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="absolute top-4 left-4 z-20 text-white text-xs font-black px-5 py-2 rounded-xl flex items-center gap-2"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #ff4136 0%, #e74c3c 50%, #c0392b 100%)",
+                          boxShadow:
+                            "0 8px 30px rgba(231,76,60,0.6), 0 0 15px rgba(231,76,60,0.3)",
+                        }}
+                      >
+                        <Flame className="w-3.5 h-3.5" />
+                        {s.tag}
+                      </motion.div>
+                    )}
+                    <Image
+                      src={s.image}
+                      alt={s.name + " " + s.highlight}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                    {/* Placeholder fallback (dark) */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0c1a30] to-[#0a1525] flex flex-col items-center justify-center text-gray-600">
+                      <s.icon className="w-14 h-14 mb-2 opacity-40" />
+                      <p className="text-xs opacity-40">{s.imageHint}</p>
                     </div>
-                    <h3 className="text-lg font-extrabold text-brand-900">
-                      <span className="text-brand-500">{s.name}</span>{" "}
-                      {s.highlight}
-                    </h3>
+                    {/* Hover overlay with arrow */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#030810]/95 via-[#030810]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1] flex items-end justify-end p-5">
+                      <motion.div
+                        whileHover={{ rotate: 45 }}
+                        className="w-11 h-11 rounded-xl flex items-center justify-center border border-white/20 backdrop-blur-md"
+                        style={{
+                          background: "rgba(255,255,255,0.08)",
+                          boxShadow: `0 8px 30px ${s.glow}`,
+                        }}
+                      >
+                        <ArrowUpRight className="w-5 h-5 text-white" />
+                      </motion.div>
+                    </div>
+                    {/* Bottom fade */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0c1a30] to-transparent" />
                   </div>
-                  <p className="text-gray-400 text-[15px] leading-relaxed">
-                    {s.desc}
-                  </p>
+
+                  {/* Card body */}
+                  <div className="px-7 pt-5 pb-7 relative">
+                    {/* Colored top highlight line */}
+                    <div
+                      className="absolute top-0 left-7 right-7 h-px opacity-40 group-hover:opacity-80 transition-opacity duration-500"
+                      style={{
+                        background: `linear-gradient(90deg, transparent, ${s.borderColor}, transparent)`,
+                      }}
+                    />
+
+                    <div className="flex items-center gap-3.5 mb-3">
+                      <div
+                        className={`bg-gradient-to-br ${s.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative`}
+                        style={{
+                          width: "52px",
+                          height: "52px",
+                          boxShadow: `0 10px 35px ${s.glow}, 0 0 20px ${s.glow}40`,
+                        }}
+                      >
+                        <s.icon className="w-6 h-6 text-white" />
+                        {/* Pulse ring behind icon */}
+                        <div
+                          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                          style={{
+                            boxShadow: `0 0 0 4px ${s.borderColor}20, 0 0 0 8px ${s.borderColor}10`,
+                          }}
+                        />
+                      </div>
+                      <h3 className="text-xl font-black text-white">
+                        <span
+                          style={{
+                            background: `linear-gradient(135deg, ${s.borderColor}, ${s.borderColor}bb)`,
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                          }}
+                        >
+                          {s.name}
+                        </span>{" "}
+                        {s.highlight}
+                      </h3>
+                    </div>
+                    <p className="text-gray-500 text-[15px] leading-relaxed">
+                      {s.desc}
+                    </p>
+
+                    {/* Reveal-on-hover accent bar */}
+                    <div className="mt-5 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                      <Sparkles className="w-3.5 h-3.5" style={{ color: s.borderColor }} />
+                      <span className="text-xs font-bold" style={{ color: s.borderColor }}>
+                        자세히 보기
+                      </span>
+                      <div
+                        className="flex-1 h-px"
+                        style={{
+                          background: `linear-gradient(90deg, ${s.borderColor}60, transparent)`,
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </AnimateIn>
           ))}
         </div>
       </div>
+
+      {/* Keyframes for animated border */}
+      <style jsx>{`
+        @keyframes gradientBorderMove {
+          0% {
+            background-position: 0% 0%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
+        }
+      `}</style>
     </section>
   );
 }
