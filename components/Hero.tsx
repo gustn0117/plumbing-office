@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown } from "lucide-react";
+import { Phone, Clock, MapPin, Shield, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 const PHONE = "010-0000-0000";
@@ -35,15 +35,54 @@ export default function Hero() {
           transition={{ duration: 10, repeat: Infinity }}
           className="absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-gold-400/10 rounded-full blur-[120px]"
         />
+        {/* Third animated orb - emerald/green toned */}
+        <motion.div
+          animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.08, 0.18, 0.08] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-2/3 left-1/3 w-[400px] h-[400px] bg-emerald-500/15 rounded-full blur-[140px]"
+        />
       </div>
+
+      {/* Floating decorative elements */}
+      <motion.div
+        animate={{ y: [0, -20, 0], opacity: [0.15, 0.35, 0.15] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[18%] right-[12%] w-2 h-2 rounded-full bg-brand-400/40"
+      />
+      <motion.div
+        animate={{ y: [0, 15, 0], opacity: [0.1, 0.3, 0.1] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute top-[45%] left-[8%] w-1.5 h-1.5 rounded-full bg-gold-400/30"
+      />
+      <motion.div
+        animate={{ y: [0, -12, 0], opacity: [0.12, 0.28, 0.12] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        className="absolute bottom-[30%] right-[25%] w-2.5 h-2.5 rounded-full bg-emerald-400/25"
+      />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-5 pt-32 pb-20 md:pt-36 md:pb-28">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
+            {/* Live consultation indicator */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-semibold mb-3"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+              </span>
+              실시간 상담 가능
+            </motion.div>
+
+            <br />
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
               className="inline-flex items-center gap-2 bg-gold-400/10 border border-gold-400/20 text-gold-400 px-4 py-2 rounded-full text-sm font-semibold mb-8"
             >
               <Sparkles className="w-4 h-4" />
@@ -68,7 +107,21 @@ export default function Hero() {
                 출장비 / 내시경
               </h1>
               <h2 className="text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-black leading-[1.1] tracking-tight mb-8">
-                <span className="text-gradient-gold">무료이벤트</span>{" "}
+                <span className="relative inline-block">
+                  <span className="text-gradient-gold">무료이벤트</span>
+                  {/* Animated gradient underline with shimmer */}
+                  <motion.div
+                    className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full"
+                    style={{
+                      background: "linear-gradient(90deg, rgba(245,183,50,0.2), rgba(245,183,50,0.8), rgba(245,200,80,1), rgba(245,183,50,0.8), rgba(245,183,50,0.2))",
+                      backgroundSize: "200% 100%",
+                    }}
+                    animate={{
+                      backgroundPosition: ["200% 0%", "-200% 0%"],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  />
+                </span>{" "}
                 <span className="text-white">진행중</span>
               </h2>
             </motion.div>
@@ -93,6 +146,10 @@ export default function Hero() {
               <a href={`tel:${PHONE}`} className="btn-primary text-xl">
                 <Phone className="w-6 h-6" />
                 긴급상담 {PHONE}
+              </a>
+              <a href={`sms:${PHONE}`} className="btn-outline text-lg">
+                <MessageCircle className="w-5 h-5" />
+                문자상담
               </a>
             </motion.div>
 
@@ -167,14 +224,17 @@ export default function Hero() {
                   <p className="text-xs mt-1 opacity-60">600 x 700px</p>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-900/80 to-transparent" />
+
+                {/* Enhanced stats overlay card */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.5 }}
                   className="absolute bottom-5 left-5 right-5 glass rounded-2xl p-5 shadow-lg"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+                  <div className="flex items-center">
+                    {/* Left: Shield + company info */}
+                    <div className="flex items-center gap-3 flex-shrink-0">
                       <div className="w-11 h-11 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30">
                         <Shield className="w-5 h-5 text-white" />
                       </div>
@@ -183,9 +243,21 @@ export default function Hero() {
                         <p className="text-gray-500 text-xs">전문 자격 보유 기술진</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <p className="text-brand-500 font-black text-xl" style={{textShadow: "0 0 20px rgba(41,128,185,0.3)"}}>50,000+</p>
-                      <p className="text-gray-400 text-xs">누적 해결</p>
+
+                    {/* Middle: Divider */}
+                    <div className="w-px h-10 bg-gray-200 mx-4 flex-shrink-0" />
+
+                    {/* Right: Two mini stats */}
+                    <div className="flex items-center gap-4 flex-1 justify-end">
+                      <div className="text-center">
+                        <p className="text-brand-500 font-black text-lg leading-tight" style={{ textShadow: "0 0 20px rgba(41,128,185,0.3)" }}>50,000+</p>
+                        <p className="text-gray-400 text-[10px] font-medium">누적 해결</p>
+                      </div>
+                      <div className="w-px h-8 bg-gray-200 flex-shrink-0" />
+                      <div className="text-center">
+                        <p className="text-emerald-500 font-black text-lg leading-tight">100%</p>
+                        <p className="text-gray-400 text-[10px] font-medium">성공률</p>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

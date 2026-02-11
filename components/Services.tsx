@@ -13,6 +13,7 @@ const services = [
     image: "/images/service-toilet.jpg",
     imageHint: "service-toilet.jpg (500x400px)",
     gradient: "from-blue-500 to-cyan-500",
+    tag: "BEST",
   },
   {
     icon: Building2,
@@ -48,6 +49,15 @@ export default function Services() {
     <section className="relative section-padding overflow-hidden" id="services">
       <div className="absolute inset-0 bg-gradient-to-br from-brand-700 via-brand-500 to-brand-600" />
       <div className="absolute inset-0 noise" />
+      {/* Animated dot pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #fff 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
       {/* Mesh gradient overlay */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-400/20 rounded-full blur-[150px]" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-700/30 rounded-full blur-[120px]" />
@@ -60,6 +70,9 @@ export default function Services() {
           <h2 className="text-3xl md:text-[2.75rem] font-black text-white tracking-tight">
             배관사무소 <span className="text-gold-300">제공 서비스</span>
           </h2>
+          <p className="text-white/50 max-w-xl mx-auto text-base mt-4">
+            다양한 배관 문제, 전문 장비와 기술로 확실하게 해결합니다.
+          </p>
         </AnimateIn>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -67,17 +80,31 @@ export default function Services() {
             <AnimateIn key={i} delay={i * 0.1}>
               <div className="group bg-white rounded-2xl overflow-hidden card-hover ring-1 ring-black/[0.03]">
                 <div className="aspect-[4/3] relative overflow-hidden bg-gray-50">
+                  {s.tag && (
+                    <div
+                      className="absolute top-4 left-4 z-10 text-white text-xs font-bold px-3 py-1 rounded-lg"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
+                      }}
+                    >
+                      {s.tag}
+                    </div>
+                  )}
                   <Image
                     src={s.image}
                     alt={s.name + " " + s.highlight}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    onError={(e) => { e.currentTarget.style.display = "none"; }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center text-gray-300">
                     <s.icon className="w-14 h-14 mb-2" />
                     <p className="text-xs">{s.imageHint}</p>
                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900/60 via-brand-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1]" />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white to-transparent" />
                 </div>
 
@@ -89,10 +116,13 @@ export default function Services() {
                       <s.icon className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-lg font-extrabold text-brand-900">
-                      <span className="text-brand-500">{s.name}</span> {s.highlight}
+                      <span className="text-brand-500">{s.name}</span>{" "}
+                      {s.highlight}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-[15px] leading-relaxed">{s.desc}</p>
+                  <p className="text-gray-400 text-[15px] leading-relaxed">
+                    {s.desc}
+                  </p>
                 </div>
               </div>
             </AnimateIn>

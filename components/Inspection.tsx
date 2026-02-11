@@ -2,7 +2,7 @@
 
 import AnimateIn from "./AnimateIn";
 import Image from "next/image";
-import { Camera, Monitor, FileCheck } from "lucide-react";
+import { Camera, Monitor, FileCheck, Phone } from "lucide-react";
 
 const features = [
   {
@@ -83,6 +83,14 @@ export default function Inspection() {
             </AnimateIn>
           ))}
         </div>
+
+        <AnimateIn delay={0.5} className="text-center mt-12">
+          <a href="tel:010-0000-0000" className="inline-flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white px-8 py-3.5 rounded-full text-base font-bold shadow-lg shadow-brand-500/25 hover:-translate-y-0.5 transition-all duration-300">
+            <Phone className="w-5 h-5" />
+            무료 내시경 검사 예약하기
+          </a>
+          <p className="text-gray-400 text-sm mt-3">지금 예약하시면 내시경 검사가 무료!</p>
+        </AnimateIn>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import AnimateIn from "./AnimateIn";
-import { Phone, Truck, Wrench, CheckCircle2 } from "lucide-react";
+import { Phone, Truck, Wrench, CheckCircle2, ChevronDown } from "lucide-react";
 
 const PHONE = "010-0000-0000";
 
@@ -38,7 +38,10 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="section-padding bg-gradient-to-b from-gray-50/80 to-white" id="process">
+    <section
+      className="section-padding bg-gradient-to-b from-gray-50/80 to-white"
+      id="process"
+    >
       <div className="max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
           <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6">
@@ -47,34 +50,50 @@ export default function Process() {
           <h2 className="text-3xl md:text-[2.75rem] font-black text-brand-900 tracking-tight">
             신속, 간단한 <span className="text-brand-500">진행절차</span>
           </h2>
+          <p className="text-gray-400 max-w-xl mx-auto text-base mt-4">
+            복잡한 과정 없이, 전화 한 통이면 끝!
+          </p>
         </AnimateIn>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-[72px] left-[12.5%] right-[12.5%] h-[1.5px] bg-gradient-to-r from-blue-200/80 via-violet-200/80 to-emerald-200/80 z-0" />
+          <div className="hidden lg:block absolute top-[56px] left-[12.5%] right-[12.5%] h-[1.5px] bg-gradient-to-r from-blue-200/80 via-violet-200/80 to-emerald-200/80 z-0" />
 
           {steps.map((s, i) => (
-            <AnimateIn key={i} delay={i * 0.12}>
-              <div className="relative bg-white rounded-2xl px-6 py-8 border border-gray-100/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-brand-200/60 hover:shadow-card-hover transition-all duration-500 text-center group h-full z-10">
-                {/* Step number badge */}
-                <div
-                  className={`w-10 h-10 mx-auto bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center shadow-lg mb-5`}
-                >
-                  <span className="text-white text-sm font-black">{s.num}</span>
+            <div key={i}>
+              <AnimateIn delay={i * 0.12}>
+                <div className="relative bg-white rounded-2xl px-6 py-8 border border-gray-100/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-brand-200/60 hover:shadow-card-hover transition-all duration-500 text-center group h-full z-10">
+                  {/* Icon with step number badge */}
+                  <div className="relative w-14 h-14 mx-auto mb-5">
+                    <div
+                      className={`w-full h-full bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <s.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="absolute -top-1.5 -right-1.5 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center">
+                      <span className="text-xs font-black text-brand-900">
+                        {s.num}
+                      </span>
+                    </div>
+                  </div>
+
+                  <h3 className="text-lg font-extrabold text-brand-900 mb-3">
+                    {s.title}
+                  </h3>
+
+                  <p className="text-gray-400 text-[15px] leading-relaxed">
+                    {s.desc}
+                  </p>
                 </div>
+              </AnimateIn>
 
-                <div className={`w-14 h-14 mx-auto bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center mb-5 opacity-10`} />
-                <div className="w-14 h-14 mx-auto -mt-[76px] mb-5 flex items-center justify-center">
-                  <s.icon className="w-7 h-7 text-brand-500" />
+              {/* Mobile step arrow */}
+              {i < steps.length - 1 && (
+                <div className="flex sm:hidden items-center justify-center py-2">
+                  <ChevronDown className="w-5 h-5 text-brand-300" />
                 </div>
-
-                <h3 className="text-lg font-extrabold text-brand-900 mb-3">
-                  {s.title}
-                </h3>
-
-                <p className="text-gray-400 text-[15px] leading-relaxed">{s.desc}</p>
-              </div>
-            </AnimateIn>
+              )}
+            </div>
           ))}
         </div>
       </div>

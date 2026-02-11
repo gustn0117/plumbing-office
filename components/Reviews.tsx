@@ -47,6 +47,20 @@ export default function Reviews() {
           </h2>
         </AnimateIn>
 
+        <AnimateIn delay={0.05} className="mb-10">
+          <div className="flex items-center justify-center gap-4">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, j) => (
+                <Star key={j} className="w-5 h-5 fill-gold-400 text-gold-400" />
+              ))}
+            </div>
+            <div className="h-5 w-px bg-gray-200" />
+            <p className="text-gray-500 text-sm font-medium">
+              고객 평점 <span className="text-brand-800 font-black">5.0</span> / 5.0
+            </p>
+          </div>
+        </AnimateIn>
+
         <div className="grid md:grid-cols-2 gap-5">
           {reviews.map((r, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
@@ -71,7 +85,11 @@ export default function Reviews() {
                   ))}
                 </div>
 
-                <p className="text-gray-500 leading-relaxed text-[15px]">{r.text}</p>
+                <p className="text-gray-500 leading-relaxed text-[15px] mb-3">{r.text}</p>
+                <div className="flex items-center gap-1.5 text-emerald-500 text-xs font-medium">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+                  <span>실제 이용 후기</span>
+                </div>
               </div>
             </AnimateIn>
           ))}

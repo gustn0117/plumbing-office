@@ -35,6 +35,9 @@ export default function BeforeAfter() {
             배관사무소는{" "}
             <span className="text-brand-500">해결 못할 시</span> 금액을 받지 않습니다!
           </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-base mt-4">
+            실제 시공 전/후 사진으로 확인하세요. 모든 작업은 사진으로 기록됩니다.
+          </p>
         </AnimateIn>
 
         <div className="space-y-12">
@@ -57,7 +60,7 @@ export default function BeforeAfter() {
                       </svg>
                       <p className="text-xs">{c.beforeHint}</p>
                     </div>
-                    <div className="absolute top-3 right-3 text-white text-xs font-bold px-3 py-1.5 rounded-lg" style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)" }}>
+                    <div className="absolute top-3 right-3 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg tracking-wider" style={{ background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)", boxShadow: "0 4px 12px rgba(239,68,68,0.3)" }}>
                       BEFORE
                     </div>
                   </div>
@@ -94,7 +97,7 @@ export default function BeforeAfter() {
                       </svg>
                       <p className="text-xs">{c.afterHint}</p>
                     </div>
-                    <div className="absolute top-3 right-3 text-white text-xs font-bold px-3 py-1.5 rounded-lg" style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)" }}>
+                    <div className="absolute top-3 right-3 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg tracking-wider" style={{ background: "linear-gradient(135deg, #10b981 0%, #059669 100%)", boxShadow: "0 4px 12px rgba(16,185,129,0.3)" }}>
                       AFTER
                     </div>
                   </div>
