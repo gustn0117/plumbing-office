@@ -74,9 +74,9 @@ export default function FloatingCta() {
                     className="group flex items-center gap-3 text-white pl-5 pr-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                     style={{
                       background:
-                        "linear-gradient(145deg, #2e8cc4 0%, #2475a8 50%, #1a6da6 100%)",
+                        "linear-gradient(145deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)",
                       boxShadow:
-                        "0 10px 40px rgba(41,128,185,0.25), inset 0 1px 0 rgba(255,255,255,0.08)",
+                        "0 10px 40px rgba(14,165,233,0.25), inset 0 1px 0 rgba(255,255,255,0.08)",
                     }}
                   >
                     <div className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/15 transition-colors">
@@ -135,7 +135,7 @@ export default function FloatingCta() {
                 className="flex-1 flex items-center justify-center gap-2 py-4 px-4 text-white font-bold text-base sm:text-lg"
               >
                 <Phone className="w-5 h-5" />
-                긴급상담 {PHONE}
+                <span className="text-sparkle">긴급상담</span> <span className="sparkle-intense">{PHONE}</span>
               </a>
               <div className="w-px h-6 bg-white/20" />
               <a

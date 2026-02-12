@@ -17,7 +17,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Rich animated background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#040d1a] via-brand-900 to-[#0a1e36]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#061a2e] via-brand-900 to-[#082d4a]" />
         {/* Animated grid */}
         <div
           className="absolute inset-0 opacity-[0.05]"
@@ -35,28 +35,28 @@ export default function Hero() {
         <motion.div
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.15, 0.35, 0.15] }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-1/4 -right-20 w-[700px] h-[700px] bg-gold-400/20 rounded-full blur-[180px]"
+          className="absolute bottom-1/4 -right-20 w-[700px] h-[700px] bg-cyan-400/20 rounded-full blur-[180px]"
         />
         <motion.div
           animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.1, 0.25, 0.1] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-2/3 left-1/3 w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-[160px]"
+          className="absolute top-2/3 left-1/3 w-[500px] h-[500px] bg-sky-400/15 rounded-full blur-[160px]"
         />
         {/* Diagonal accent beams */}
-        <div className="absolute top-0 right-0 w-[1000px] h-[500px] bg-gradient-to-bl from-brand-400/10 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-gradient-to-tr from-gold-400/5 via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-[1000px] h-[500px] bg-gradient-to-bl from-brand-400/15 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-gradient-to-tr from-brand-500/8 via-transparent to-transparent" />
       </div>
 
       {/* Floating particles - more visible */}
       {[
         { top: "15%", right: "10%", size: "w-3 h-3", color: "bg-brand-400/60", dur: 5 },
-        { top: "40%", left: "6%", size: "w-2 h-2", color: "bg-gold-400/50", dur: 7 },
-        { bottom: "25%", right: "20%", size: "w-3 h-3", color: "bg-emerald-400/40", dur: 6 },
-        { top: "22%", left: "25%", size: "w-1.5 h-1.5", color: "bg-white/25", dur: 4 },
-        { bottom: "40%", right: "8%", size: "w-2 h-2", color: "bg-gold-300/35", dur: 8 },
-        { top: "55%", left: "12%", size: "w-2.5 h-2.5", color: "bg-brand-300/30", dur: 9 },
-        { top: "70%", right: "35%", size: "w-1.5 h-1.5", color: "bg-gold-400/40", dur: 5.5 },
-        { top: "10%", left: "45%", size: "w-2 h-2", color: "bg-white/15", dur: 6.5 },
+        { top: "40%", left: "6%", size: "w-2 h-2", color: "bg-cyan-400/50", dur: 7 },
+        { bottom: "25%", right: "20%", size: "w-3 h-3", color: "bg-sky-400/40", dur: 6 },
+        { top: "22%", left: "25%", size: "w-1.5 h-1.5", color: "bg-brand-300/40", dur: 4 },
+        { bottom: "40%", right: "8%", size: "w-2 h-2", color: "bg-cyan-300/35", dur: 8 },
+        { top: "55%", left: "12%", size: "w-2.5 h-2.5", color: "bg-brand-300/35", dur: 9 },
+        { top: "70%", right: "35%", size: "w-1.5 h-1.5", color: "bg-sky-300/40", dur: 5.5 },
+        { top: "10%", left: "45%", size: "w-2 h-2", color: "bg-brand-200/25", dur: 6.5 },
       ].map((p, i) => (
         <motion.div
           key={i}
@@ -96,7 +96,7 @@ export default function Hero() {
                   src="/images/hero-worker.png"
                   alt="배관사무소 전문 기술진"
                   fill
-                  className="object-contain drop-shadow-[0_20px_60px_rgba(41,128,185,0.4)]"
+                  className="object-contain drop-shadow-[0_20px_60px_rgba(14,165,233,0.4)]"
                   priority
                 />
               </div>
@@ -150,7 +150,7 @@ export default function Hero() {
                   className="glass-dark rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg"
                 >
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span className="text-white/90 text-xs font-black">50,000+ 해결</span>
+                  <span className="text-white/90 text-xs font-black">10,000+ 해결</span>
                 </motion.div>
               </motion.div>
             </div>
@@ -179,16 +179,16 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-gold-400/15 border border-gold-400/30 text-gold-400 px-5 py-2.5 rounded-full text-sm font-bold mb-8 backdrop-blur-sm shadow-[0_0_20px_rgba(241,196,15,0.1)]"
           >
             <Sparkles className="w-4 h-4" />
-            누적 해결 건수 5만 돌파 기념
+            누적 해결 건수 1만 돌파 기념
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/65 text-lg md:text-xl font-semibold mb-5"
+            className="text-white/65 text-[1.4rem] md:text-2xl font-semibold mb-5"
           >
-            24시간 어디든 <span className="text-gold-400">30분 안에</span> 당일 출동
+            24시간 어디든 <span className="text-brand-400 glow-pulse">30분 안에</span> 당일 출동
           </motion.p>
 
           <motion.div
@@ -196,10 +196,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
           >
-            <h1 className="text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black text-white leading-[1.05] tracking-tight mb-2">
-              출장비 / 내시경
+            <h1 className="text-[2.5rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-2">
+              <span className="text-gradient-blue text-glow-blue">출장비</span>
+              <span className="text-white"> / </span>
+              <span className="text-gradient-blue text-glow-blue">내시경</span>
             </h1>
-            <h2 className="text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-3">
+            <h2 className="text-[2.5rem] sm:text-[3.25rem] md:text-[4.25rem] lg:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-3">
               <span className="relative inline-block">
                 <span className="text-gradient-gold">무료이벤트</span>
                 <motion.div
@@ -221,11 +223,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="text-white/50 text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed"
+            className="text-white/60 text-[1.1rem] md:text-xl mb-10 max-w-lg mx-auto leading-relaxed"
           >
-            꽉 막힌 하수구, 한번에 해결해드립니다.
+            하수구 막힘, 누수까지 한번에 해결해드립니다.
             <br />
-            전문 자격 보유 기술진이 직접 방문합니다.
+            <span className="text-brand-300 glow-pulse">전문 자격 보유 기술진</span>이 직접 방문합니다.
           </motion.p>
 
           <motion.div
@@ -234,9 +236,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
           >
-            <a href={`tel:${PHONE}`} className="btn-primary sm:text-xl">
+            <a href={`tel:${PHONE}`} className="btn-primary sm:text-xl shimmer-sweep">
               <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
-              긴급상담 {PHONE}
+              <span className="text-sparkle">긴급상담</span> <span className="sparkle-intense">{PHONE}</span>
             </a>
             <a href={`sms:${PHONE}`} className="btn-outline text-lg group">
               <MessageCircle className="w-5 h-5" />
@@ -256,11 +258,11 @@ export default function Hero() {
                 whileHover={{ y: -3, scale: 1.03 }}
                 className={`flex items-center gap-2.5 rounded-2xl px-5 py-3 backdrop-blur-md cursor-default transition-all duration-300 ${
                   badge.highlight
-                    ? "bg-brand-500/20 border border-brand-400/30 shadow-[0_0_15px_rgba(41,128,185,0.15)]"
+                    ? "bg-brand-500/20 border border-brand-400/30 shadow-[0_0_15px_rgba(14,165,233,0.15)]"
                     : "bg-white/[0.08] border border-white/[0.12]"
                 }`}
               >
-                <badge.icon className="w-4.5 h-4.5 text-gold-400" />
+                <badge.icon className="w-4.5 h-4.5 text-brand-400" />
                 <span className="text-white/80 text-sm font-semibold">{badge.text}</span>
               </motion.div>
             ))}

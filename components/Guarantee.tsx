@@ -13,7 +13,7 @@ const features = [
 export default function Guarantee() {
   return (
     <section className="relative section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#080816] via-[#10102a] to-[#080816]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#061525] via-[#0a1e36] to-[#061525]" />
       <div className="absolute inset-0 noise" />
 
       {/* Grid pattern */}
@@ -84,10 +84,10 @@ export default function Guarantee() {
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-4xl md:text-[3rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
+          <h2 className="text-4xl md:text-[3.25rem] font-black text-white leading-tight tracking-tight text-glow-white mb-3">
             저희 업체는
           </h2>
-          <h2 className="text-4xl md:text-[3rem] font-black leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-[3.25rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-gold text-glow-gold">미해결시</span>{" "}
             <span className="text-white text-glow-white">금액을 받지 않습니다.</span>
           </h2>
@@ -161,7 +161,7 @@ export default function Guarantee() {
         </AnimateIn>
 
         <AnimateIn delay={0.4}>
-          <p className="text-white/40 text-[15px] md:text-base leading-relaxed max-w-lg mx-auto">
+          <p className="text-white/50 text-base md:text-lg leading-relaxed max-w-lg mx-auto">
             배관사무소는 고객님의 문제를 완벽하게 해결할 때까지 책임집니다.
             <br />
             해결하지 못하면 비용을 청구하지 않는 것이 저희의 원칙입니다.

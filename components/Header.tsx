@@ -50,7 +50,7 @@ export default function Header() {
                 }`}
                 style={{ transition: "color 0.2s ease" }}
               >
-                배관<span className={scrolled ? "text-brand-500" : "text-gold-400"}>사무소</span>
+                배관<span className={`text-sparkle ${scrolled ? "text-brand-500" : "text-gold-400"}`}>사무소</span>
               </div>
               <div
                 className={`text-[9px] tracking-[3px] font-medium ${
@@ -79,14 +79,14 @@ export default function Header() {
             ))}
             <a
               href={`tel:${PHONE}`}
-              className="ml-4 inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-transform duration-200"
+              className="ml-4 inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-transform duration-200 shimmer-sweep"
               style={{
                 background: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
                 boxShadow: "0 4px 20px rgba(231,76,60,0.3), 0 0 0 1px rgba(231,76,60,0.1)",
               }}
             >
               <Phone className="w-4 h-4" />
-              긴급상담
+              <span className="text-sparkle">긴급상담</span>
             </a>
           </nav>
 

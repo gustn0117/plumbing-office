@@ -47,7 +47,7 @@ export default function Reviews() {
   return (
     <section className="relative section-padding overflow-hidden" id="reviews">
       {/* Dark premium background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050c18] via-[#081422] to-[#040a14]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#061525] via-[#0a1e36] to-[#061220]" />
       <div className="absolute inset-0 noise" />
       {/* Subtle cross-hatch pattern */}
       <div
@@ -133,8 +133,8 @@ export default function Reviews() {
                 <div className="w-16 h-px sm:hidden bg-white/10" />
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="text-center sm:text-left">
-                    <p className="text-white/50 text-xs sm:text-sm font-bold">고객 만족도</p>
-                    <p className="text-white text-xl sm:text-2xl font-black">99.8%</p>
+                    <p className="text-white/50 text-sm sm:text-base font-bold">고객 만족도</p>
+                    <p className="text-white text-2xl sm:text-3xl font-black">98.6%</p>
                   </div>
                   <div className="h-10 sm:h-12 w-px bg-white/10" />
                   <div className="flex items-center gap-2 text-emerald-400">
@@ -143,8 +143,8 @@ export default function Reviews() {
                       style={{ filter: "drop-shadow(0 0 8px rgba(16,185,129,0.4))" }}
                     />
                     <div>
-                      <p className="text-xs sm:text-sm font-black">인증 후기</p>
-                      <p className="text-emerald-500/70 text-[10px] sm:text-xs">실사용 검증</p>
+                      <p className="text-sm sm:text-base font-black">인증 후기</p>
+                      <p className="text-emerald-500/70 text-xs sm:text-sm">실사용 검증</p>
                     </div>
                   </div>
                 </div>
@@ -294,7 +294,7 @@ export default function Reviews() {
                       boxShadow: "0 8px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
                     }}
                   />
-                  <p className="relative z-10 text-gray-300 text-[15px] leading-relaxed">
+                  <p className="relative z-10 text-gray-300 text-base leading-relaxed">
                     덕분에 싱크대 사용할 때 걱정 없겠어요.. 앞으로도 더 번창하세요
                   </p>
                 </motion.div>
@@ -308,12 +308,12 @@ export default function Reviews() {
                   whileHover={{ scale: 1.02 }}
                   className="rounded-2xl rounded-br-sm px-6 py-4 max-w-[85%] text-white"
                   style={{
-                    background: "linear-gradient(145deg, #3498db 0%, #2980b9 50%, #1a6da6 100%)",
+                    background: "linear-gradient(145deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)",
                     boxShadow:
-                      "0 15px 40px rgba(41,128,185,0.4), 0 0 20px rgba(41,128,185,0.15), inset 0 1px 0 rgba(255,255,255,0.2)",
+                      "0 15px 40px rgba(14,165,233,0.4), 0 0 20px rgba(14,165,233,0.15), inset 0 1px 0 rgba(255,255,255,0.2)",
                   }}
                 >
-                  <p className="text-[15px] leading-relaxed">
+                  <p className="text-base leading-relaxed">
                     너무 다행입니다^^ 그럴일은 없겠지만 혹시라도 재발하거나 다른 문제 생기시면
                     언제든 편히 연락주세요 &#128522;
                   </p>
@@ -342,7 +342,7 @@ export default function Reviews() {
                       boxShadow: "0 8px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
                     }}
                   />
-                  <p className="relative z-10 text-gray-300 text-[15px] leading-relaxed">
+                  <p className="relative z-10 text-gray-300 text-base leading-relaxed">
                     감사합니다. 아내가 기사님 친절하고 잘 뚫어주신다고 하네요. 주변에도 소개
                     많이 해야겠어요. &#127942;
                   </p>

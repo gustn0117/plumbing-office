@@ -53,7 +53,7 @@ export default function Process() {
   return (
     <section className="relative section-padding overflow-hidden" id="process">
       {/* Dark premium background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#040a14] via-[#081220] to-[#050d18]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#061525] via-[#0a1e36] to-[#071322]" />
       <div className="absolute inset-0 noise" />
       {/* Subtle dot grid */}
       <div
@@ -214,8 +214,8 @@ export default function Process() {
                         />
                       </div>
 
-                      <h3 className="text-lg font-extrabold text-white mb-3">{s.title}</h3>
-                      <p className="text-gray-500 text-[15px] leading-relaxed">{s.desc}</p>
+                      <h3 className="text-xl font-extrabold text-white mb-3">{s.title}</h3>
+                      <p className="text-gray-500 text-base leading-relaxed">{s.desc}</p>
 
                       {/* Bottom accent line */}
                       <div

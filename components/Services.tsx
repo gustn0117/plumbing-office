@@ -2,7 +2,7 @@
 
 import AnimateIn from "./AnimateIn";
 import Image from "next/image";
-import { Droplets, Building2, Home, Factory, Flame, ArrowUpRight, Sparkles } from "lucide-react";
+import { Droplets, Building2, Home, Factory, Flame, ArrowUpRight, Sparkles, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
@@ -51,13 +51,25 @@ const services = [
     glow: "rgba(249,115,22,0.5)",
     borderColor: "#f97316",
   },
+  {
+    icon: Search,
+    name: "누수 탐지",
+    highlight: "및 수리",
+    desc: "보이지 않는 누수, 최신 탐지 장비로 정확히 찾아 수리합니다!",
+    image: "/images/service-leak.jpeg",
+    imageHint: "service-leak.jpg (500x400px)",
+    gradient: "from-cyan-500 to-blue-500",
+    glow: "rgba(14,165,233,0.5)",
+    borderColor: "#0ea5e9",
+    tag: "NEW",
+  },
 ];
 
 export default function Services() {
   return (
     <section className="relative section-padding overflow-hidden" id="services">
       {/* Deep dark background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#030810] via-[#0a1628] to-[#050e1d]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#051525] via-[#0a1e36] to-[#071830]" />
       <div className="absolute inset-0 noise" />
       {/* Grid overlay */}
       <div
@@ -101,13 +113,13 @@ export default function Services() {
           </p>
         </AnimateIn>
 
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {services.map((s, i) => (
-            <AnimateIn key={i} delay={i * 0.12}>
+            <AnimateIn key={i} delay={i * 0.12} className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]">
               <motion.div
                 whileHover={{ y: -12, scale: 1.02 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="group relative rounded-[1.5rem] p-[2px] overflow-hidden"
+                className="group relative rounded-[1.5rem] p-[2px] overflow-hidden h-full"
               >
                 {/* === ANIMATED GRADIENT BORDER (visible at all times) === */}
                 <div
@@ -134,7 +146,7 @@ export default function Services() {
 
                 {/* Card inner (gradient glass on dark) */}
                 <div
-                  className="relative z-10 rounded-[calc(1.5rem-2px)] overflow-hidden backdrop-blur-sm"
+                  className="relative z-10 rounded-[calc(1.5rem-2px)] overflow-hidden backdrop-blur-sm h-full flex flex-col"
                   style={{
                     background:
                       "linear-gradient(165deg, rgba(12,22,42,0.97) 0%, rgba(8,16,32,0.99) 40%, rgba(6,12,24,1) 100%)",
@@ -202,7 +214,7 @@ export default function Services() {
                   </div>
 
                   {/* Card body */}
-                  <div className="px-7 pt-7 pb-8 relative">
+                  <div className="px-7 pt-7 pb-8 relative flex-1 flex flex-col">
                     {/* Colored top highlight line */}
                     <div
                       className="absolute top-0 left-7 right-7 h-px opacity-40 group-hover:opacity-80 transition-opacity duration-500"
@@ -242,7 +254,7 @@ export default function Services() {
                         {s.highlight}
                       </h3>
                     </div>
-                    <p className="text-gray-500 text-[15px] leading-relaxed">
+                    <p className="text-gray-500 text-base leading-relaxed flex-1">
                       {s.desc}
                     </p>
 

@@ -27,9 +27,9 @@ const cases = [
 export default function BeforeAfter() {
   return (
     <section className="relative section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-white bg-mesh-vivid" />
-      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.45, 0.2] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-100/30 rounded-full blur-[120px]" />
-      <motion.div animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.15, 0.4, 0.15] }} transition={{ duration: 10, repeat: Infinity }} className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/25 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f0f9ff] via-white to-[#e0f2fe]" />
+      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.45, 0.2] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-200/30 rounded-full blur-[120px]" />
+      <motion.div animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.15, 0.4, 0.15] }} transition={{ duration: 10, repeat: Infinity }} className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-200/25 rounded-full blur-[100px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <AnimateIn className="text-center mb-16">
@@ -88,7 +88,7 @@ export default function BeforeAfter() {
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                     className="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg ring-1 ring-brand-400/20"
-                    style={{ boxShadow: "0 8px 24px rgba(41,128,185,0.35)" }}
+                    style={{ boxShadow: "0 8px 24px rgba(14,165,233,0.35)" }}
                   >
                     <ArrowRight className="w-6 h-6 text-white" />
                   </motion.div>

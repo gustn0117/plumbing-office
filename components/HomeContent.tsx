@@ -8,6 +8,7 @@ import Trust from "@/components/Trust";
 import Reviews from "@/components/Reviews";
 import BeforeAfter from "@/components/BeforeAfter";
 import Services from "@/components/Services";
+import KoreaMap from "@/components/KoreaMap";
 import Process from "@/components/Process";
 import CtaBottom from "@/components/CtaBottom";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function HomeContent() {
       <Reviews />
       <BeforeAfter />
       <Services />
+      <KoreaMap />
       <Process />
       <CtaBottom />
       <Footer />

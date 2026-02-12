@@ -5,10 +5,10 @@ import { useRef, useEffect, useState } from "react";
 import AnimateIn from "./AnimateIn";
 import { Users, ThumbsUp, Clock, Zap, TrendingUp } from "lucide-react";
 
-function CountUp({ target }: { target: number }) {
+function CountUp({ target, decimals = 0 }: { target: number; decimals?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState("0");
 
   useEffect(() => {
     if (!isInView) return;
@@ -18,18 +18,19 @@ function CountUp({ target }: { target: number }) {
       if (!start) start = timestamp;
       const progress = Math.min((timestamp - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
+      const val = eased * target;
+      setCount(decimals > 0 ? val.toFixed(decimals) : Math.floor(val).toString());
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [isInView, target]);
+  }, [isInView, target, decimals]);
 
   return <span ref={ref}>{count}</span>;
 }
 
 const stats = [
-  { icon: Users, value: "50,000+", label: "누적 해결 건수", color: "from-blue-500 to-brand-500", glow: "rgba(41,128,185,0.3)" },
-  { icon: ThumbsUp, value: "99.8%", label: "재이용 의향률", color: "from-emerald-500 to-teal-500", glow: "rgba(16,185,129,0.3)" },
+  { icon: Users, value: "10,000+", label: "누적 해결 건수", color: "from-blue-500 to-brand-500", glow: "rgba(14,165,233,0.3)" },
+  { icon: ThumbsUp, value: "98.6%", label: "재이용 의향률", color: "from-emerald-500 to-teal-500", glow: "rgba(16,185,129,0.3)" },
   { icon: Clock, value: "30분", label: "평균 출동 시간", color: "from-violet-500 to-purple-500", glow: "rgba(139,92,246,0.3)" },
   { icon: Zap, value: "24시간", label: "연중무휴 운영", color: "from-gold-400 to-orange-500", glow: "rgba(241,196,15,0.3)" },
 ];
@@ -37,7 +38,7 @@ const stats = [
 export default function Trust() {
   return (
     <section className="relative section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0d1b2a] to-[#0a1628]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#071d32] via-[#0a2540] to-[#071d32]" />
       <div className="absolute inset-0 noise" />
       {/* Grid pattern */}
       <div
@@ -59,7 +60,7 @@ export default function Trust() {
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.12, 0.3, 0.12] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(41,128,185,0.15) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)" }}
       />
       <motion.div
         animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.05, 0.15, 0.05] }}
@@ -97,10 +98,10 @@ export default function Trust() {
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-4xl md:text-[3rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
+          <h2 className="text-4xl md:text-[3.25rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
             배관사무소는
           </h2>
-          <h2 className="text-4xl md:text-[3rem] font-black leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-[3.25rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-gold text-glow-gold">결과로 신뢰를</span>{" "}
             <span className="text-white text-glow-white">증명합니다!</span>
           </h2>
@@ -109,7 +110,7 @@ export default function Trust() {
         {/* Main percentage */}
         <AnimateIn delay={0.2}>
           <div className="mt-14 mb-8">
-            <p className="text-white/35 text-base md:text-lg mb-8">연간 해결 성공률이 무려</p>
+            <p className="text-white/35 text-lg md:text-xl mb-8">연간 해결 성공률이 무려</p>
 
             <div className="relative inline-block">
               {/* Outer animated ring */}
@@ -138,20 +139,42 @@ export default function Trust() {
               </motion.div>
 
               {/* Number glow layers - more intense */}
-              <div className="absolute inset-0 text-8xl md:text-[140px] lg:text-[170px] font-black leading-none tracking-tighter text-gold-400/25 blur-3xl -z-10 select-none flex items-center justify-center">
-                100%
+              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/25 blur-3xl -z-10 select-none flex items-center justify-center">
+                98.6%
               </div>
-              <div className="absolute inset-0 text-8xl md:text-[140px] lg:text-[170px] font-black leading-none tracking-tighter text-gold-400/10 blur-xl -z-10 select-none flex items-center justify-center">
-                100%
+              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/10 blur-xl -z-10 select-none flex items-center justify-center">
+                98.6%
+              </div>
+
+              {/* Laurel wreath SVG */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] md:w-[320px] md:h-[320px] pointer-events-none z-0">
+                <svg viewBox="0 0 200 200" fill="none" className="w-full h-full opacity-30">
+                  {/* Left laurel */}
+                  <path d="M60 170C40 150 30 120 35 90C40 60 55 35 70 25" stroke="rgba(241,196,15,0.6)" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  <path d="M55 160C38 145 25 118 28 90C31 62 45 40 58 30" stroke="rgba(241,196,15,0.4)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M35 90C42 85 48 78 50 70" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M38 110C45 105 52 97 54 88" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M42 130C49 125 56 117 58 108" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M48 148C55 143 62 135 64 126" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M42 68C48 64 55 58 58 50" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  {/* Right laurel (mirrored) */}
+                  <path d="M140 170C160 150 170 120 165 90C160 60 145 35 130 25" stroke="rgba(241,196,15,0.6)" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  <path d="M145 160C162 145 175 118 172 90C169 62 155 40 142 30" stroke="rgba(241,196,15,0.4)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M165 90C158 85 152 78 150 70" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M162 110C155 105 148 97 146 88" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M158 130C151 125 144 117 142 108" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M152 148C145 143 138 135 136 126" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  <path d="M158 68C152 64 145 58 142 50" stroke="rgba(241,196,15,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                </svg>
               </div>
 
               {/* Actual number */}
-              <div className="text-8xl md:text-[140px] lg:text-[170px] font-black leading-none tracking-tighter text-gradient-gold py-6" style={{ filter: "drop-shadow(0 0 40px rgba(241,196,15,0.2))" }}>
-                <CountUp target={100} />%
+              <div className="relative z-10 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gradient-gold py-6" style={{ filter: "drop-shadow(0 0 40px rgba(241,196,15,0.2))" }}>
+                <CountUp target={98.6} decimals={1} />%
               </div>
             </div>
 
-            <p className="text-white/30 text-base md:text-lg mt-6">고객만족 보장</p>
+            <p className="text-white/30 text-lg md:text-xl mt-6">문제 해결 성공률</p>
           </div>
         </AnimateIn>
 
@@ -181,10 +204,10 @@ export default function Trust() {
                 >
                   <s.icon className="w-6 h-6 text-white" />
                 </div>
-                <p className="text-white font-black text-2xl md:text-3xl mb-1 text-glow-white">
+                <p className="text-white font-black text-3xl md:text-4xl mb-1 text-glow-white">
                   {s.value}
                 </p>
-                <p className="text-white/35 text-xs md:text-sm">{s.label}</p>
+                <p className="text-white/35 text-sm md:text-base">{s.label}</p>
               </motion.div>
             ))}
           </div>

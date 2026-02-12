@@ -5,7 +5,7 @@ import { Phone, Clock, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-brand-950 to-[#020810] pt-16 px-5 text-center md:pb-16 pb-28">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-brand-950 to-[#051525] pt-16 px-5 text-center md:pb-16 pb-28">
       {/* Decorative orbs */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.15, 0.05] }}
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="flex items-center justify-center mb-8">
           <div>
             <span className="text-white/70 font-black text-lg">
-              배관<span className="text-brand-400">사무소</span>
+              배관<span className="text-brand-400 text-sparkle">사무소</span>
             </span>
             <p className="text-white/20 text-[9px] tracking-[3px] font-medium">PLUMBING OFFICE</p>
           </div>
@@ -33,15 +33,15 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
             <Phone className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/50 text-sm font-medium">010-4111-6977</span>
+            <span className="text-white/50 text-base font-medium">010-4111-6977</span>
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
             <Clock className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/50 text-sm font-medium">24시간 연중무휴</span>
+            <span className="text-white/50 text-base font-medium">24시간 연중무휴</span>
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm">
             <MapPin className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/50 text-sm font-medium">전국 출장 가능</span>
+            <span className="text-white/50 text-base font-medium">전국 출장 가능</span>
           </div>
         </div>
 

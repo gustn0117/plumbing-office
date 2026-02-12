@@ -8,7 +8,7 @@ const PHONE = "010-4111-6977";
 
 const trustBadges = [
   { icon: Clock, label: "평균 30분 출동", value: "30분" },
-  { icon: Users, label: "누적 해결", value: "50,000+" },
+  { icon: Users, label: "누적 해결", value: "10,000+" },
   { icon: Shield, label: "무료 견적", value: "0원" },
 ];
 
@@ -21,7 +21,7 @@ export default function CtaBottom() {
       {/* Animated gradient orbs - bigger and more vivid */}
       <motion.div
         className="absolute top-1/4 left-1/4 w-[700px] h-[700px] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(41,128,185,0.15) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)" }}
         animate={{ scale: [1, 1.4, 1], opacity: [0.2, 0.5, 0.2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -40,12 +40,12 @@ export default function CtaBottom() {
 
       {/* Floating particles */}
       {[
-        { top: "15%", left: "20%", size: "w-1.5 h-1.5", color: "bg-gold-400/40", dur: 5 },
-        { top: "35%", right: "15%", size: "w-2 h-2", color: "bg-brand-400/30", dur: 6.5 },
-        { bottom: "25%", left: "35%", size: "w-1 h-1", color: "bg-gold-300/45", dur: 4.5 },
-        { bottom: "40%", right: "30%", size: "w-1.5 h-1.5", color: "bg-brand-300/25", dur: 7 },
-        { top: "55%", left: "10%", size: "w-2 h-2", color: "bg-gold-400/20", dur: 5.5 },
-        { top: "20%", right: "35%", size: "w-1 h-1", color: "bg-white/15", dur: 6 },
+        { top: "15%", left: "20%", size: "w-1.5 h-1.5", color: "bg-brand-400/40", dur: 5 },
+        { top: "35%", right: "15%", size: "w-2 h-2", color: "bg-cyan-400/35", dur: 6.5 },
+        { bottom: "25%", left: "35%", size: "w-1 h-1", color: "bg-sky-300/45", dur: 4.5 },
+        { bottom: "40%", right: "30%", size: "w-1.5 h-1.5", color: "bg-brand-300/30", dur: 7 },
+        { top: "55%", left: "10%", size: "w-2 h-2", color: "bg-brand-400/25", dur: 5.5 },
+        { top: "20%", right: "35%", size: "w-1 h-1", color: "bg-cyan-300/20", dur: 6 },
       ].map((p, i) => (
         <motion.div
           key={i}
@@ -79,12 +79,12 @@ export default function CtaBottom() {
         </AnimateIn>
 
         <AnimateIn delay={0.06}>
-          <h2 className="text-[2.25rem] md:text-[3rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
+          <h2 className="text-[2.5rem] md:text-[3.25rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
             배관 문제,
             <br />
             <span className="text-gradient-gold text-glow-gold">더 이상 고민하지 마세요!</span>
           </h2>
-          <p className="text-white/50 text-[15px] md:text-base mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             24시간 전문 상담사가 대기하고 있습니다.
             <br className="hidden sm:block" />
             지금 바로 연락주세요.
@@ -100,9 +100,9 @@ export default function CtaBottom() {
                 whileHover={{ y: -3, scale: 1.03 }}
                 className="bg-white/[0.08] border border-white/[0.12] rounded-2xl px-7 py-5 backdrop-blur-sm text-center min-w-[120px]"
               >
-                <badge.icon className="w-7 h-7 text-gold-400 mx-auto mb-2" />
-                <p className="text-white font-black text-2xl leading-none mb-1">{badge.value}</p>
-                <span className="text-white/40 text-xs font-medium">{badge.label}</span>
+                <badge.icon className="w-7 h-7 text-brand-400 mx-auto mb-2" />
+                <p className="text-white font-black text-3xl leading-none mb-1">{badge.value}</p>
+                <span className="text-white/40 text-sm font-medium">{badge.label}</span>
               </motion.div>
             ))}
           </div>
@@ -114,10 +114,10 @@ export default function CtaBottom() {
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               href={`tel:${PHONE}`}
-              className="btn-primary sm:text-xl justify-center"
+              className="btn-primary sm:text-xl justify-center shimmer-sweep"
             >
               <Phone className="w-6 h-6" />
-              긴급상담 {PHONE}
+              <span className="text-sparkle">긴급상담</span> <span className="sparkle-intense">{PHONE}</span>
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.03, y: -2 }}

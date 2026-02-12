@@ -8,17 +8,17 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          50: "#eef6ff",
-          100: "#d9eaff",
-          200: "#bcdaff",
-          300: "#8ec3ff",
-          400: "#59a1ff",
-          500: "#2980b9",
-          600: "#1a6da6",
-          700: "#155a8a",
-          800: "#1a3a5c",
-          900: "#0d1b2a",
-          950: "#060e18",
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
+          950: "#082f49",
         },
         gold: {
           300: "#fcd34d",
@@ -33,17 +33,17 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"Noto Sans KR"', "sans-serif"],
+        sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'system-ui', '"Noto Sans KR"', 'sans-serif'],
       },
       backgroundImage: {
         "dark-gradient":
-          "linear-gradient(180deg, #0d1b2a 0%, #1a2a3a 50%, #0d1b2a 100%)",
+          "linear-gradient(180deg, #0c4a6e 0%, #0e2a45 50%, #0c4a6e 100%)",
         "cta-gradient":
-          "linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 100%)",
+          "linear-gradient(135deg, #0c4a6e 0%, #082f49 50%, #0a3d5c 100%)",
         "premium-mesh":
-          "radial-gradient(at 40% 20%, rgba(41,128,185,0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(241,196,15,0.05) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(41,128,185,0.05) 0px, transparent 50%)",
+          "radial-gradient(at 40% 20%, rgba(14,165,233,0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(241,196,15,0.05) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(14,165,233,0.05) 0px, transparent 50%)",
         "mesh-vivid":
-          "radial-gradient(at 20% 30%, rgba(41,128,185,0.12) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(241,196,15,0.08) 0px, transparent 50%), radial-gradient(at 50% 80%, rgba(231,76,60,0.06) 0px, transparent 50%)",
+          "radial-gradient(at 20% 30%, rgba(14,165,233,0.12) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(241,196,15,0.08) 0px, transparent 50%), radial-gradient(at 50% 80%, rgba(231,76,60,0.06) 0px, transparent 50%)",
       },
       animation: {
         float: "float 6s ease-in-out infinite",
@@ -73,8 +73,8 @@ module.exports = {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         glow: {
-          "0%": { boxShadow: "0 0 20px rgba(41,128,185,0.3)" },
-          "100%": { boxShadow: "0 0 40px rgba(41,128,185,0.6)" },
+          "0%": { boxShadow: "0 0 20px rgba(14,165,233,0.3)" },
+          "100%": { boxShadow: "0 0 40px rgba(14,165,233,0.6)" },
         },
         gradient: {
           "0%, 100%": { backgroundPosition: "0% 50%" },
@@ -98,8 +98,8 @@ module.exports = {
         },
       },
       boxShadow: {
-        glow: "0 0 40px rgba(41,128,185,0.25)",
-        "glow-lg": "0 0 60px rgba(41,128,185,0.35), 0 0 120px rgba(41,128,185,0.15)",
+        glow: "0 0 40px rgba(14,165,233,0.25)",
+        "glow-lg": "0 0 60px rgba(14,165,233,0.35), 0 0 120px rgba(14,165,233,0.15)",
         "glow-gold": "0 0 40px rgba(241,196,15,0.25)",
         "glow-gold-lg": "0 0 60px rgba(241,196,15,0.35), 0 0 120px rgba(241,196,15,0.15)",
         "glow-danger": "0 0 40px rgba(231,76,60,0.25)",
@@ -111,11 +111,11 @@ module.exports = {
         "inner-glow":
           "inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 50px -10px rgba(0,0,0,0.2)",
         "card-hover":
-          "0 25px 50px -12px rgba(41,128,185,0.15), 0 10px 20px -5px rgba(0,0,0,0.08)",
+          "0 25px 50px -12px rgba(14,165,233,0.15), 0 10px 20px -5px rgba(0,0,0,0.08)",
         elevated:
           "0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.08), 0 20px 25px -5px rgba(0,0,0,0.04)",
         "dramatic":
-          "0 30px 60px -15px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05), 0 0 40px rgba(41,128,185,0.1)",
+          "0 30px 60px -15px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05), 0 0 40px rgba(14,165,233,0.1)",
       },
     },
   },
