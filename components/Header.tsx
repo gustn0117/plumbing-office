@@ -79,10 +79,10 @@ export default function Header() {
             ))}
             <a
               href={`tel:${PHONE}`}
-              className="ml-4 inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-transform duration-200 shimmer-sweep"
+              className="ml-4 inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:-translate-y-0.5 shimmer-sweep"
               style={{
-                background: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
-                boxShadow: "0 4px 20px rgba(231,76,60,0.3), 0 0 0 1px rgba(231,76,60,0.1)",
+                transition: "transform 0.2s, filter 0.2s",
+                animation: "btnColorShift 1.5s ease-in-out infinite",
               }}
             >
               <Phone className="w-4 h-4" />

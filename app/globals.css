@@ -2,7 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
 
 @layer base {
   html {
@@ -11,7 +22,7 @@
   }
 
   body {
-    font-family: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Noto Sans KR", sans-serif;
+    font-family: 'Cafe24Ssurround', -apple-system, system-ui, sans-serif;
     color: #333;
     overflow-x: hidden;
   }
@@ -32,7 +43,7 @@
   }
 
   .glass-dark {
-    background: rgba(12, 74, 110, 0.8);
+    background: rgba(3, 105, 161, 0.8);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -54,7 +65,7 @@
   }
 
   .text-gradient-blue {
-    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0369a1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #bae6fd 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -73,7 +84,7 @@
   }
 
   .text-glow-blue {
-    text-shadow: 0 0 30px rgba(14,165,233,0.6), 0 0 60px rgba(14,165,233,0.3), 0 0 100px rgba(14,165,233,0.15);
+    text-shadow: 0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.25), 0 0 100px rgba(14,165,233,0.2);
   }
 
   .text-glow-white {
@@ -87,19 +98,18 @@
     animation: shimmer 2.5s linear infinite;
   }
 
-  /* Premium buttons - MUCH more dramatic */
+  /* Premium buttons - color shifting */
   .btn-primary {
     @apply inline-flex items-center gap-2 text-white
            px-6 py-3.5 rounded-full text-base font-bold
            hover:-translate-y-1.5
            active:translate-y-0
-           transition-all duration-300 relative overflow-hidden;
-    background: linear-gradient(135deg, #ff4136 0%, #e74c3c 40%, #c0392b 100%);
-    box-shadow: 0 10px 40px rgba(231,76,60,0.5), 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -2px 4px rgba(0,0,0,0.1);
+           relative overflow-hidden;
+    transition: transform 0.3s, filter 0.3s;
+    animation: btnColorShift 1.5s ease-in-out infinite;
   }
   .btn-primary:hover {
-    box-shadow: 0 20px 60px rgba(231,76,60,0.65), 0 8px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.25);
-    filter: brightness(1.08);
+    filter: brightness(1.12);
   }
   .btn-primary::after {
     content: "";
@@ -108,15 +118,20 @@
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     animation: shine 2.5s ease-in-out infinite;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-3 border-2 border-white/30 text-white
+    @apply inline-flex items-center gap-3 border-2 text-white
            px-8 py-3.5 rounded-full text-base font-semibold
-           hover:bg-white/10 hover:border-white/50 hover:-translate-y-0.5
-           transition-all duration-300;
+           hover:-translate-y-0.5;
+    transition: transform 0.3s, filter 0.3s, background 0.3s;
+    animation: outlineColorShift 1.5s ease-in-out infinite;
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    filter: brightness(1.1);
   }
 
   .btn-white {
@@ -264,6 +279,16 @@
     animation: sparkleGlowIntense 2s ease-in-out infinite;
   }
 
+  /* Color shift for glass badges */
+  .glass-color-shift {
+    animation: glassColorShift 2s ease-in-out infinite;
+  }
+
+  /* Color shift for info badges */
+  .badge-color-shift {
+    animation: badgeColorShift 1.5s ease-in-out infinite;
+  }
+
   /* Shimmer sweep for text/buttons */
   .shimmer-sweep {
     position: relative;
@@ -370,4 +395,54 @@
 @keyframes shimmerSweep {
   0% { left: -100%; }
   50%, 100% { left: 150%; }
+}
+
+/* Button color shift: red ↔ blue */
+@keyframes btnColorShift {
+  0%, 100% {
+    background: linear-gradient(135deg, #ff4136 0%, #e74c3c 40%, #c0392b 100%);
+    box-shadow: 0 10px 40px rgba(231,76,60,0.5), 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -2px 4px rgba(0,0,0,0.1);
+  }
+  50% {
+    background: linear-gradient(135deg, #4338ca 0%, #3b82f6 40%, #1d4ed8 100%);
+    box-shadow: 0 10px 40px rgba(59,130,246,0.5), 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -2px 4px rgba(0,0,0,0.1);
+  }
+}
+
+/* Outline button border color shift */
+@keyframes outlineColorShift {
+  0%, 100% {
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+  }
+  50% {
+    border-color: rgba(241,196,15,0.5);
+    box-shadow: 0 0 25px rgba(241,196,15,0.12);
+  }
+}
+
+/* Glass badge color shift */
+@keyframes glassColorShift {
+  0%, 100% {
+    background: rgba(3, 105, 161, 0.8);
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  50% {
+    background: rgba(67, 56, 202, 0.7);
+    border-color: rgba(241,196,15,0.25);
+    box-shadow: 0 10px 30px rgba(67,56,202,0.25), 0 0 15px rgba(241,196,15,0.08);
+  }
+}
+
+/* Badge border color shift */
+@keyframes badgeColorShift {
+  0%, 100% {
+    border-color: rgba(14,165,233,0.25);
+    box-shadow: 0 0 12px rgba(14,165,233,0.1);
+  }
+  50% {
+    border-color: rgba(241,196,15,0.35);
+    box-shadow: 0 0 15px rgba(241,196,15,0.1);
+  }
 }

@@ -53,7 +53,7 @@ export default function Process() {
   return (
     <section className="relative section-padding overflow-hidden" id="process">
       {/* Dark premium background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#061525] via-[#0a1e36] to-[#071322]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0369a1] via-[#0284c7] to-[#0369a1]" />
       <div className="absolute inset-0 noise" />
       {/* Subtle dot grid */}
       <div
@@ -87,11 +87,11 @@ export default function Process() {
             <Zap className="w-4 h-4 text-gold-400" />
             복잡한 절차에 지친 당신, 오늘부턴 배관사무소가 해답!
           </span>
-          <h2 className="text-4xl md:text-[3.25rem] font-black text-white tracking-tight">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-white tracking-tight">
             신속, 간단한{" "}
             <span className="text-gradient-blue text-glow-blue">진행절차</span>
           </h2>
-          <p className="text-white/40 max-w-xl mx-auto text-lg mt-5">
+          <p className="text-white/70 max-w-xl mx-auto text-xl mt-5">
             복잡한 과정 없이, 전화 한 통이면 끝!
           </p>
         </AnimateIn>
@@ -151,8 +151,8 @@ export default function Process() {
                   <div
                     className="relative z-10 rounded-[calc(1.25rem-1.5px)] px-6 py-8 text-center h-full overflow-hidden"
                     style={{
-                      background: "linear-gradient(160deg, rgba(12,20,36,0.96) 0%, rgba(8,14,28,0.98) 50%, rgba(5,10,22,1) 100%)",
-                      boxShadow: "0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)",
+                      background: "linear-gradient(160deg, rgba(3,105,161,0.95) 0%, rgba(2,132,199,0.97) 50%, rgba(3,105,161,1) 100%)",
+                      boxShadow: "0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)",
                     }}
                   >
                     {/* Hover tint */}
@@ -198,7 +198,7 @@ export default function Process() {
                         <div
                           className="absolute -top-2 -right-2 w-7 h-7 rounded-full flex items-center justify-center ring-2"
                           style={{
-                            background: "linear-gradient(135deg, rgba(15,25,42,1), rgba(10,18,32,1))",
+                            background: "linear-gradient(135deg, rgba(3,105,161,1), rgba(2,132,199,1))",
                             borderColor: `${s.borderColor}40`,
                             boxShadow: `0 4px 12px rgba(0,0,0,0.4), 0 0 8px ${s.borderColor}20, 0 0 0 2px ${s.borderColor}30`,
                           }}
@@ -214,8 +214,8 @@ export default function Process() {
                         />
                       </div>
 
-                      <h3 className="text-xl font-extrabold text-white mb-3">{s.title}</h3>
-                      <p className="text-gray-500 text-base leading-relaxed">{s.desc}</p>
+                      <h3 className="text-2xl font-extrabold text-white mb-3">{s.title}</h3>
+                      <p className="text-white/60 text-lg leading-relaxed">{s.desc}</p>
 
                       {/* Bottom accent line */}
                       <div

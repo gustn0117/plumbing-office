@@ -70,7 +70,7 @@ export default function CtaBottom() {
           <motion.p
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex items-center justify-center gap-2 text-gold-400 text-sm md:text-base font-bold mb-5"
+            className="flex items-center justify-center gap-2 text-gold-400 text-base md:text-lg font-bold mb-5"
           >
             <Sparkles className="w-4 h-4" />
             지금 전화하시면 출장비 무료!
@@ -79,12 +79,12 @@ export default function CtaBottom() {
         </AnimateIn>
 
         <AnimateIn delay={0.06}>
-          <h2 className="text-[2.5rem] md:text-[3.25rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-white leading-tight tracking-tight mb-3 text-glow-white">
             배관 문제,
             <br />
             <span className="text-gradient-gold text-glow-gold">더 이상 고민하지 마세요!</span>
           </h2>
-          <p className="text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
             24시간 전문 상담사가 대기하고 있습니다.
             <br className="hidden sm:block" />
             지금 바로 연락주세요.
@@ -98,11 +98,11 @@ export default function CtaBottom() {
               <motion.div
                 key={i}
                 whileHover={{ y: -3, scale: 1.03 }}
-                className="bg-white/[0.08] border border-white/[0.12] rounded-2xl px-7 py-5 backdrop-blur-sm text-center min-w-[120px]"
+                className="bg-white/[0.08] border border-white/[0.12] rounded-2xl px-7 py-5 backdrop-blur-sm text-center min-w-[120px] badge-color-shift"
               >
                 <badge.icon className="w-7 h-7 text-brand-400 mx-auto mb-2" />
-                <p className="text-white font-black text-3xl leading-none mb-1">{badge.value}</p>
-                <span className="text-white/40 text-sm font-medium">{badge.label}</span>
+                <p className="text-white font-black text-4xl leading-none mb-1">{badge.value}</p>
+                <span className="text-white/70 text-sm font-medium">{badge.label}</span>
               </motion.div>
             ))}
           </div>
@@ -133,7 +133,7 @@ export default function CtaBottom() {
         </AnimateIn>
 
         <AnimateIn delay={0.25}>
-          <p className="flex items-center justify-center gap-1.5 text-white/25 text-xs mt-8">
+          <p className="flex items-center justify-center gap-1.5 text-white/50 text-xs mt-8">
             <Lock className="w-3 h-3" />
             상담 전화는 무료이며, 개인정보는 안전하게 보호됩니다.
           </p>

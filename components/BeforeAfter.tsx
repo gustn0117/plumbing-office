@@ -36,11 +36,11 @@ export default function BeforeAfter() {
           <span className="section-badge bg-gradient-to-r from-brand-50 to-blue-50 text-brand-600 border border-brand-100/50 mb-6 shadow-sm">
             배관사무소는 근본원인부터 진단하고 해결합니다.
           </span>
-          <h2 className="text-4xl md:text-[3rem] font-black text-brand-900 tracking-tight">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-brand-900 tracking-tight">
             배관사무소는{" "}
             <span className="text-brand-500">해결 못할 시</span> 금액을 받지 않습니다!
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-base mt-4">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg mt-4">
             실제 시공 전/후 사진으로 확인하세요. 모든 작업은 사진으로 기록됩니다.
           </p>
         </AnimateIn>
@@ -78,7 +78,7 @@ export default function BeforeAfter() {
                     </div>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-gray-500 text-[15px] leading-relaxed">{c.beforeText}</p>
+                    <p className="text-gray-500 text-base leading-relaxed">{c.beforeText}</p>
                   </div>
                 </motion.div>
 
@@ -132,7 +132,7 @@ export default function BeforeAfter() {
                     </div>
                   </div>
                   <div className="px-6 py-4">
-                    <p className="text-gray-500 text-[15px] leading-relaxed">{c.afterText}</p>
+                    <p className="text-gray-500 text-base leading-relaxed">{c.afterText}</p>
                   </div>
                 </motion.div>
               </div>

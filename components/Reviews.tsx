@@ -47,7 +47,7 @@ export default function Reviews() {
   return (
     <section className="relative section-padding overflow-hidden" id="reviews">
       {/* Dark premium background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#061525] via-[#0a1e36] to-[#061220]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0369a1] via-[#0284c7] to-[#0c6a94]" />
       <div className="absolute inset-0 noise" />
       {/* Subtle cross-hatch pattern */}
       <div
@@ -82,7 +82,7 @@ export default function Reviews() {
             <MessageSquare className="w-4 h-4 text-gold-400" />
             고객님들이 직접 작성하신 생생후기!
           </span>
-          <h2 className="text-4xl md:text-[3.25rem] font-black text-white tracking-tight">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-white tracking-tight">
             고객님들의{" "}
             <span className="text-gradient-gold text-glow-gold">리얼후기</span>
           </h2>
@@ -105,7 +105,7 @@ export default function Reviews() {
               <div
                 className="absolute inset-[1.5px] rounded-[calc(1rem-1.5px)] z-[1]"
                 style={{
-                  background: "linear-gradient(160deg, rgba(14,24,42,0.95) 0%, rgba(10,18,34,0.98) 100%)",
+                  background: "linear-gradient(160deg, rgba(3,105,161,0.95) 0%, rgba(2,132,199,0.98) 100%)",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)",
                 }}
               />
@@ -189,7 +189,7 @@ export default function Reviews() {
                 <div
                   className="relative z-10 rounded-[calc(1rem-1.5px)] px-7 py-6 h-full overflow-hidden"
                   style={{
-                    background: "linear-gradient(160deg, rgba(14,24,42,0.96) 0%, rgba(9,17,32,0.98) 50%, rgba(6,12,24,1) 100%)",
+                    background: "linear-gradient(160deg, rgba(3,105,161,0.96) 0%, rgba(3,105,161,0.98) 50%, rgba(3,105,161,1) 100%)",
                     boxShadow: "0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)",
                   }}
                 >
@@ -227,7 +227,7 @@ export default function Reviews() {
                       </motion.div>
                       <div>
                         <p className="font-bold text-white text-base">{r.name} 고객님</p>
-                        <p className="text-gray-500 text-sm">{r.location}</p>
+                        <p className="text-white/50 text-sm">{r.location}</p>
                       </div>
                     </div>
 
@@ -243,7 +243,7 @@ export default function Reviews() {
                     </div>
 
                     {/* Review text */}
-                    <p className="text-gray-400 leading-relaxed text-[15px] mb-4">{r.text}</p>
+                    <p className="text-white/70 leading-relaxed text-base mb-4">{r.text}</p>
 
                     {/* Verified badge */}
                     <div className="flex items-center gap-1.5 text-emerald-400">
@@ -263,7 +263,7 @@ export default function Reviews() {
         {/* Chat testimonials section */}
         <AnimateIn delay={0.2} className="mt-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-snug">
+            <h3 className="text-[1.75rem] md:text-[2rem] font-black text-white tracking-tight leading-snug">
               이용해보신 고객님들은 다~ 알아요!
               <br />
               <span className="text-gradient-gold text-glow-gold">
@@ -290,11 +290,11 @@ export default function Reviews() {
                   <div
                     className="absolute inset-[1px] rounded-[calc(1rem-1px)] rounded-bl-sm"
                     style={{
-                      background: "linear-gradient(160deg, rgba(18,30,50,0.95) 0%, rgba(12,22,38,0.98) 100%)",
+                      background: "linear-gradient(160deg, rgba(3,120,180,0.95) 0%, rgba(2,132,199,0.98) 100%)",
                       boxShadow: "0 8px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
                     }}
                   />
-                  <p className="relative z-10 text-gray-300 text-base leading-relaxed">
+                  <p className="relative z-10 text-white/80 text-lg leading-relaxed">
                     덕분에 싱크대 사용할 때 걱정 없겠어요.. 앞으로도 더 번창하세요
                   </p>
                 </motion.div>
@@ -313,7 +313,7 @@ export default function Reviews() {
                       "0 15px 40px rgba(14,165,233,0.4), 0 0 20px rgba(14,165,233,0.15), inset 0 1px 0 rgba(255,255,255,0.2)",
                   }}
                 >
-                  <p className="text-base leading-relaxed">
+                  <p className="text-lg leading-relaxed">
                     너무 다행입니다^^ 그럴일은 없겠지만 혹시라도 재발하거나 다른 문제 생기시면
                     언제든 편히 연락주세요 &#128522;
                   </p>
@@ -338,11 +338,11 @@ export default function Reviews() {
                   <div
                     className="absolute inset-[1px] rounded-[calc(1rem-1px)] rounded-bl-sm"
                     style={{
-                      background: "linear-gradient(160deg, rgba(18,30,50,0.95) 0%, rgba(12,22,38,0.98) 100%)",
+                      background: "linear-gradient(160deg, rgba(3,120,180,0.95) 0%, rgba(2,132,199,0.98) 100%)",
                       boxShadow: "0 8px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
                     }}
                   />
-                  <p className="relative z-10 text-gray-300 text-base leading-relaxed">
+                  <p className="relative z-10 text-white/80 text-lg leading-relaxed">
                     감사합니다. 아내가 기사님 친절하고 잘 뚫어주신다고 하네요. 주변에도 소개
                     많이 해야겠어요. &#127942;
                   </p>

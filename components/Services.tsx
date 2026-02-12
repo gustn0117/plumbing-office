@@ -69,7 +69,7 @@ export default function Services() {
   return (
     <section className="relative section-padding overflow-hidden" id="services">
       {/* Deep dark background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#051525] via-[#0a1e36] to-[#071830]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0369a1] via-[#0284c7] to-[#0c6a94]" />
       <div className="absolute inset-0 noise" />
       {/* Grid overlay */}
       <div
@@ -104,11 +104,11 @@ export default function Services() {
             <Flame className="w-4 h-4 text-gold-400" />
             완벽한 해결? 배관사무소에서 가능합니다!
           </span>
-          <h2 className="text-4xl md:text-[3.5rem] font-black text-white tracking-tight leading-tight">
+          <h2 className="text-[2.75rem] md:text-[3.75rem] font-black text-white tracking-tight leading-tight">
             배관사무소{" "}
             <span className="text-gradient-gold text-glow-gold">제공 서비스</span>
           </h2>
-          <p className="text-white/40 max-w-xl mx-auto text-lg mt-5">
+          <p className="text-white/70 max-w-xl mx-auto text-xl mt-5">
             다양한 배관 문제, 전문 장비와 기술로 확실하게 해결합니다.
           </p>
         </AnimateIn>
@@ -149,7 +149,7 @@ export default function Services() {
                   className="relative z-10 rounded-[calc(1.5rem-2px)] overflow-hidden backdrop-blur-sm h-full flex flex-col"
                   style={{
                     background:
-                      "linear-gradient(165deg, rgba(12,22,42,0.97) 0%, rgba(8,16,32,0.99) 40%, rgba(6,12,24,1) 100%)",
+                      "linear-gradient(165deg, rgba(3,105,161,0.96) 0%, rgba(2,132,199,0.98) 40%, rgba(3,105,161,1) 100%)",
                     boxShadow: `0 30px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 0 80px rgba(255,255,255,0.01)`,
                   }}
                 >
@@ -183,7 +183,7 @@ export default function Services() {
                       </motion.div>
                     )}
                     {/* Placeholder fallback (dark) */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0c1a30] to-[#0a1525] flex flex-col items-center justify-center text-gray-600">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0369a1] to-[#0284c7] flex flex-col items-center justify-center text-gray-600">
                       <s.icon className="w-14 h-14 mb-2 opacity-40" />
                       <p className="text-xs opacity-40">{s.imageHint}</p>
                     </div>
@@ -197,7 +197,7 @@ export default function Services() {
                       }}
                     />
                     {/* Hover overlay with arrow */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#030810]/95 via-[#030810]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1] flex items-end justify-end p-5">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d5c]/95 via-[#0a3d5c]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1] flex items-end justify-end p-5">
                       <motion.div
                         whileHover={{ rotate: 45 }}
                         className="w-11 h-11 rounded-xl flex items-center justify-center border border-white/20 backdrop-blur-md"
@@ -210,7 +210,7 @@ export default function Services() {
                       </motion.div>
                     </div>
                     {/* Bottom fade */}
-                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0c1a30] to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0369a1] to-transparent" />
                   </div>
 
                   {/* Card body */}
@@ -241,7 +241,7 @@ export default function Services() {
                           }}
                         />
                       </div>
-                      <h3 className="text-xl font-black text-white">
+                      <h3 className="text-2xl font-black text-white">
                         <span
                           style={{
                             background: `linear-gradient(135deg, ${s.borderColor}, ${s.borderColor}bb)`,
@@ -254,7 +254,7 @@ export default function Services() {
                         {s.highlight}
                       </h3>
                     </div>
-                    <p className="text-gray-500 text-base leading-relaxed flex-1">
+                    <p className="text-white/60 text-lg leading-relaxed flex-1">
                       {s.desc}
                     </p>
 

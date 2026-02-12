@@ -33,14 +33,6 @@ const cities: City[] = [
   { name: "제주", x: 55, y: 365, major: true },
 ];
 
-const connections = [
-  { x: 191, y: 262, dur: 2.5 },
-  { x: 72, y: 264, dur: 2.8 },
-  { x: 101, y: 177, dur: 1.8 },
-  { x: 165, y: 212, dur: 2.2 },
-  { x: 55, y: 365, dur: 3.2 },
-];
-
 const coverage = [
   { icon: Zap, title: "수도권", time: "30분 내 출동", desc: "서울 · 경기 · 인천", color: "from-brand-400 to-cyan-400", glow: "rgba(14,165,233,0.4)", badge: "최단시간" },
   { icon: Truck, title: "광역시", time: "당일 출동", desc: "부산 · 대구 · 광주 · 대전 · 울산", color: "from-brand-500 to-blue-500", glow: "rgba(14,165,233,0.3)", badge: "당일처리" },
@@ -53,7 +45,7 @@ const KOREA_PATH =
 export default function KoreaMap() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#061a2e] via-brand-950 to-[#051525]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0369a1] via-[#0284c7] to-[#0369a1]" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -95,12 +87,12 @@ export default function KoreaMap() {
             <MapPin className="w-4 h-4" />
             전국 출동 서비스
           </span>
-          <h2 className="text-4xl md:text-[3.25rem] font-black tracking-tight leading-tight mb-5">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black tracking-tight leading-tight mb-5">
             <span className="text-white">전국 어디든 </span>
             <span className="text-gradient-blue text-glow-blue">빠르게 출동</span>
             <span className="text-white">합니다</span>
           </h2>
-          <p className="text-white/40 max-w-xl mx-auto text-lg">
+          <p className="text-white/70 max-w-xl mx-auto text-xl">
             24시간 연중무휴, 전국 방문 서비스를 제공합니다.
           </p>
         </AnimateIn>
@@ -113,7 +105,7 @@ export default function KoreaMap() {
               { value: "24H", label: "연중무휴 운영" },
             ].map((s, i) => (
               <div key={i} className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-brand-400 mb-1">{s.value}</div>
+                <div className="text-4xl md:text-5xl font-black text-brand-400 mb-1">{s.value}</div>
                 <div className="text-white/35 text-sm font-medium">{s.label}</div>
               </div>
             ))}
@@ -142,7 +134,7 @@ export default function KoreaMap() {
                     padding: "1px",
                   }}
                 />
-                <div className="absolute inset-[1px] rounded-[calc(1.5rem-1px)] bg-[#071d32]/95 backdrop-blur-sm" />
+                <div className="absolute inset-[1px] rounded-[calc(1.5rem-1px)] bg-[#0369a1]/95 backdrop-blur-sm" />
 
                 {/* Top & bottom edge glows */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-brand-400/50 to-transparent rounded-full z-10" />
@@ -196,18 +188,6 @@ export default function KoreaMap() {
                   {/* Seoul area ambient glow */}
                   <circle cx="80" cy="89" r="60" fill="url(#seoulGlow)" />
 
-                  {/* Radar sweep animation */}
-                  <motion.g
-                    style={{ transformOrigin: "80px 89px" }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                  >
-                    <path
-                      d="M 80 89 L 80 34 A 55 55 0 0 1 127 64 Z"
-                      fill="url(#radarGrad)"
-                    />
-                  </motion.g>
-
                   {/* Korea mainland */}
                   <path d={KOREA_PATH} fill="url(#mapFill)" stroke="url(#mapStroke)" strokeWidth="0.8" filter="url(#glow)" />
                   {/* Map inner glow overlay */}
@@ -215,110 +195,20 @@ export default function KoreaMap() {
                   {/* Jeju island */}
                   <ellipse cx="55" cy="365" rx="22" ry="9" fill="url(#mapFill)" stroke="url(#mapStroke)" strokeWidth="0.8" filter="url(#glow)" />
 
-                  {/* Coverage zone circles */}
-                  <motion.circle
-                    cx="80" cy="89" r="30"
-                    fill="none" stroke="rgba(56,189,248,0.2)"
-                    strokeWidth="0.6" strokeDasharray="2 3"
-                    animate={{ r: [28, 33, 28], opacity: [0.15, 0.35, 0.15] }}
-                    transition={{ duration: 3.5, repeat: Infinity }}
-                  />
-                  <motion.circle
-                    cx="80" cy="89" r="80"
-                    fill="none" stroke="rgba(14,165,233,0.1)"
-                    strokeWidth="0.4" strokeDasharray="4 6"
-                    animate={{ r: [78, 84, 78], opacity: [0.08, 0.2, 0.08] }}
-                    transition={{ duration: 5, repeat: Infinity }}
-                  />
-
-                  {/* Connection lines with glow */}
-                  {connections.map((c, i) => (
-                    <g key={`conn-${i}`}>
-                      <motion.line
-                        x1="80" y1="89" x2={c.x} y2={c.y}
-                        stroke="rgba(14,165,233,0.08)"
-                        strokeWidth="1.5"
-                        filter="url(#glow)"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 + i * 0.12, duration: 0.8 }}
-                      />
-                      <motion.line
-                        x1="80" y1="89" x2={c.x} y2={c.y}
-                        stroke="rgba(14,165,233,0.15)"
-                        strokeWidth="0.5"
-                        strokeDasharray="3 5"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 + i * 0.12, duration: 0.8 }}
-                      />
-                      {/* Traveling dot along line */}
-                      <circle r="1.5" fill="#38bdf8" filter="url(#glow)">
-                        <animateMotion
-                          dur={`${c.dur}s`}
-                          repeatCount="indefinite"
-                          path={`M 80 89 L ${c.x} ${c.y}`}
-                        />
-                        <animate
-                          attributeName="opacity"
-                          values="0;0.8;0.8;0"
-                          dur={`${c.dur}s`}
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-                    </g>
-                  ))}
-
                   {/* City markers */}
                   {cities.map((city, i) => (
                     <g key={city.name}>
-                      {/* Expanding pulse ring */}
-                      {city.major && (
-                        <motion.circle
-                          cx={city.x} cy={city.y}
-                          r={city.capital ? 6 : 4}
-                          fill="none"
-                          stroke={city.capital ? "rgba(56,189,248,0.6)" : "rgba(14,165,233,0.4)"}
-                          strokeWidth="0.5"
-                          animate={{
-                            r: city.capital ? [6, 18, 6] : [4, 12, 4],
-                            opacity: [0.6, 0, 0.6],
-                          }}
-                          transition={{ duration: city.capital ? 2 : 2.5, repeat: Infinity, delay: i * 0.12 }}
-                        />
-                      )}
-                      {/* Seoul double ring */}
-                      {city.capital && (
-                        <>
-                          <circle cx={city.x} cy={city.y} r="6" fill="none" stroke="rgba(56,189,248,0.3)" strokeWidth="0.6" />
-                          <circle cx={city.x} cy={city.y} r="8" fill="none" stroke="rgba(56,189,248,0.15)" strokeWidth="0.4" strokeDasharray="2 2" />
-                        </>
-                      )}
-                      {/* City dot with glow */}
-                      <circle
+                      {/* City dot with pulse */}
+                      <motion.circle
                         cx={city.x} cy={city.y}
                         r={city.capital ? 3.5 : city.major ? 2.5 : 1.5}
                         fill={city.capital ? "#38bdf8" : city.major ? "#0ea5e9" : "rgba(14,165,233,0.6)"}
                         stroke={city.major ? "rgba(186,230,253,0.5)" : "none"}
                         strokeWidth="0.5"
                         filter={city.capital ? "url(#strongGlow)" : city.major ? "url(#glow)" : undefined}
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.15 }}
                       />
-                      {/* City label */}
-                      {city.major && (
-                        <text
-                          x={city.x}
-                          y={city.y - (city.capital ? 12 : 7)}
-                          textAnchor="middle"
-                          fontSize={city.capital ? 10 : 7.5}
-                          fontWeight="800"
-                          fill={city.capital ? "#7dd3fc" : "rgba(186,230,253,0.7)"}
-                          style={city.capital ? { filter: "drop-shadow(0 0 4px rgba(56,189,248,0.5))" } : undefined}
-                        >
-                          {city.name}
-                        </text>
-                      )}
                     </g>
                   ))}
                 </svg>
@@ -347,13 +237,13 @@ export default function KoreaMap() {
                   </div>
                   <div className="relative">
                     <div className="flex items-center gap-2.5 mb-2">
-                      <h4 className="font-black text-white text-xl">{c.title}</h4>
+                      <h4 className="font-black text-white text-2xl">{c.title}</h4>
                       <span className="text-brand-400 font-bold text-xs bg-brand-500/15 border border-brand-400/20 px-2.5 py-1 rounded-lg">
                         {c.badge}
                       </span>
                     </div>
-                    <p className="text-brand-300 font-bold text-lg mb-1">{c.time}</p>
-                    <p className="text-white/35 text-base">{c.desc}</p>
+                    <p className="text-brand-300 font-bold text-xl mb-1">{c.time}</p>
+                    <p className="text-white/35 text-lg">{c.desc}</p>
                   </div>
                 </motion.div>
               ))}

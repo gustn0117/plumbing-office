@@ -52,7 +52,7 @@ export default function FloatingCta() {
                     className="group flex items-center gap-3 text-white pl-5 pr-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                     style={{
                       background:
-                        "linear-gradient(145deg, #1e4468 0%, #132d47 50%, #0d1b2a 100%)",
+                        "linear-gradient(145deg, #0369a1 0%, #075985 50%, #0c4a6e 100%)",
                       boxShadow:
                         "0 10px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06)",
                     }}
@@ -64,7 +64,7 @@ export default function FloatingCta() {
                       <p className="font-bold text-sm leading-none mb-0.5">
                         전화상담
                       </p>
-                      <p className="text-white/40 text-xs">{PHONE}</p>
+                      <p className="text-white/70 text-xs">{PHONE}</p>
                     </div>
                   </a>
 
@@ -86,7 +86,7 @@ export default function FloatingCta() {
                       <p className="font-bold text-sm leading-none mb-0.5">
                         문자상담
                       </p>
-                      <p className="text-white/40 text-xs">빠른 답변</p>
+                      <p className="text-white/70 text-xs">빠른 답변</p>
                     </div>
                   </a>
                 </motion.div>
@@ -97,12 +97,10 @@ export default function FloatingCta() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   onClick={() => setExpanded(true)}
-                  className="group relative w-14 h-14 rounded-2xl text-white flex items-center justify-center shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+                  className="group relative w-14 h-14 rounded-2xl text-white flex items-center justify-center shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
-                    boxShadow:
-                      "0 8px 32px rgba(231,76,60,0.4), inset 0 1px 0 rgba(255,255,255,0.15)",
+                    transition: "transform 0.3s, filter 0.3s",
+                    animation: "btnColorShift 1.5s ease-in-out infinite",
                   }}
                 >
                   <Headset className="w-6 h-6" />
@@ -125,7 +123,7 @@ export default function FloatingCta() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed bottom-0 left-0 right-0 z-50 md:hidden safe-area-bottom"
             style={{
-              background: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
+              animation: "btnColorShift 1.5s ease-in-out infinite",
               boxShadow: "0 -4px 20px rgba(0,0,0,0.2)",
             }}
           >

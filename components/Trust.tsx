@@ -38,7 +38,7 @@ const stats = [
 export default function Trust() {
   return (
     <section className="relative section-padding overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#071d32] via-[#0a2540] to-[#071d32]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0369a1] via-[#0284c7] to-[#0369a1]" />
       <div className="absolute inset-0 noise" />
       {/* Grid pattern */}
       <div
@@ -93,15 +93,15 @@ export default function Trust() {
         <AnimateIn>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm mb-4">
             <TrendingUp className="w-4 h-4 text-gold-400" />
-            <span className="text-white/50 text-sm font-medium">믿고 맡겨도 되는 업체인지 고민되시나요?</span>
+            <span className="text-white/75 text-sm font-medium">믿고 맡겨도 되는 업체인지 고민되시나요?</span>
           </div>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-4xl md:text-[3.25rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
             배관사무소는
           </h2>
-          <h2 className="text-4xl md:text-[3.25rem] font-black leading-tight tracking-tight">
+          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-gold text-glow-gold">결과로 신뢰를</span>{" "}
             <span className="text-white text-glow-white">증명합니다!</span>
           </h2>
@@ -110,7 +110,7 @@ export default function Trust() {
         {/* Main percentage */}
         <AnimateIn delay={0.2}>
           <div className="mt-14 mb-8">
-            <p className="text-white/35 text-lg md:text-xl mb-8">연간 해결 성공률이 무려</p>
+            <p className="text-white/65 text-xl md:text-2xl mb-8">연간 해결 성공률이 무려</p>
 
             <div className="relative inline-block">
               {/* Outer animated ring */}
@@ -174,7 +174,7 @@ export default function Trust() {
               </div>
             </div>
 
-            <p className="text-white/30 text-lg md:text-xl mt-6">문제 해결 성공률</p>
+            <p className="text-white/65 text-xl md:text-2xl mt-6">문제 해결 성공률</p>
           </div>
         </AnimateIn>
 
@@ -204,10 +204,10 @@ export default function Trust() {
                 >
                   <s.icon className="w-6 h-6 text-white" />
                 </div>
-                <p className="text-white font-black text-3xl md:text-4xl mb-1 text-glow-white">
+                <p className="text-white font-black text-4xl md:text-5xl mb-1 text-glow-white">
                   {s.value}
                 </p>
-                <p className="text-white/35 text-sm md:text-base">{s.label}</p>
+                <p className="text-white/65 text-base md:text-lg">{s.label}</p>
               </motion.div>
             ))}
           </div>

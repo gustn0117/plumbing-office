@@ -33,13 +33,13 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'system-ui', '"Noto Sans KR"', 'sans-serif'],
+        sans: ["'Cafe24Ssurround'", '-apple-system', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         "dark-gradient":
-          "linear-gradient(180deg, #0c4a6e 0%, #0e2a45 50%, #0c4a6e 100%)",
+          "linear-gradient(180deg, #0284c7 0%, #0369a1 50%, #0284c7 100%)",
         "cta-gradient":
-          "linear-gradient(135deg, #0c4a6e 0%, #082f49 50%, #0a3d5c 100%)",
+          "linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #0c6a94 100%)",
         "premium-mesh":
           "radial-gradient(at 40% 20%, rgba(14,165,233,0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(241,196,15,0.05) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(14,165,233,0.05) 0px, transparent 50%)",
         "mesh-vivid":
