@@ -211,14 +211,14 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="glass-dark glass-color-shift rounded-xl px-3 py-2 lg:px-4 lg:py-2.5 flex items-center gap-2 shadow-lg"
+                className="glass-dark glass-color-shift rounded-xl px-4 py-3 lg:px-5 lg:py-3.5 flex items-center gap-2.5 shadow-lg"
               >
-                <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-lg bg-gold-400/20 flex items-center justify-center">
-                  <Zap className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-gold-400" />
+                <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-gold-400/20 flex items-center justify-center">
+                  <Zap className="w-4 h-4 lg:w-5 lg:h-5 text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-white text-[11px] lg:text-xs font-black leading-tight">30분 내 출동</p>
-                  <p className="text-white/70 text-[9px] font-semibold">전국 평균 기준</p>
+                  <p className="text-white text-sm lg:text-base font-black leading-tight">30분 내 출동</p>
+                  <p className="text-white/70 text-xs lg:text-sm font-semibold">전국 평균 기준</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -233,20 +233,20 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="glass-dark glass-color-shift rounded-xl px-3 py-2 lg:px-4 lg:py-2.5 flex items-center gap-2 shadow-lg"
+                className="glass-dark glass-color-shift rounded-xl px-4 py-3 lg:px-5 lg:py-3.5 flex items-center gap-3 shadow-lg"
               >
                 <div className="flex flex-col items-center">
                   <div className="flex gap-0.5 mb-0.5">
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-2.5 h-2.5 fill-gold-400 text-gold-400" />
+                      <Star key={j} className="w-3 h-3 lg:w-3.5 lg:h-3.5 fill-gold-400 text-gold-400" />
                     ))}
                   </div>
-                  <span className="text-white text-sm lg:text-base font-black leading-none">5.0</span>
+                  <span className="text-white text-base lg:text-lg font-black leading-none">5.0</span>
                 </div>
-                <div className="w-px h-6 bg-white/10" />
+                <div className="w-px h-8 bg-white/10" />
                 <div>
-                  <p className="text-white/90 text-[10px] lg:text-xs font-bold">고객 만족도</p>
-                  <p className="text-white/60 text-[9px]">2,847건 리뷰</p>
+                  <p className="text-white/90 text-sm lg:text-base font-bold">고객 만족도</p>
+                  <p className="text-white/60 text-xs lg:text-sm">2,847건 리뷰</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -261,14 +261,14 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="glass-dark glass-color-shift rounded-xl px-3 py-2 lg:px-4 lg:py-2.5 flex items-center gap-2 shadow-lg"
+                className="glass-dark glass-color-shift rounded-xl px-4 py-3 lg:px-5 lg:py-3.5 flex items-center gap-2.5 shadow-lg"
               >
-                <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-lg bg-emerald-400/20 flex items-center justify-center">
-                  <CheckCircle2 className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-emerald-400" />
+                <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-emerald-400/20 flex items-center justify-center">
+                  <CheckCircle2 className="w-4 h-4 lg:w-5 lg:h-5 text-emerald-400" />
                 </div>
                 <div>
-                  <p className="text-white text-[11px] lg:text-xs font-black leading-tight">10,000+</p>
-                  <p className="text-white/70 text-[9px] font-semibold">누적 해결 건수</p>
+                  <p className="text-white text-sm lg:text-base font-black leading-tight">10,000+</p>
+                  <p className="text-white/70 text-xs lg:text-sm font-semibold">누적 해결 건수</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -314,7 +314,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.45 }}
               className="text-white/90 text-lg md:text-xl font-semibold mb-3"
             >
-              24시간 어디든 <span className="text-yellow-300 glow-pulse">30분 안에</span> 당일 출동
+              24시간 당일출동
             </motion.p>
 
             {/* Main heading */}
@@ -354,7 +354,7 @@ export default function Hero() {
             >
               하수구 막힘, 누수까지 한번에 해결해드립니다.
               <br />
-              <span className="text-yellow-300 font-bold">전문 자격 보유 기술진</span>이 직접 방문합니다.
+              <span className="text-yellow-300 font-bold">전문 기술진</span>이 직접 방문합니다.
             </motion.p>
 
             {/* CTA Buttons */}

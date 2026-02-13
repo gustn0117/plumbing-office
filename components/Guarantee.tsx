@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import AnimateIn from "./AnimateIn";
-import { ShieldCheck, BadgeCheck, Banknote, Sparkles } from "lucide-react";
+import { ShieldCheck, Banknote, Sparkles } from "lucide-react";
 
 const features = [
   { icon: ShieldCheck, text: "완벽 해결 보장", desc: "책임감 있는 작업" },
   { icon: Banknote, text: "미해결시 전액 무료", desc: "비용 부담 제로" },
-  { icon: BadgeCheck, text: "추가 요금 없음", desc: "투명한 견적" },
 ];
 
 export default function Guarantee() {
@@ -129,14 +128,13 @@ export default function Guarantee() {
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="relative w-48 h-48 md:w-60 md:h-60 mx-auto bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 rounded-[2.5rem] flex flex-col items-center justify-center rotate-3"
+              className="relative w-72 h-40 md:w-96 md:h-48 mx-auto bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 rounded-[2.5rem] flex flex-col items-center justify-center rotate-3"
             >
               {/* Inner shine */}
               <div className="absolute inset-[1px] rounded-[2.4rem] bg-gradient-to-br from-white/25 via-transparent to-transparent" />
               <div className="absolute inset-[1px] rounded-[2.4rem] bg-gradient-to-tl from-black/10 via-transparent to-transparent" />
-              <span className="text-brand-900/40 text-sm font-black tracking-widest -rotate-3 mb-2 uppercase">Guaranteed</span>
-              <span className="text-6xl md:text-8xl font-black text-brand-900 -rotate-3" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.1)" }}>₩0</span>
-              <span className="text-brand-900/30 text-xs font-bold -rotate-3 mt-1">미해결시</span>
+              <span className="text-brand-900/40 text-xs md:text-sm font-black tracking-widest -rotate-3 mb-2 uppercase">Guaranteed</span>
+              <span className="text-3xl md:text-5xl font-black text-brand-900 -rotate-3" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.1)" }}>해결 못하면 0원</span>
             </motion.div>
           </div>
         </AnimateIn>

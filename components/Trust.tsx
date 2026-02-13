@@ -102,7 +102,7 @@ export default function Trust() {
             배관사무소는
           </h2>
           <h2 className="text-[2.75rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
-            <span className="text-gradient-gold text-glow-gold">결과로 신뢰를</span>{" "}
+            <span className="text-gradient-lime text-glow-lime">결과로 신뢰를</span>{" "}
             <span className="text-white text-glow-white">증명합니다!</span>
           </h2>
         </AnimateIn>
@@ -139,10 +139,10 @@ export default function Trust() {
               </motion.div>
 
               {/* Number glow layers - more intense */}
-              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/25 blur-3xl -z-10 select-none flex items-center justify-center">
+              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-[#fafd57]/25 blur-3xl -z-10 select-none flex items-center justify-center">
                 98.6%
               </div>
-              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gold-400/10 blur-xl -z-10 select-none flex items-center justify-center">
+              <div className="absolute inset-0 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-[#fafd57]/15 blur-xl -z-10 select-none flex items-center justify-center">
                 98.6%
               </div>
 
@@ -169,7 +169,7 @@ export default function Trust() {
               </div>
 
               {/* Actual number */}
-              <div className="relative z-10 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gradient-gold py-6" style={{ filter: "drop-shadow(0 0 40px rgba(241,196,15,0.2))" }}>
+              <div className="relative z-10 text-7xl md:text-[120px] lg:text-[150px] font-black leading-none tracking-tighter text-gradient-lime py-6" style={{ filter: "drop-shadow(0 0 40px rgba(250,253,87,0.25))" }}>
                 <CountUp target={98.6} decimals={1} />%
               </div>
             </div>

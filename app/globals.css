@@ -25,6 +25,8 @@
     font-family: 'Cafe24Ssurround', -apple-system, system-ui, sans-serif;
     color: #333;
     overflow-x: hidden;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   ::selection {
@@ -76,6 +78,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-lime {
+    background: linear-gradient(135deg, #fafd57 0%, #e4f54a 40%, #d4e840 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-glow-lime {
+    text-shadow: 0 0 30px rgba(250,253,87,0.5), 0 0 80px rgba(250,253,87,0.2), 0 0 120px rgba(250,253,87,0.1);
   }
 
   /* Text glow - more intense */

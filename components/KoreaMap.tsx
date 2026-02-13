@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import AnimateIn from "./AnimateIn";
-import { MapPin, Truck, Phone, Zap, Shield } from "lucide-react";
+import { MapPin, Phone, Zap } from "lucide-react";
 
 const PHONE = "010-4111-6977";
 
@@ -31,12 +31,6 @@ const cities: City[] = [
   { name: "창원", x: 170, y: 259 },
   { name: "목포", x: 42, y: 290 },
   { name: "제주", x: 55, y: 365, major: true },
-];
-
-const coverage = [
-  { icon: Zap, title: "수도권", time: "30분 내 출동", desc: "서울 · 경기 · 인천", color: "from-brand-400 to-cyan-400", glow: "rgba(14,165,233,0.4)", badge: "최단시간" },
-  { icon: Truck, title: "광역시", time: "당일 출동", desc: "부산 · 대구 · 광주 · 대전 · 울산", color: "from-brand-500 to-blue-500", glow: "rgba(14,165,233,0.3)", badge: "당일처리" },
-  { icon: Shield, title: "전국", time: "출동 가능", desc: "전국 어디든 방문 서비스", color: "from-blue-500 to-indigo-500", glow: "rgba(59,130,246,0.3)", badge: "전국대응" },
 ];
 
 const KOREA_PATH =
@@ -89,7 +83,7 @@ export default function KoreaMap() {
           </span>
           <h2 className="text-[2.75rem] md:text-[3.5rem] font-black tracking-tight leading-tight mb-5">
             <span className="text-white">전국 어디든 </span>
-            <span className="text-gradient-blue text-glow-blue">빠르게 출동</span>
+            <span className="text-gradient-lime text-glow-lime">빠르게 출동</span>
             <span className="text-white">합니다</span>
           </h2>
           <p className="text-white/70 max-w-xl mx-auto text-xl">
@@ -105,8 +99,8 @@ export default function KoreaMap() {
               { value: "24H", label: "연중무휴 운영" },
             ].map((s, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-black text-brand-400 mb-1">{s.value}</div>
-                <div className="text-white/35 text-sm font-medium">{s.label}</div>
+                <div className="text-4xl md:text-5xl font-black text-gradient-lime mb-1">{s.value}</div>
+                <div className="text-white/50 text-sm font-medium">{s.label}</div>
               </div>
             ))}
           </div>
@@ -117,98 +111,61 @@ export default function KoreaMap() {
             <div className="relative mx-auto w-full max-w-[380px]">
               {/* Outer glow behind map */}
               <motion.div
-                animate={{ opacity: [0.4, 0.8, 0.4] }}
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute inset-0 bg-gradient-to-br from-brand-500/15 via-transparent to-cyan-500/10 rounded-3xl blur-[50px]"
+                className="absolute inset-0 bg-white/10 rounded-3xl blur-[40px]"
               />
 
-              {/* Map container with animated border */}
-              <div className="relative rounded-3xl overflow-hidden">
-                {/* Animated border gradient */}
-                <motion.div
-                  animate={{ opacity: [0.4, 0.8, 0.4] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute inset-0 rounded-3xl"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(14,165,233,0.3), rgba(6,182,212,0.15), rgba(14,165,233,0.3))",
-                    padding: "1px",
-                  }}
-                />
-                <div className="absolute inset-[1px] rounded-[calc(1.5rem-1px)] bg-[#0369a1]/95 backdrop-blur-sm" />
-
-                {/* Top & bottom edge glows */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-brand-400/50 to-transparent rounded-full z-10" />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent rounded-full z-10" />
+              {/* Map container - white background style */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 rounded-3xl bg-white" />
 
                 <svg
                   viewBox="0 0 240 400"
-                  className="relative z-[1] w-full h-auto"
-                  style={{ filter: "drop-shadow(0 0 25px rgba(14,165,233,0.12))" }}
+                  className="relative z-[1] w-full h-auto p-4"
                 >
                   <defs>
-                    <linearGradient id="mapFill" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="rgba(14,165,233,0.15)" />
-                      <stop offset="50%" stopColor="rgba(14,165,233,0.08)" />
-                      <stop offset="100%" stopColor="rgba(6,182,212,0.12)" />
+                    <linearGradient id="mapFillLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#a7d9a7" />
+                      <stop offset="50%" stopColor="#8fce8f" />
+                      <stop offset="100%" stopColor="#b5e0b5" />
                     </linearGradient>
-                    <linearGradient id="mapStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="rgba(14,165,233,0.6)" />
-                      <stop offset="100%" stopColor="rgba(6,182,212,0.6)" />
-                    </linearGradient>
-                    <radialGradient id="seoulGlow" cx="80" cy="89" r="60" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="rgba(56,189,248,0.12)" />
-                      <stop offset="100%" stopColor="rgba(56,189,248,0)" />
-                    </radialGradient>
-                    <radialGradient id="radarGrad" cx="80" cy="89" r="55" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="rgba(14,165,233,0.12)" />
-                      <stop offset="100%" stopColor="rgba(14,165,233,0)" />
-                    </radialGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="2" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
+                    <filter id="mapShadow">
+                      <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="rgba(0,0,0,0.15)" />
                     </filter>
-                    <filter id="strongGlow">
-                      <feGaussianBlur stdDeviation="4" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
+                    <filter id="pinShadow">
+                      <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="rgba(0,0,0,0.25)" />
                     </filter>
-                    <pattern id="dotGrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-                      <circle cx="8" cy="8" r="0.4" fill="rgba(14,165,233,0.1)" />
-                    </pattern>
                   </defs>
 
-                  {/* Background dot grid */}
-                  <rect width="240" height="400" fill="url(#dotGrid)" />
-
-                  {/* Seoul area ambient glow */}
-                  <circle cx="80" cy="89" r="60" fill="url(#seoulGlow)" />
-
-                  {/* Korea mainland */}
-                  <path d={KOREA_PATH} fill="url(#mapFill)" stroke="url(#mapStroke)" strokeWidth="0.8" filter="url(#glow)" />
-                  {/* Map inner glow overlay */}
-                  <path d={KOREA_PATH} fill="none" stroke="rgba(56,189,248,0.1)" strokeWidth="2" filter="url(#strongGlow)" />
+                  {/* Korea mainland - green style */}
+                  <path d={KOREA_PATH} fill="url(#mapFillLight)" stroke="#7ab87a" strokeWidth="1" filter="url(#mapShadow)" />
                   {/* Jeju island */}
-                  <ellipse cx="55" cy="365" rx="22" ry="9" fill="url(#mapFill)" stroke="url(#mapStroke)" strokeWidth="0.8" filter="url(#glow)" />
+                  <ellipse cx="55" cy="365" rx="22" ry="9" fill="url(#mapFillLight)" stroke="#7ab87a" strokeWidth="1" filter="url(#mapShadow)" />
 
-                  {/* City markers */}
+                  {/* City pin markers */}
                   {cities.map((city, i) => (
-                    <g key={city.name}>
-                      {/* City dot with pulse */}
-                      <motion.circle
-                        cx={city.x} cy={city.y}
-                        r={city.capital ? 3.5 : city.major ? 2.5 : 1.5}
-                        fill={city.capital ? "#38bdf8" : city.major ? "#0ea5e9" : "rgba(14,165,233,0.6)"}
-                        stroke={city.major ? "rgba(186,230,253,0.5)" : "none"}
-                        strokeWidth="0.5"
-                        filter={city.capital ? "url(#strongGlow)" : city.major ? "url(#glow)" : undefined}
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.15 }}
-                      />
+                    <g key={city.name} filter="url(#pinShadow)">
+                      {/* Pin body */}
+                      <motion.g
+                        animate={{ y: [0, -2, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
+                      >
+                        {(city.major || city.capital) && (
+                          <>
+                            <path
+                              d={`M${city.x} ${city.y + 2} C${city.x} ${city.y - 6}, ${city.x - 6} ${city.y - 12}, ${city.x - 6} ${city.y - 14} A6 6 0 1 1 ${city.x + 6} ${city.y - 14} C${city.x + 6} ${city.y - 12}, ${city.x} ${city.y - 6}, ${city.x} ${city.y + 2}Z`}
+                              fill="#ef4444"
+                              stroke="#dc2626"
+                              strokeWidth="0.5"
+                            />
+                            <circle cx={city.x} cy={city.y - 14} r="2.5" fill="white" opacity="0.9" />
+                          </>
+                        )}
+                        {!city.major && !city.capital && (
+                          <circle cx={city.x} cy={city.y} r="2" fill="#ef4444" stroke="white" strokeWidth="0.5" />
+                        )}
+                      </motion.g>
                     </g>
                   ))}
                 </svg>
@@ -218,35 +175,35 @@ export default function KoreaMap() {
 
           <AnimateIn delay={0.2}>
             <div className="space-y-5">
-              {coverage.map((c, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ x: 6, scale: 1.02 }}
-                  className="relative flex items-start gap-5 p-6 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm hover:bg-white/[0.07] hover:border-brand-400/20 transition-all duration-300 group overflow-hidden"
+              {/* Single combined coverage box */}
+              <motion.div
+                whileHover={{ x: 6, scale: 1.02 }}
+                className="relative flex items-start gap-5 p-8 rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm hover:bg-white/[0.1] hover:border-brand-400/25 transition-all duration-300 group overflow-hidden"
+              >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-brand-500/5 via-transparent to-transparent" />
+                <div
+                  className="relative w-16 h-16 bg-gradient-to-br from-brand-400 to-cyan-400 rounded-2xl flex items-center justify-center flex-shrink-0"
+                  style={{ boxShadow: "0 8px 24px rgba(14,165,233,0.4)" }}
                 >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-brand-500/5 via-transparent to-transparent" />
-                  {/* Step number */}
-                  <div className="absolute top-3 right-4 text-brand-400/10 font-black text-4xl select-none">
-                    0{i + 1}
+                  <Zap className="w-7 h-7 text-white" />
+                </div>
+                <div className="relative">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <h4 className="font-black text-white text-3xl">전국 출동가능</h4>
+                    <span className="text-[#fafd57] font-bold text-xs bg-[#fafd57]/15 border border-[#fafd57]/30 px-3 py-1 rounded-lg">
+                      24시간
+                    </span>
                   </div>
-                  <div
-                    className={`relative w-14 h-14 bg-gradient-to-br ${c.color} rounded-2xl flex items-center justify-center flex-shrink-0`}
-                    style={{ boxShadow: `0 8px 24px ${c.glow}` }}
-                  >
-                    <c.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="relative">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <h4 className="font-black text-white text-2xl">{c.title}</h4>
-                      <span className="text-brand-400 font-bold text-xs bg-brand-500/15 border border-brand-400/20 px-2.5 py-1 rounded-lg">
-                        {c.badge}
-                      </span>
-                    </div>
-                    <p className="text-brand-300 font-bold text-xl mb-1">{c.time}</p>
-                    <p className="text-white/35 text-lg">{c.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+                  <p className="text-gradient-lime text-glow-lime font-black text-4xl mb-3">30분 방문</p>
+                  <p className="text-white/60 text-lg leading-relaxed">
+                    서울 · 경기 · 인천 수도권 30분 내 출동
+                    <br />
+                    부산 · 대구 · 광주 · 대전 · 울산 당일 출동
+                    <br />
+                    전국 어디든 방문 서비스
+                  </p>
+                </div>
+              </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.02 }}
