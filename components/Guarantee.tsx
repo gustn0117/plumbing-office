@@ -85,14 +85,12 @@ export default function Guarantee() {
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white leading-tight tracking-tight text-glow-white mb-3">
-            저희 업체는
-          </h2>
-          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
-            <span className="text-gradient-gold text-glow-gold">미해결시</span>{" "}
-            <span className="text-white text-glow-white">금액을</span>
+          <h2 className="text-[2rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
+            <span className="text-white text-glow-white">배관사무소는</span>
             <br className="md:hidden" />
-            <span className="text-white text-glow-white"> 받지 않습니다.</span>
+            <span className="text-gradient-gold text-glow-gold"> 해결 못할 시</span>
+            <br className="md:hidden" />
+            <span className="text-white text-glow-white"> 금액을 받지 않습니다!</span>
           </h2>
         </AnimateIn>
 
@@ -164,11 +162,15 @@ export default function Guarantee() {
 
         <AnimateIn delay={0.4}>
           <p className="text-white/80 text-base md:text-xl leading-relaxed max-w-lg mx-auto">
-            배관사무소는 고객님의 문제를
+            배관사무소는
             <br className="md:hidden" />
-            완벽하게 해결할 때까지 책임집니다.
+            고객님의 문제를 완벽하게
+            <br className="md:hidden" />
+            해결할 때까지 책임집니다.
             <br />
-            해결하지 못하면 비용을 청구하지 않는 것이
+            해결하지 못하면
+            <br className="md:hidden" />
+            비용을 청구하지 않는 것이
             <br className="md:hidden" />
             저희의 원칙입니다.
           </p>
