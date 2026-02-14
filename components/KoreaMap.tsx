@@ -83,12 +83,14 @@ export default function KoreaMap() {
             <MapPin className="w-4 h-4" />
             전국 출동 서비스
           </span>
-          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black tracking-tight leading-tight mb-5">
-            <span className="text-white">전국 어디든 </span>
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black tracking-tight leading-tight mb-5">
+            <span className="text-white">전국 어디든</span>
+            <br className="md:hidden" />
+            <span className="text-white"> </span>
             <span className="text-gradient-lime text-glow-lime">빠르게 출동</span>
             <span className="text-white">합니다</span>
           </h2>
-          <p className="text-white/70 max-w-xl mx-auto text-xl">
+          <p className="text-white/80 max-w-xl mx-auto text-lg md:text-xl">
             24시간 연중무휴, 전국 방문 서비스를 제공합니다.
           </p>
         </AnimateIn>
@@ -102,7 +104,7 @@ export default function KoreaMap() {
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="text-4xl md:text-5xl font-black text-gradient-lime mb-1">{s.value}</div>
-                <div className="text-white/50 text-sm font-medium">{s.label}</div>
+                <div className="text-white/65 text-sm font-medium">{s.label}</div>
               </div>
             ))}
           </div>
@@ -190,20 +192,8 @@ export default function KoreaMap() {
                   <Zap className="w-7 h-7 text-white" />
                 </div>
                 <div className="relative">
-                  <div className="flex items-center gap-2.5 mb-3">
-                    <h4 className="font-black text-white text-3xl">전국 출동가능</h4>
-                    <span className="text-[#fafd57] font-bold text-xs bg-[#fafd57]/15 border border-[#fafd57]/30 px-3 py-1 rounded-lg">
-                      24시간
-                    </span>
-                  </div>
-                  <p className="text-gradient-lime text-glow-lime font-black text-4xl mb-3">30분 방문</p>
-                  <p className="text-white/60 text-lg leading-relaxed">
-                    서울 · 경기 · 인천 수도권 30분 내 출동
-                    <br />
-                    부산 · 대구 · 광주 · 대전 · 울산 당일 출동
-                    <br />
-                    전국 어디든 방문 서비스
-                  </p>
+                  <h4 className="font-black text-white text-3xl md:text-5xl mb-3">전국 출동가능</h4>
+                  <p className="text-gradient-lime text-glow-lime font-black text-4xl md:text-6xl">30분 방문</p>
                 </div>
               </motion.div>
 
@@ -217,7 +207,7 @@ export default function KoreaMap() {
                       <Phone className="w-5 h-5 text-brand-400" />
                     </div>
                     <div>
-                      <p className="text-white/50 text-sm font-medium mb-0.5">전국 어디서든 전화주세요</p>
+                      <p className="text-white/65 text-sm font-medium mb-0.5">전국 어디서든 전화주세요</p>
                       <p className="text-white font-black text-xl sparkle-intense">{PHONE}</p>
                     </div>
                   </div>

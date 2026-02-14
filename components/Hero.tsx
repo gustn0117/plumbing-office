@@ -327,14 +327,12 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              <h1 className="text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black leading-[1.08] tracking-tight mb-1">
-                <span className="text-gradient-blue text-glow-blue">출장비</span>
-                <span className="text-white/90"> / </span>
-                <span className="text-gradient-blue text-glow-blue">내시경</span>
+              <h1 className="text-[2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black leading-[1.08] tracking-tight mb-1">
+                <span className="text-white">출장비 무료</span>
               </h1>
-              <h2 className="text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black leading-[1.08] tracking-tight mb-5">
+              <h2 className="text-[2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.2rem] font-black leading-[1.08] tracking-tight mb-5">
                 <span className="relative inline-block">
-                  <span className="text-gradient-gold">무료이벤트</span>
+                  <span className="text-gradient-gold">내시경 무료이벤트</span>
                   <motion.div
                     className="absolute -bottom-1.5 left-0 h-1 w-full rounded-full"
                     style={{
@@ -344,8 +342,7 @@ export default function Hero() {
                     animate={{ backgroundPosition: ["200% 0%", "-200% 0%"] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                   />
-                </span>{" "}
-                <span className="text-white">진행중</span>
+                </span>
               </h2>
             </motion.div>
 
@@ -354,7 +351,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-white/80 text-base md:text-lg mb-8 lg:max-w-lg leading-relaxed"
+              className="text-white/85 text-base md:text-lg mb-8 lg:max-w-lg leading-relaxed"
             >
               하수구 막힘, 누수까지 한번에 해결해드립니다.
               <br />

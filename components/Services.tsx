@@ -104,12 +104,14 @@ export default function Services() {
             <Flame className="w-4 h-4 text-gold-400" />
             완벽한 해결? 배관사무소에서 가능합니다!
           </span>
-          <h2 className="text-[2.75rem] md:text-[3.75rem] font-black text-white tracking-tight leading-tight">
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white tracking-tight leading-tight">
             배관사무소{" "}
-            <span className="text-gradient-gold text-glow-gold">제공 서비스</span>
+            <span className="text-white text-glow-white">제공 서비스</span>
           </h2>
-          <p className="text-white/70 max-w-xl mx-auto text-xl mt-5">
-            다양한 배관 문제, 전문 장비와 기술로 확실하게 해결합니다.
+          <p className="text-white/80 max-w-xl mx-auto text-lg md:text-xl mt-5">
+            다양한 배관 문제,
+            <br className="md:hidden" />
+            전문 장비와 기술로 확실하게 해결합니다.
           </p>
         </AnimateIn>
 
@@ -254,7 +256,7 @@ export default function Services() {
                         {s.highlight}
                       </h3>
                     </div>
-                    <p className="text-white/60 text-lg leading-relaxed flex-1">
+                    <p className="text-white/75 text-base md:text-lg leading-relaxed flex-1">
                       {s.desc}
                     </p>
 

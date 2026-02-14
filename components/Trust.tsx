@@ -32,7 +32,7 @@ const stats = [
   { icon: Users, value: "10,000+", label: "누적 해결 건수", color: "from-blue-500 to-brand-500", glow: "rgba(14,165,233,0.3)" },
   { icon: ThumbsUp, value: "98.6%", label: "재이용 의향률", color: "from-emerald-500 to-teal-500", glow: "rgba(16,185,129,0.3)" },
   { icon: Clock, value: "30분", label: "평균 출동 시간", color: "from-violet-500 to-purple-500", glow: "rgba(139,92,246,0.3)" },
-  { icon: Zap, value: "24시간", label: "연중무휴 운영", color: "from-gold-400 to-orange-500", glow: "rgba(241,196,15,0.3)" },
+  { icon: Zap, value: "24시간", label: "연중무휴 운영", color: "from-sky-400 to-blue-500", glow: "rgba(56,189,248,0.3)" },
 ];
 
 export default function Trust() {
@@ -95,15 +95,15 @@ export default function Trust() {
         <AnimateIn>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm mb-4">
             <TrendingUp className="w-4 h-4 text-gold-400" />
-            <span className="text-white/75 text-sm font-medium">믿고 맡겨도 되는 업체인지 고민되시나요?</span>
+            <span className="text-white/80 text-sm font-medium">믿고 맡겨도 되는 업체인지 고민되시나요?</span>
           </div>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white leading-tight tracking-tight mb-2 text-glow-white">
             배관사무소는
           </h2>
-          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-lime text-glow-lime">결과로 신뢰를</span>{" "}
             <span className="text-white text-glow-white">증명합니다!</span>
           </h2>
@@ -112,7 +112,7 @@ export default function Trust() {
         {/* Main percentage */}
         <AnimateIn delay={0.2}>
           <div className="mt-14 mb-8">
-            <p className="text-white/65 text-xl md:text-2xl mb-8">연간 해결 성공률이 무려</p>
+            <p className="text-white/75 text-lg md:text-2xl mb-8">연간 해결 성공률이 무려</p>
 
             <div className="relative inline-block">
               {/* Outer animated ring */}
@@ -176,7 +176,7 @@ export default function Trust() {
               </div>
             </div>
 
-            <p className="text-white/65 text-xl md:text-2xl mt-6">문제 해결 성공률</p>
+            <p className="text-white/75 text-lg md:text-2xl mt-6">문제 해결 성공률</p>
           </div>
         </AnimateIn>
 
@@ -201,15 +201,15 @@ export default function Trust() {
                 />
 
                 <div
-                  className={`w-14 h-14 mx-auto bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center mb-3 shadow-lg`}
+                  className={`w-12 h-12 md:w-14 md:h-14 mx-auto bg-gradient-to-br ${s.color} rounded-xl flex items-center justify-center mb-3 shadow-lg`}
                   style={{ boxShadow: `0 6px 20px ${s.glow}` }}
                 >
                   <s.icon className="w-6 h-6 text-white" />
                 </div>
-                <p className="text-white font-black text-4xl md:text-5xl mb-1 text-glow-white">
+                <p className="text-white font-black text-2xl md:text-4xl mb-1 text-glow-white whitespace-nowrap">
                   {s.value}
                 </p>
-                <p className="text-white/65 text-base md:text-lg">{s.label}</p>
+                <p className="text-white/75 text-base md:text-lg">{s.label}</p>
               </motion.div>
             ))}
           </div>

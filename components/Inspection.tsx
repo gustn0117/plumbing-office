@@ -51,14 +51,19 @@ export default function Inspection() {
             <Sparkles className="w-4 h-4 text-gold-500" />
             누적 해결 건수 1만 돌파 기념
           </span>
-          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-brand-900 tracking-tight leading-tight mb-5">
-            최첨단 내시경 검사{" "}
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-brand-900 tracking-tight leading-tight mb-5">
+            최첨단 내시경 검사
+            <br />
             <span className="text-brand-500 glow-pulse">무료이벤트</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed text-xl">
-            하수구 배관은 내부를 육안으로 확인하기 어렵습니다.
-            <br className="hidden md:block" />
-            정밀 내시경으로 배관 속 누수, 이물질, 결함을 정확하게 파악합니다.
+          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg md:text-xl">
+            하수구 배관은 내부를 육안으로
+            <br className="md:hidden" />
+            확인하기 어렵습니다.
+            <br />
+            정밀 내시경으로 배관 속 누수, 이물질,
+            <br className="md:hidden" />
+            결함을 정확하게 파악합니다.
           </p>
         </AnimateIn>
 
@@ -103,7 +108,7 @@ export default function Inspection() {
                     <f.icon className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-white font-extrabold text-2xl mb-3 text-glow-white">{f.title}</h4>
-                  <p className="text-white/45 text-lg leading-relaxed">{f.desc}</p>
+                  <p className="text-white/70 text-base md:text-lg leading-relaxed">{f.desc}</p>
                 </div>
               </motion.div>
             </AnimateIn>

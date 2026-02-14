@@ -81,14 +81,14 @@ export default function CtaBottom() {
         </AnimateIn>
 
         <AnimateIn delay={0.06}>
-          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-gray-900 leading-tight tracking-tight mb-3">
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-gray-900 leading-tight tracking-tight mb-3">
             배관 문제,
             <br />
             <span className="text-brand-500">더 이상 고민하지 마세요!</span>
           </h2>
-          <p className="text-gray-500 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-base md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
             24시간 전문 상담사가 대기하고 있습니다.
-            <br className="hidden sm:block" />
+            <br />
             지금 바로 연락주세요.
           </p>
         </AnimateIn>
@@ -103,8 +103,8 @@ export default function CtaBottom() {
                 className="bg-white border border-gray-200/80 rounded-2xl px-7 py-5 text-center min-w-[120px] shadow-sm hover:shadow-md transition-shadow"
               >
                 <badge.icon className="w-7 h-7 text-brand-500 mx-auto mb-2" />
-                <p className="text-gray-900 font-black text-4xl leading-none mb-1">{badge.value}</p>
-                <span className="text-gray-500 text-sm font-medium">{badge.label}</span>
+                <p className="text-gray-900 font-black text-3xl md:text-4xl leading-none mb-1">{badge.value}</p>
+                <span className="text-gray-600 text-sm font-medium">{badge.label}</span>
               </motion.div>
             ))}
           </div>

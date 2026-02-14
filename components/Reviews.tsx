@@ -82,7 +82,7 @@ export default function Reviews() {
             <MessageSquare className="w-4 h-4 text-gold-400" />
             고객님들이 직접 작성하신 생생후기!
           </span>
-          <h2 className="text-[2.75rem] md:text-[3.5rem] font-black text-white tracking-tight">
+          <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white tracking-tight">
             고객님들의{" "}
             <span className="text-gradient-gold text-glow-gold">리얼후기</span>
           </h2>
@@ -133,7 +133,7 @@ export default function Reviews() {
                 <div className="w-16 h-px sm:hidden bg-white/10" />
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="text-center sm:text-left">
-                    <p className="text-white/50 text-sm sm:text-base font-bold">고객 만족도</p>
+                    <p className="text-white/60 text-sm sm:text-base font-bold">고객 만족도</p>
                     <p className="text-white text-2xl sm:text-3xl font-black">98.6%</p>
                   </div>
                   <div className="h-10 sm:h-12 w-px bg-white/10" />
@@ -144,7 +144,7 @@ export default function Reviews() {
                     />
                     <div>
                       <p className="text-sm sm:text-base font-black">인증 후기</p>
-                      <p className="text-emerald-500/70 text-xs sm:text-sm">실사용 검증</p>
+                      <p className="text-emerald-400/70 text-xs sm:text-sm">실사용 검증</p>
                     </div>
                   </div>
                 </div>
@@ -227,7 +227,7 @@ export default function Reviews() {
                       </motion.div>
                       <div>
                         <p className="font-bold text-white text-base">{r.name} 고객님</p>
-                        <p className="text-white/50 text-sm">{r.location}</p>
+                        <p className="text-white/60 text-sm">{r.location}</p>
                       </div>
                     </div>
 
@@ -243,7 +243,7 @@ export default function Reviews() {
                     </div>
 
                     {/* Review text */}
-                    <p className="text-white/70 leading-relaxed text-base mb-4">{r.text}</p>
+                    <p className="text-white/80 leading-relaxed text-base mb-4">{r.text}</p>
 
                     {/* Verified badge */}
                     <div className="flex items-center gap-1.5 text-emerald-400">
@@ -263,7 +263,7 @@ export default function Reviews() {
         {/* Chat testimonials section */}
         <AnimateIn delay={0.2} className="mt-20">
           <div className="text-center mb-10">
-            <h3 className="text-[1.75rem] md:text-[2rem] font-black text-white tracking-tight leading-snug">
+            <h3 className="text-[1.5rem] md:text-[2rem] font-black text-white tracking-tight leading-snug">
               이용해보신 고객님들은 다~ 알아요!
               <br />
               <span className="text-gradient-gold text-glow-gold">

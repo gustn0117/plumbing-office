@@ -25,7 +25,7 @@ export default function Footer() {
             <span className="text-white/90 font-black text-xl">
               배관<span className="text-brand-400 text-sparkle">사무소</span>
             </span>
-            <p className="text-white/50 text-[9px] tracking-[3px] font-medium">PLUMBING OFFICE</p>
+            <p className="text-white/60 text-[9px] tracking-[3px] font-medium">PLUMBING OFFICE</p>
           </div>
         </div>
 
@@ -33,15 +33,15 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.12] border border-white/[0.2] backdrop-blur-sm">
             <Phone className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/75 text-lg font-medium">010-4111-6977</span>
+            <span className="text-white/80 text-base md:text-lg font-medium">010-4111-6977</span>
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.12] border border-white/[0.2] backdrop-blur-sm">
             <Clock className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/75 text-lg font-medium">24시간 연중무휴</span>
+            <span className="text-white/80 text-base md:text-lg font-medium">24시간 연중무휴</span>
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.12] border border-white/[0.2] backdrop-blur-sm">
             <MapPin className="w-3.5 h-3.5 text-brand-400" />
-            <span className="text-white/75 text-lg font-medium">전국 출장 가능</span>
+            <span className="text-white/80 text-base md:text-lg font-medium">전국 출장 가능</span>
           </div>
         </div>
 
