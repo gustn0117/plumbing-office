@@ -90,7 +90,9 @@ export default function Guarantee() {
           </h2>
           <h2 className="text-[2.25rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
             <span className="text-gradient-gold text-glow-gold">미해결시</span>{" "}
-            <span className="text-white text-glow-white">금액을 받지 않습니다.</span>
+            <span className="text-white text-glow-white">금액을</span>
+            <br className="md:hidden" />
+            <span className="text-white text-glow-white"> 받지 않습니다.</span>
           </h2>
         </AnimateIn>
 

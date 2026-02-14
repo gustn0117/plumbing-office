@@ -106,7 +106,7 @@ export default function Services() {
           </span>
           <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white tracking-tight leading-tight">
             배관사무소{" "}
-            <span className="text-white text-glow-white">제공 서비스</span>
+            <span className="text-gradient-gold text-glow-gold">제공 서비스</span>
           </h2>
           <p className="text-white/80 max-w-xl mx-auto text-lg md:text-xl mt-5">
             다양한 배관 문제,
@@ -244,16 +244,7 @@ export default function Services() {
                         />
                       </div>
                       <h3 className="text-2xl font-black text-white">
-                        <span
-                          style={{
-                            background: `linear-gradient(135deg, ${s.borderColor}, ${s.borderColor}bb)`,
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                          }}
-                        >
-                          {s.name}
-                        </span>{" "}
-                        {s.highlight}
+                        {s.name} {s.highlight}
                       </h3>
                     </div>
                     <p className="text-white/75 text-base md:text-lg leading-relaxed flex-1">
