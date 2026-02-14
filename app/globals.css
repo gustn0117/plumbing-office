@@ -119,7 +119,7 @@
            active:translate-y-0
            relative overflow-hidden;
     transition: transform 0.3s, filter 0.3s;
-    animation: btnColorShift 1.5s ease-in-out infinite;
+    animation: btnColorShift 5s ease-in-out infinite;
   }
   .btn-primary:hover {
     filter: brightness(1.12);
@@ -132,7 +132,7 @@
     width: 60%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    animation: shine 2.5s ease-in-out infinite;
+    animation: shine 4s ease-in-out infinite;
   }
 
   .btn-outline {
@@ -140,7 +140,7 @@
            px-8 py-3.5 rounded-full text-base font-semibold
            hover:-translate-y-0.5;
     transition: transform 0.3s, filter 0.3s, background 0.3s;
-    animation: outlineColorShift 1.5s ease-in-out infinite;
+    animation: outlineColorShift 5s ease-in-out infinite;
   }
   .btn-outline:hover {
     background: rgba(255,255,255,0.1);
@@ -284,22 +284,22 @@
 
   /* Shining text - pulsing glow only (no pseudo-elements) */
   .text-sparkle {
-    animation: sparkleGlow 2.5s ease-in-out infinite;
+    animation: sparkleGlow 4s ease-in-out infinite;
   }
 
   /* Intense shimmer for phone numbers - stronger glow */
   .sparkle-intense {
-    animation: sparkleGlowIntense 2s ease-in-out infinite;
+    animation: sparkleGlowIntense 4s ease-in-out infinite;
   }
 
   /* Color shift for glass badges */
   .glass-color-shift {
-    animation: glassColorShift 2s ease-in-out infinite;
+    animation: glassColorShift 6s ease-in-out infinite;
   }
 
   /* Color shift for info badges */
   .badge-color-shift {
-    animation: badgeColorShift 1.5s ease-in-out infinite;
+    animation: badgeColorShift 5s ease-in-out infinite;
   }
 
   /* Shimmer sweep for text/buttons */
@@ -315,7 +315,7 @@
     width: 60%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
-    animation: shimmerSweep 2s ease-in-out infinite;
+    animation: shimmerSweep 4s ease-in-out infinite;
     pointer-events: none;
   }
 
