@@ -57,11 +57,11 @@ export default function Inspection() {
             <span className="text-brand-500 glow-pulse">무료이벤트</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg md:text-xl">
-            하수구 배관은 내부를 육안으로
+            하수구 배관은 내부를 육안으로{" "}
             <br className="md:hidden" />
             확인하기 어렵습니다.
             <br />
-            정밀 내시경으로 배관 속 누수, 이물질,
+            정밀 내시경으로 배관 속 누수, 이물질,{" "}
             <br className="md:hidden" />
             결함을 정확하게 파악합니다.
           </p>

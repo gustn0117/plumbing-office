@@ -162,15 +162,15 @@ export default function Guarantee() {
 
         <AnimateIn delay={0.4}>
           <p className="text-white/80 text-base md:text-xl leading-relaxed max-w-lg mx-auto">
-            배관사무소는
+            배관사무소는{" "}
             <br className="md:hidden" />
-            고객님의 문제를 완벽하게
+            고객님의 문제를 완벽하게{" "}
             <br className="md:hidden" />
             해결할 때까지 책임집니다.
             <br />
-            해결하지 못하면
+            해결하지 못하면{" "}
             <br className="md:hidden" />
-            비용을 청구하지 않는 것이
+            비용을 청구하지 않는 것이{" "}
             <br className="md:hidden" />
             저희의 원칙입니다.
           </p>
