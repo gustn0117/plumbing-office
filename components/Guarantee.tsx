@@ -35,7 +35,7 @@ export default function Guarantee() {
       <motion.div
         animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 4, repeat: Infinity }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(241,196,15,0.1) 0%, transparent 60%)" }}
       />
 
@@ -43,20 +43,21 @@ export default function Guarantee() {
       <motion.div
         animate={{ scale: [1, 1.12, 1], opacity: [0.08, 0.18, 0.08] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border-[3px] border-gold-400/10"
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border-[3px] border-gold-400/10"
       />
       <motion.div
         animate={{ scale: [1, 1.18, 1], opacity: [0.05, 0.12, 0.05] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-full border-2 border-gold-400/[0.08]"
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-full border-2 border-gold-400/[0.08]"
       />
       <motion.div
         animate={{ scale: [1.05, 1.2, 1.05], opacity: [0.03, 0.08, 0.03] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] md:w-[750px] md:h-[750px] rounded-full border border-gold-400/[0.05]"
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] md:w-[750px] md:h-[750px] rounded-full border border-gold-400/[0.05]"
       />
 
       {/* Floating gold particles */}
+      <div className="hidden md:block">
       {[
         { top: "20%", left: "15%", size: "w-1.5 h-1.5", dur: 5 },
         { top: "30%", right: "20%", size: "w-1 h-1", dur: 6.5 },
@@ -73,6 +74,7 @@ export default function Guarantee() {
           transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
         />
       ))}
+      </div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <AnimateIn>

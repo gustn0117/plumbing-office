@@ -50,15 +50,16 @@ export default function KoreaMap() {
       <motion.div
         animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-brand-500/20 rounded-full blur-[160px]"
+        className="hidden md:block absolute top-1/4 -left-20 w-[600px] h-[600px] bg-brand-500/20 rounded-full blur-[160px]"
       />
       <motion.div
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.25, 0.1] }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px]"
+        className="hidden md:block absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px]"
       />
 
       {/* Floating particles */}
+      <div className="hidden md:block">
       {[
         { top: "12%", right: "18%", size: "w-2 h-2", color: "bg-brand-400/40", dur: 5 },
         { top: "35%", left: "6%", size: "w-1.5 h-1.5", color: "bg-cyan-400/30", dur: 7 },
@@ -74,6 +75,7 @@ export default function KoreaMap() {
           style={{ top: p.top, left: p.left, right: p.right, bottom: p.bottom }}
         />
       ))}
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-5">
         <AnimateIn className="text-center mb-14">

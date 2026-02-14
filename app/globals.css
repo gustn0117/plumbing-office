@@ -365,6 +365,46 @@
   background: #94a3b8;
 }
 
+/* Mobile: disable heavy effects */
+@media (max-width: 768px) {
+  .btn-primary {
+    animation: none !important;
+    background: linear-gradient(135deg, #ff4136 0%, #e74c3c 40%, #c0392b 100%) !important;
+    box-shadow: 0 10px 40px rgba(231,76,60,0.4), 0 4px 6px rgba(0,0,0,0.1) !important;
+  }
+  .btn-primary::after {
+    animation: none !important;
+    display: none !important;
+  }
+  .btn-outline {
+    animation: none !important;
+    border-color: rgba(255,255,255,0.3) !important;
+  }
+  .glass-color-shift {
+    animation: none !important;
+  }
+  .badge-color-shift {
+    animation: none !important;
+  }
+  .shimmer-sweep::after {
+    animation: none !important;
+    display: none !important;
+  }
+  .text-sparkle,
+  .sparkle-intense {
+    animation: none !important;
+  }
+  .glow-pulse {
+    animation: none !important;
+  }
+  .shimmer {
+    animation: none !important;
+  }
+  .noise::before {
+    display: none !important;
+  }
+}
+
 /* Animations */
 @keyframes shine {
   0% { left: -100%; }

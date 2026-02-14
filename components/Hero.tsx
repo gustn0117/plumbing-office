@@ -28,17 +28,17 @@ export default function Hero() {
         <motion.div
           animate={{ scale: [1, 1.4, 1], opacity: [0.15, 0.35, 0.15] }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-brand-500/25 rounded-full blur-[180px]"
+          className="hidden md:block absolute top-1/4 -left-20 w-[600px] h-[600px] bg-brand-500/25 rounded-full blur-[180px]"
         />
         <motion.div
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.3, 0.1] }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-cyan-400/20 rounded-full blur-[180px]"
+          className="hidden md:block absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-cyan-400/20 rounded-full blur-[180px]"
         />
         <div className="absolute top-0 right-0 w-[800px] h-[400px] bg-gradient-to-bl from-brand-400/10 via-transparent to-transparent" />
 
-        {/* Light rays */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Light rays - hidden on mobile */}
+        <div className="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             animate={{ opacity: [0.03, 0.08, 0.03] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -59,8 +59,8 @@ export default function Hero() {
           />
         </div>
 
-        {/* SVG Laurel wreath - behind the person image area */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-x-[75%] pointer-events-none">
+        {/* SVG Laurel wreath - hidden on mobile */}
+        <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-x-[75%] pointer-events-none">
           <motion.svg
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [0.98, 1.02, 0.98] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -108,42 +108,46 @@ export default function Hero() {
           className="absolute bottom-[20%] left-[5%] w-[150px] h-[150px] md:w-[250px] md:h-[250px] rounded-full border border-dashed border-brand-300/[0.06] pointer-events-none"
         />
 
-        {/* Water droplet shapes */}
-        {[
-          { top: "10%", right: "15%", size: 20, delay: 0 },
-          { top: "60%", left: "8%", size: 16, delay: 2 },
-          { bottom: "15%", right: "25%", size: 14, delay: 4 },
-        ].map((d, i) => (
-          <motion.svg
-            key={`drop-${i}`}
-            animate={{ y: [0, -10, 0], opacity: [0.06, 0.15, 0.06] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: d.delay }}
-            width={d.size} height={d.size * 1.4} viewBox="0 0 20 28"
-            className="absolute pointer-events-none"
-            style={{ top: d.top, left: d.left, right: d.right, bottom: d.bottom }}
-          >
-            <path d="M10 0 C10 0, 0 14, 0 18 C0 23.5, 4.5 28, 10 28 C15.5 28, 20 23.5, 20 18 C20 14, 10 0, 10 0Z" fill="rgba(56,189,248,0.15)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
-          </motion.svg>
-        ))}
+        {/* Water droplet shapes - hidden on mobile */}
+        <div className="hidden md:block">
+          {[
+            { top: "10%", right: "15%", size: 20, delay: 0 },
+            { top: "60%", left: "8%", size: 16, delay: 2 },
+            { bottom: "15%", right: "25%", size: 14, delay: 4 },
+          ].map((d, i) => (
+            <motion.svg
+              key={`drop-${i}`}
+              animate={{ y: [0, -10, 0], opacity: [0.06, 0.15, 0.06] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: d.delay }}
+              width={d.size} height={d.size * 1.4} viewBox="0 0 20 28"
+              className="absolute pointer-events-none"
+              style={{ top: d.top, left: d.left, right: d.right, bottom: d.bottom }}
+            >
+              <path d="M10 0 C10 0, 0 14, 0 18 C0 23.5, 4.5 28, 10 28 C15.5 28, 20 23.5, 20 18 C20 14, 10 0, 10 0Z" fill="rgba(56,189,248,0.15)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+            </motion.svg>
+          ))}
+        </div>
       </div>
 
-      {/* Floating particles */}
-      {[
-        { top: "15%", right: "10%", size: "w-2.5 h-2.5", color: "bg-brand-400/50", dur: 5 },
-        { top: "40%", left: "6%", size: "w-2 h-2", color: "bg-cyan-400/40", dur: 7 },
-        { bottom: "25%", right: "20%", size: "w-2 h-2", color: "bg-sky-400/35", dur: 6 },
-        { top: "22%", left: "25%", size: "w-1.5 h-1.5", color: "bg-brand-300/30", dur: 4 },
-        { bottom: "40%", right: "8%", size: "w-1.5 h-1.5", color: "bg-cyan-300/30", dur: 8 },
-        { top: "65%", left: "15%", size: "w-2 h-2", color: "bg-brand-300/30", dur: 9 },
-      ].map((p, i) => (
-        <motion.div
-          key={i}
-          animate={{ y: [0, i % 2 === 0 ? -20 : 15, 0], opacity: [0.2, 0.6, 0.2] }}
-          transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
-          className={`absolute rounded-full ${p.size} ${p.color}`}
-          style={{ top: p.top, left: p.left, right: p.right, bottom: p.bottom }}
-        />
-      ))}
+      {/* Floating particles - hidden on mobile */}
+      <div className="hidden md:block">
+        {[
+          { top: "15%", right: "10%", size: "w-2.5 h-2.5", color: "bg-brand-400/50", dur: 5 },
+          { top: "40%", left: "6%", size: "w-2 h-2", color: "bg-cyan-400/40", dur: 7 },
+          { bottom: "25%", right: "20%", size: "w-2 h-2", color: "bg-sky-400/35", dur: 6 },
+          { top: "22%", left: "25%", size: "w-1.5 h-1.5", color: "bg-brand-300/30", dur: 4 },
+          { bottom: "40%", right: "8%", size: "w-1.5 h-1.5", color: "bg-cyan-300/30", dur: 8 },
+          { top: "65%", left: "15%", size: "w-2 h-2", color: "bg-brand-300/30", dur: 9 },
+        ].map((p, i) => (
+          <motion.div
+            key={i}
+            animate={{ y: [0, i % 2 === 0 ? -20 : 15, 0], opacity: [0.2, 0.6, 0.2] }}
+            transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
+            className={`absolute rounded-full ${p.size} ${p.color}`}
+            style={{ top: p.top, left: p.left, right: p.right, bottom: p.bottom }}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-24 pb-20 md:pt-28 md:pb-24">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-6 items-center">

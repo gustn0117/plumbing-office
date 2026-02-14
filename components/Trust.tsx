@@ -53,23 +53,24 @@ export default function Trust() {
       <motion.div
         animate={{ scale: [1, 1.4, 1], opacity: [0.15, 0.35, 0.15] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full"
+        className="hidden md:block absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(241,196,15,0.15) 0%, transparent 70%)" }}
       />
       <motion.div
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.12, 0.3, 0.12] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full"
+        className="hidden md:block absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)" }}
       />
       <motion.div
         animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.05, 0.15, 0.05] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 right-1/3 w-[400px] h-[400px] rounded-full"
+        className="hidden md:block absolute top-1/2 right-1/3 w-[400px] h-[400px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)" }}
       />
 
       {/* Floating particles */}
+      <div className="hidden md:block">
       {[
         { top: "15%", left: "10%", size: "w-1.5 h-1.5", color: "bg-gold-400/40", dur: 5 },
         { top: "25%", right: "15%", size: "w-1 h-1", color: "bg-brand-400/30", dur: 7 },
@@ -88,6 +89,7 @@ export default function Trust() {
           transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
         />
       ))}
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimateIn>

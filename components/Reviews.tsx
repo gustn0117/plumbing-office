@@ -63,17 +63,17 @@ export default function Reviews() {
       <motion.div
         animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.22, 0.08] }}
         transition={{ duration: 9, repeat: Infinity }}
-        className="absolute top-20 left-0 w-[700px] h-[700px] bg-blue-600/12 rounded-full blur-[200px]"
+        className="hidden md:block absolute top-20 left-0 w-[700px] h-[700px] bg-blue-600/12 rounded-full blur-[200px]"
       />
       <motion.div
         animate={{ scale: [1.1, 0.8, 1.1], opacity: [0.06, 0.18, 0.06] }}
         transition={{ duration: 11, repeat: Infinity }}
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gold-400/10 rounded-full blur-[180px]"
+        className="hidden md:block absolute bottom-0 right-0 w-[600px] h-[600px] bg-gold-400/10 rounded-full blur-[180px]"
       />
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.04, 0.12, 0.04] }}
         transition={{ duration: 13, repeat: Infinity }}
-        className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-[150px]"
+        className="hidden md:block absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-[150px]"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">

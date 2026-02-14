@@ -20,25 +20,26 @@ export default function CtaBottom() {
 
       {/* Soft decorative orbs */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-[700px] h-[700px] rounded-full"
+        className="hidden md:block absolute top-1/4 left-1/4 w-[700px] h-[700px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%)" }}
         animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full"
+        className="hidden md:block absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(56,189,248,0.06) 0%, transparent 70%)" }}
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.5, 0.2] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(241,196,15,0.04) 0%, transparent 50%)" }}
         animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Floating particles */}
+      <div className="hidden md:block">
       {[
         { top: "15%", left: "20%", size: "w-1.5 h-1.5", color: "bg-brand-300/30", dur: 5 },
         { top: "35%", right: "15%", size: "w-2 h-2", color: "bg-sky-300/25", dur: 6.5 },
@@ -55,6 +56,7 @@ export default function CtaBottom() {
           transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
         />
       ))}
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimateIn>

@@ -85,17 +85,17 @@ export default function Services() {
       <motion.div
         animate={{ scale: [1, 1.5, 1], opacity: [0.12, 0.3, 0.12] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute -top-60 -right-60 w-[1000px] h-[1000px] bg-blue-600/15 rounded-full blur-[250px]"
+        className="hidden md:block absolute -top-60 -right-60 w-[1000px] h-[1000px] bg-blue-600/15 rounded-full blur-[250px]"
       />
       <motion.div
         animate={{ scale: [1.3, 0.7, 1.3], opacity: [0.08, 0.25, 0.08] }}
         transition={{ duration: 11, repeat: Infinity }}
-        className="absolute -bottom-60 -left-60 w-[900px] h-[900px] bg-purple-600/15 rounded-full blur-[220px]"
+        className="hidden md:block absolute -bottom-60 -left-60 w-[900px] h-[900px] bg-purple-600/15 rounded-full blur-[220px]"
       />
       <motion.div
         animate={{ scale: [1, 1.4, 1], opacity: [0.04, 0.12, 0.04] }}
         transition={{ duration: 14, repeat: Infinity }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-400/8 rounded-full blur-[180px]"
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-400/8 rounded-full blur-[180px]"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
