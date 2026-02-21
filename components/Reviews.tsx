@@ -264,7 +264,9 @@ export default function Reviews() {
         <AnimateIn delay={0.2} className="mt-20">
           <div className="text-center mb-10">
             <h3 className="text-[1.5rem] md:text-[2rem] font-black text-white tracking-tight leading-snug">
-              이용해보신 고객님들은 다~ 알아요!
+              이용해보신 고객님들은
+              <br className="md:hidden" />
+              {" "}다~ 알아요!
               <br />
               <span className="text-gradient-gold text-glow-gold">
                 고객님들의 이유 있는 선택!!

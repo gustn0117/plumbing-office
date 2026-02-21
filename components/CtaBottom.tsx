@@ -84,7 +84,9 @@ export default function CtaBottom() {
           <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-gray-900 leading-tight tracking-tight mb-3">
             배관 문제,
             <br />
-            <span className="text-brand-500">더 이상 고민하지 마세요!</span>
+            <span className="text-brand-500">더 이상 고민하지</span>
+            <br className="md:hidden" />
+            <span className="text-brand-500"> 마세요!</span>
           </h2>
           <p className="text-gray-600 text-base md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
             24시간 전문 상담사가 대기하고 있습니다.

@@ -104,8 +104,9 @@ export default function Trust() {
             배관사무소는
           </h2>
           <h2 className="text-[2.25rem] md:text-[3.5rem] font-black leading-tight tracking-tight">
-            <span className="text-gradient-lime text-glow-lime">결과로 신뢰를</span>{" "}
-            <span className="text-white text-glow-white">증명합니다!</span>
+            <span className="text-gradient-lime text-glow-lime">결과로 신뢰를</span>
+            <br className="md:hidden" />
+            <span className="text-white text-glow-white"> 증명합니다!</span>
           </h2>
         </AnimateIn>
 

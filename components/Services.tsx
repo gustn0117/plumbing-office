@@ -105,8 +105,9 @@ export default function Services() {
             완벽한 해결? 배관사무소에서 가능합니다!
           </span>
           <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white tracking-tight leading-tight">
-            배관사무소{" "}
-            <span className="text-gradient-gold text-glow-gold">제공 서비스</span>
+            배관사무소
+            <br className="md:hidden" />
+            {" "}<span className="text-gradient-gold text-glow-gold">제공 서비스</span>
           </h2>
           <p className="text-white/80 max-w-xl mx-auto text-lg md:text-xl mt-5">
             다양한 배관 문제,

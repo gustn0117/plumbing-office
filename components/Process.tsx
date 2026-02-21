@@ -79,8 +79,9 @@ export default function Process() {
             복잡한 절차에 지친 당신, 오늘부턴 배관사무소가 해답!
           </span>
           <h2 className="text-[2.25rem] md:text-[3.5rem] font-black text-white tracking-tight">
-            신속, 간단한{" "}
-            <span className="text-gradient-blue text-glow-blue">진행절차</span>
+            신속, 간단한
+            <br className="md:hidden" />
+            {" "}<span className="text-gradient-blue text-glow-blue">진행절차</span>
           </h2>
           <p className="text-white/80 max-w-xl mx-auto text-lg md:text-xl mt-5">
             복잡한 과정 없이, 전화 한 통이면 끝!
