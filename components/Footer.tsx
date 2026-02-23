@@ -48,8 +48,10 @@ export default function Footer() {
         <div className="divider-gradient mb-7" />
 
         <div className="text-white/50 text-sm space-y-1">
+          <p>상호: 배관사무소 | 대표자명: 이연지</p>
           <p>사업자등록번호: 785-14-02557</p>
-          <p>&copy; 2026 배관사무소. All rights reserved.</p>
+          <p>주소: 경기 평택시 송월로 8 | 이메일: moh2001@naver.com</p>
+          <p className="mt-3">&copy; 2026 배관사무소. All rights reserved.</p>
         </div>
       </div>
     </footer>
