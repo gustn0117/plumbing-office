@@ -47,7 +47,7 @@ export default function Footer() {
 
         <div className="divider-gradient mb-8" />
 
-        <div className="text-white/50 text-sm space-y-1.5">
+        <div className="text-white/50 text-sm space-y-1">
           <p>사업자등록번호: 785-14-02557</p>
           <p>&copy; 2026 배관사무소. All rights reserved.</p>
         </div>
