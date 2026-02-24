@@ -13,6 +13,7 @@ import Process from "@/components/Process";
 import CtaBottom from "@/components/CtaBottom";
 import Footer from "@/components/Footer";
 import FloatingCta from "@/components/FloatingCta";
+import ClickTracker from "@/components/ClickTracker";
 
 export default function HomeContent() {
   return (
@@ -30,6 +31,7 @@ export default function HomeContent() {
       <CtaBottom />
       <Footer />
       <FloatingCta />
+      <ClickTracker />
     </main>
   );
 }
